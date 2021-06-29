@@ -1,0 +1,6 @@
+.logo{
+    @include display(flex,row);
+    @include typography(shrikhand,30px,lighter);
+    height:63px;
+    @include align(); 
+}

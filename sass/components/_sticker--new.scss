@@ -1,0 +1,14 @@
+
+.new{
+    &::after{
+        content: "Nouveau";
+        position:absolute;
+        @include typography(roboto,14px,normal);
+        background-color: $cd-tertiary;
+        color:darken($cd-tertiary, 35%);
+        right:12px;
+        top:12px;
+        padding:5px 12px 5px 12px;
+        border-radius: 2px;
+    } 
+}

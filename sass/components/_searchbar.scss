@@ -1,0 +1,19 @@
+.searchbar{
+    border:hidden;
+    @include display(flex,row);
+    background-color:$cd-grey;
+    box-shadow:$box-shadow--searchbar;
+    @include align();
+    padding-top: 13px;
+    padding-bottom:13px;
+    &__icon{
+        padding-left:33px;
+        padding-right: 15px;
+        padding-top: 4px;
+    }
+    &__input{
+        @include typography(roboto,medium,bold);
+        border-style: none;
+        background-color:$cd-grey;
+    }
+}

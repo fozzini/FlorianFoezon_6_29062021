@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1"/>
+        <link rel="stylesheet" href="sass/main.css"/>
+        <script src="https://kit.fontawesome.com/cdad57d0a6.js" crossorigin="anonymous"></script>
+        <title>Acceuil</title>
+    </head>
+    <body class="body noscroll">
+        <div class="loader">
+            <i class="fas fa-utensils"></i>
+            <span class="loader__ripple--1"></span>
+            <span class="loader__ripple--2"></span>
+            <span class="loader__ripple--3"></span>
+            <span class="loader__ripple--4"></span>
+            <span class="loader__ripple--5"></span>
+        </div>
+        <div>
+            <header class="header">
+                <div class="logo">ohmyfood</div>
+                <div class="searchbar">
+                    <label for="recherche" class="searchbar__icon"><i class="fas fa-map-marker-alt"></i></label>
+                    <input type="search" id="recherche" value="Paris, Belleville" class="searchbar__input">
+                </div>
+                <h1 class="header__title">Réservez le menu qui vous convient</h1>
+                <h2 class="header__subtitle">Découvrez des restaurants d'exception, sélectionnés par nos soins.</h2>
+                <div class="box"><button class="button">Explorer nos restaurants</button></div>
+            </header>
+            <main class="main">
+                <section class="main__services">
+                    <h2 class="main__services__title">
+                        Fonctionnement
+                    </h2>
+                    <aside class="ordertype">  
+                        <a href="#Restaurants" class="ordertype__list"><i class="fas fa-mobile-alt ordertype__list__icons"></i> Choisissez un restaurant</a>
+                        <a href="#" class="ordertype__list"><i class="fas fa-list-ul ordertype__list__icons"></i>Composez votre menu</a>
+                        <a href="#" class="ordertype__list"><i class="fas fa-store ordertype__list__icons"></i>Dégustez au restaurant</a> 
+                    </aside>
+                </section>
+                <section id="Restaurants" class="main__restaurants">
+                    <h2 class="main__restaurants__title">Restaurants</h2>
+                    <div class="media">
+                        <a href="La_palette_du_gout.html" class= "sticker--restaurant new">
+                            <div class= "imageGenerator__lapalette sticker--restaurant__image"></div>
+                            <div class= "sticker--restaurant__description">
+                                <i class="fas fa-heart hearticones--1"><i class="far fa-heart hearticones--2"></i></i> 
+                                <h3 class= "sticker--restaurant__description__title">La palette du goût</h3>
+                                <h4 class= "sticker--restaurant__description__subtitle">Ménilmontant</h4>
+                            </div>          
+                        </a>
+                        <a href="La_note_enchantee.html" class= "sticker--restaurant new">
+                            <div class= "imageGenerator__lanote sticker--restaurant__image"></div>
+                            <div class= "sticker--restaurant__description">
+                                <i class="fas fa-heart hearticones--1"><i class="far fa-heart hearticones--2"></i></i>
+                                <h3 class= "sticker--restaurant__description__title">La note enchantée</h3>
+                                <h4 class= "sticker--restaurant__description__subtitle">Charonne</h4>
+                            </div>
+                        </a>
+                        <a href="A_la_francaise.html" class= "sticker--restaurant">
+                            <div class= "imageGenerator__franc sticker--restaurant__image"></div>
+                            <div class= "sticker--restaurant__description">
+                                <i class="fas fa-heart hearticones--1"><i class="far fa-heart hearticones--2"></i></i>
+                                <h3 class= "sticker--restaurant__description__title">À la française</h3>
+                                <h4 class= "sticker--restaurant__description__subtitle">Cité Rouge</h4>
+                            </div>
+                        </a>
+                        <a href="Le_delice_des_sens.html" class= "sticker--restaurant">
+                            <div class= "imageGenerator__delice sticker--restaurant__image"></div>
+                            <div class= "sticker--restaurant__description">
+                                <i class="fas fa-heart hearticones--1"><i class="far fa-heart hearticones--2"></i></i>
+                                <h3 class= "sticker--restaurant__description__title">Le délice des sens</h3>
+                                <h4 class= "sticker--restaurant__description__subtitle">Folie-Méricourt</h4>  
+                            </div>
+                        </a>
+                    </div>
+                </section>          
+            </main>
+            <footer class="footer">
+                <h2 class="footer__title">ohmyfood</h2>
+                <ul class="footer__list" >
+                    <li>
+                        <a href="#Restaurants" class="footer__list__links"><i class="fas fa-utensils"></i> Proposer un restaurant</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__list__links"><i class="fas fa-hands-helping "></i>Devenir partenaire</a>
+                    </li>
+                    <li class="footer__list__links">
+                        <a href="#" class="footer__list__links">Mentions légales</a>
+                    </li>
+                    <li class="footer__list__links">
+                        <a href="mailto:contact@example.com" class="footer__list__links">Contact</a>
+                    </li>
+                </ul>
+            </footer>
+        </div>
+    </body>
+</html>
+    	
