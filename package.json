@@ -1,0 +1,22 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "TP3-openclassrooms-dev-front",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:.public/css/style.css"
+  },
+  "author": "Florian Foezon",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fozzini/FlorianFoezon_3_15042021.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fozzini/FlorianFoezon_3_15042021/issues"
+  },
+  "homepage": "https://github.com/fozzini/FlorianFoezon_3_15042021#readme"
+}
