@@ -1,12 +1,12 @@
-@import "./utils/variables";
-@import "./layout/footer";
+@import "./base/font";
+@import "./base/modern-normalize";
+/* @import "./utils/variables";
 @import "./pages/loader";
 @import "./layout/header--menu";
 @import "./layout/header";
 @import "./pages/acceuil";
 @import "./layout/menu";
 @import "./layout/body";
-@import "./base/font";
 @import "./utils/keyframes";
 @import "./utils/boucles";
 @import "./utils/mixins";
@@ -18,5 +18,5 @@
 @import "./components/sticker--restaurant";
 @import "./components/sticker--menu";
 @import "./components/sticker--new";
-@import "./components/heart";
+@import "./components/heart"; */
 
