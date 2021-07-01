@@ -1,0 +1,6 @@
+.cardlist{
+  @include alignFlex(space-around,center);
+  
+  margin-top: 100px;
+  flex-direction: row;
+}

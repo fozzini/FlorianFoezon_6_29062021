@@ -1,0 +1,39 @@
+.nav{
+    @include alignFlex;
+    flex-direction: row;
+    left: 27.29%;
+    right: 35.83%;
+    top: 5%;
+    bottom: 92.48%;
+    ul{
+        @include alignFlex;
+        padding-inline-start: 0px;
+        margin: inherit;
+    }
+    li{
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        margin-right: 5px;
+        margin-left: 5px;
+        padding: 5px;
+        border: 0.5px solid #C4C4C4;
+        border-radius: 11px; 
+    }
+    li:before{ 
+        content: "#";
+        color:$cd-tag;
+        text-align: center;
+        font-weight: bold;
+        font-size: 12px;       
+    }
+    a{
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 12px;
+        font-weight: bold;
+        color:$cd-tag;
+        text-decoration: none;
+        list-style: none;
+    }
+}

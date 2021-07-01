@@ -1,29 +1,3 @@
-/* .main{
-    height: auto;
-    position: relative;
-    &__services{
-        @include display(flex,column);
-        padding-bottom: 33px;
-        &__title{
-            @include typography(roboto,24px,bold);
-            margin-left: 21px;
-            padding-top: 25px;
-        }   
-    }
-    &__restaurants{
-        padding-bottom: 44px;
-        height: auto;
-        &__title{
-            @include typography(roboto,24px,bold);
-            padding: 50px 20px 20px 21px;
-            margin-bottom: 0px;
-        }
-    }  
+.body{
+    width: 100vh;
 }
-.media{
-    @media all and (min-width: 768px){
-        @include display(flex,row);
-        @include align();
-        flex-wrap: wrap;   
-    }
-} */

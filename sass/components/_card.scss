@@ -1,0 +1,60 @@
+.card{
+  @include alignFlex;
+  background-color: white;
+  flex-direction: column;
+  width:auto;
+  img{
+    width: 300px;
+  }
+  &__vignette{
+    
+    flex-direction: column;
+    height: auto;
+    }
+  &__picture{
+    @include alignFlex;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px #C4C4C4;
+    padding-top: 25px;
+  }
+  &__name{
+    font-weight: normal;
+    font-size: 36px;
+    margin-bottom: inherit;
+    margin-top:15px;
+    line-height: 47px;
+    text-align: center;
+    color: #D3573C;
+  }
+  &__location{
+    font-weight: normal;
+    font-size: 13px;
+    margin-bottom: inherit;
+    margin-top:3px;
+    line-height: 17px;
+    text-align: center;
+    color: #901C1C;
+  }
+  &__quote{
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 13px;
+    text-align: center;
+    margin-bottom: inherit;
+    margin-top:3px;
+    color: #000000;
+  }
+  &__price{
+    font-weight: normal;
+    font-size: 9px;
+    line-height: 12px;
+    text-align: center;
+    margin-bottom: 3px;
+    margin-top:3px;
+    color: #757575;
+  }
+  
+}

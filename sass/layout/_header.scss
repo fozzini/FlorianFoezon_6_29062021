@@ -1,17 +1,7 @@
-/* .header{
-    @include display(flex,column);
-    height:auto;
-    background-color:white;
-    padding-bottom: 55px;
-    &__title{
-        @include typography(roboto,24px,bold);
-        text-align: center;
-        margin: 35px 47px 0px 47px;
-    }
-    &__subtitle{
-        @include typography(roboto,17.5px,lighter);
-        margin-top: 6px;
-        margin-bottom: 30px;
-        text-align: center;
-    }  
-} */
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-around;
+    width:auto;
+}

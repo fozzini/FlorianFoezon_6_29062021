@@ -6,9 +6,9 @@
 @mixin display($display,$direction) {
   display:$display;
   flex-direction: $direction;
-}
-@mixin align($justify:center,$align:center) {
+}*/
+@mixin alignFlex($justify:center,$align:center) {
+  display: flex;
   justify-content: $justify;
   align-items: $align;
 }
- */

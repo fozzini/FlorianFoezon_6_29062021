@@ -1,0 +1,11 @@
+.cta{
+  @include alignFlex;
+  font-weight: bold;
+  background-color: $cd-primary;
+  position: absolute;
+  width: 170px;
+  height: 30px;
+  left: 633px;
+  top: 6px;
+  display: none;
+}
