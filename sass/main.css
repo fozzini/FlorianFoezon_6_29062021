@@ -174,6 +174,7 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  margin-left: 6.25rem;
   justify-content: space-around;
   width: auto;
 }
@@ -182,17 +183,28 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 100px;
-  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .body {
-  width: 100vh;
+  width: auto;
+}
+
+.photographer {
+  width: auto;
+  margin-left: 80px;
+  margin-right: 120px;
+}
+
+.header-photographer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 /*
-@import "./layout/menu";
-@import "./layout/body";
 @import "./utils/keyframes";
 @import "./utils/boucles";*/
 .titre {
@@ -215,6 +227,9 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   right: 35.83%;
   top: 5%;
   bottom: 92.48%;
+}
+.nav__panel {
+  margin-top: 5px;
 }
 .nav ul {
   display: flex;
@@ -252,7 +267,6 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
 }
 
 .logo {
-  left: 6.25rem;
   margin-top: 2.625rem;
   width: 12.5rem;
   height: 3.125rem;
@@ -267,9 +281,9 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   position: absolute;
   width: 170px;
   height: 30px;
-  left: 633px;
   top: 6px;
-  display: none;
+  display: flex;
+  cursor: pointer;
 }
 
 .card {
@@ -278,7 +292,8 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   align-items: center;
   background-color: white;
   flex-direction: column;
-  width: auto;
+  width: 30%;
+  margin-top: 30px;
 }
 .card img {
   width: 300px;
@@ -286,6 +301,7 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
 .card__vignette {
   flex-direction: column;
   height: auto;
+  text-decoration: none;
 }
 .card__picture {
   display: flex;
@@ -307,6 +323,12 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   text-align: center;
   color: #D3573C;
 }
+.card__name--panel {
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 83px;
+  color: #D3573C;
+}
 .card__location {
   font-weight: normal;
   font-size: 13px;
@@ -314,6 +336,12 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   margin-top: 3px;
   line-height: 17px;
   text-align: center;
+  color: #901C1C;
+}
+.card__location--panel {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 31px;
   color: #901C1C;
 }
 .card__quote {
@@ -325,6 +353,12 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   margin-top: 3px;
   color: #000000;
 }
+.card__quote--panel {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  color: #525252;
+}
 .card__price {
   font-weight: normal;
   font-size: 9px;
@@ -334,9 +368,24 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   margin-top: 3px;
   color: #757575;
 }
+.card--align {
+  display: flex;
+  align-items: flex-start;
+}
+
+.panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  background: #FAFAFA;
+  border-radius: 5px;
+}
+.panel--split {
+  width: 50%;
+}
 
 /*
-@import "./components/sticker--restaurant";
 @import "./components/sticker--menu";
 @import "./components/sticker--new";
 @import "./components/heart"; */

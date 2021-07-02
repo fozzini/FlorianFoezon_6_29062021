@@ -5,6 +5,9 @@
     right: 35.83%;
     top: 5%;
     bottom: 92.48%;
+    &__panel{
+        margin-top:5px;
+    }
     ul{
         @include alignFlex;
         padding-inline-start: 0px;
@@ -36,4 +39,5 @@
         text-decoration: none;
         list-style: none;
     }
+   
 }

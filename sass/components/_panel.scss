@@ -1,0 +1,10 @@
+.panel{
+  @include alignFlex(space-between,center);
+  padding:30px;
+  background: #FAFAFA;
+  border-radius: 5px;
+  &--split{
+    width:50%;
+  }
+  
+}

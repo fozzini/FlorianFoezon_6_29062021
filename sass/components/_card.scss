@@ -2,15 +2,16 @@
   @include alignFlex;
   background-color: white;
   flex-direction: column;
-  width:auto;
+  width:30%;
+  margin-top: 30px;
   img{
     width: 300px;
   }
   &__vignette{
-    
     flex-direction: column;
     height: auto;
-    }
+    text-decoration: none;
+  }
   &__picture{
     @include alignFlex;
     height: 200px;
@@ -28,6 +29,12 @@
     line-height: 47px;
     text-align: center;
     color: #D3573C;
+    &--panel{
+      font-weight: normal;
+      font-size: 64px;
+      line-height: 83px;
+      color: #D3573C;
+    }
   }
   &__location{
     font-weight: normal;
@@ -37,6 +44,12 @@
     line-height: 17px;
     text-align: center;
     color: #901C1C;
+    &--panel{
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 31px;
+      color: #901C1C;
+    }
   }
   &__quote{
     font-weight: normal;
@@ -46,6 +59,12 @@
     margin-bottom: inherit;
     margin-top:3px;
     color: #000000;
+    &--panel{
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 23px;
+      color: #525252;
+    }
   }
   &__price{
     font-weight: normal;
@@ -55,6 +74,10 @@
     margin-bottom: 3px;
     margin-top:3px;
     color: #757575;
+  }
+  &--align{
+    display: flex;
+    align-items: flex-start
   }
   
 }

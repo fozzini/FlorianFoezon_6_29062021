@@ -5,9 +5,9 @@
 @import "./pages/loader";*/
 @import "./layout/header";
 @import "./layout/section";
-@import "./pages/acceuil";/*
-@import "./layout/menu";
-@import "./layout/body";
+@import "./pages/acceuil";
+@import "./pages/photographer";
+@import "./layout/header-photographer";/*
 @import "./utils/keyframes";
 @import "./utils/boucles";*/
 
@@ -15,8 +15,8 @@
 @import "./components/nav";
 @import "./components/logo";
 @import "./components/cta";
-@import "./components/card";/*
-@import "./components/sticker--restaurant";
+@import "./components/card";
+@import "./components/panel";/*
 @import "./components/sticker--menu";
 @import "./components/sticker--new";
 @import "./components/heart"; */ 
