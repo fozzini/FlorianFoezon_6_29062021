@@ -228,9 +228,6 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   top: 5%;
   bottom: 92.48%;
 }
-.nav__panel {
-  margin-top: 5px;
-}
 .nav ul {
   display: flex;
   justify-content: center;
@@ -244,7 +241,6 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   flex-direction: row;
   list-style: none;
   margin-right: 5px;
-  margin-left: 5px;
   padding: 5px;
   border: 0.5px solid #C4C4C4;
   border-radius: 11px;
@@ -368,21 +364,68 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   margin-top: 3px;
   color: #757575;
 }
-.card--align {
-  display: flex;
-  align-items: flex-start;
-}
 
 .panel {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px;
+  padding-top: 0px;
+  margin-top: 30px;
   background: #FAFAFA;
   border-radius: 5px;
 }
 .panel--split {
   width: 50%;
+}
+.panel__description {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.panel__name {
+  font-weight: normal;
+  font-size: 64px;
+  margin-bottom: inherit;
+  margin-top: 15px;
+  line-height: 83px;
+  text-align: center;
+  color: #D3573C;
+}
+.panel__location {
+  font-weight: normal;
+  font-size: 24px;
+  margin-bottom: inherit;
+  margin-top: 3px;
+  line-height: 31px;
+  text-align: center;
+  color: #901C1C;
+}
+.panel__quote {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 3px;
+  color: #525252;
+}
+.panel__btn {
+  display: flex;
+  padding: 21px 11px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  background: #911C1C;
+  border-radius: 5px;
+  text-decoration: none;
+  align-self: flex-start;
+  margin-top: 50px;
 }
 
 /*
