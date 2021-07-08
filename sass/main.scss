@@ -1,14 +1,15 @@
 @import "./base/font";
 @import "./base/modern-normalize";
 @import "./utils/mixins";
-@import "./utils/variables";/*
-@import "./pages/loader";*/
+@import "./utils/variables";
+@import "./components/dropdown";
+@import "./layout/article";
 @import "./layout/header";
 @import "./layout/section";
 @import "./pages/acceuil";
 @import "./pages/photographer";
-@import "./layout/header-photographer";/*
-@import "./utils/keyframes";
+@import "./layout/header-photographer";
+@import "./layout/gallery";/*
 @import "./utils/boucles";*/
 
 @import "./components/titre";

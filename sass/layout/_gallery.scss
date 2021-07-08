@@ -1,0 +1,47 @@
+
+.article-Gallery{
+  @include alignFlex(space-between);
+  flex-wrap: wrap;
+}
+
+.gallery {
+  @include alignFlex;
+  flex-direction: column;
+	margin: 5px;
+	border: none;
+	float: left;
+	width: 30%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 5px;
+	&:hover {
+		border: 1px solid #777;
+	}
+	img {
+    width: 100%;
+  }
+		
+}
+.desc {
+	text-align: center;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  color:#901C1C;
+  
+}
+.image{
+  width: auto;
+  height: 90%;
+  background-position: center;
+  overflow: hidden;
+  
+}
+.likes{
+  @include alignFlex;
+  i{
+    margin-left: 5px;
+  }
+
+}

@@ -1,0 +1,30 @@
+.article{
+  position: relative;
+  &__header{
+    @include alignFlex(flex-start, baseline);
+    margin-top:10px;
+  }
+  &__title{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    margin-right: 30px;
+  }
+  &__dropdown{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    background: #911C1C;
+    border-radius:5px 5px 5px 5px;
+    color: white;
+  }
+  &__btn{
+    background: #911C1C;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    
+  }
+}
