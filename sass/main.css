@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* dm-sans-regular - latin */
 @font-face {
   font-family: "DM Sans";
@@ -168,6 +169,11 @@ $box-shadow--searchbar: inset 0px 5px 5px 0px darken($cd-grey, 10%);
 $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
 /* liste */
 /* $restaurants: "lapalette", "lanote", "franc","delice"; */
+.dropdown {
+  position: absolute;
+  left: 85px;
+  z-index: 1;
+}
 .dropdown__content {
   display: flex;
   flex-direction: column;
@@ -189,6 +195,9 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
 .dropdown__content:hover .delborder {
   border-bottom: hidden;
 }
+.dropdown__content:hover .arrow::after {
+  transform: rotate(-180deg);
+}
 .dropdown__content__link {
   text-decoration: none;
   color: white;
@@ -201,11 +210,24 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   display: none;
 }
 
+.icon::after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
 .arrow::after {
-  content: "<";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
+  margin-left: 15px;
 }
 
 .article {
+  display: flex;
+  flex-direction: column;
   position: relative;
 }
 .article__header {
@@ -213,6 +235,7 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   justify-content: flex-start;
   align-items: baseline;
   margin-top: 10px;
+  margin-bottom: 15px;
 }
 .article__title {
   font-weight: bold;
@@ -260,6 +283,7 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
 }
 
 .photographer {
+  position: relative;
   width: auto;
   margin-left: 80px;
   margin-right: 120px;
@@ -287,7 +311,7 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   border: none;
   float: left;
   width: 30%;
-  height: 250px;
+  height: 350px;
   overflow: hidden;
   border-radius: 5px;
 }
@@ -295,7 +319,10 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   border: 1px solid #777;
 }
 .gallery img {
+  position: relative;
+  bottom: 60px;
   width: 100%;
+  height: auto;
 }
 
 .desc {
@@ -323,8 +350,88 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   margin-left: 5px;
 }
 
-/*
-@import "./utils/boucles";*/
+.image-1 {
+  width: auto;
+  padding: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  overflow: hidden;
+  background-image: url(/images/Mimi/Animals_Rainbow.jpg);
+}
+
+.slider {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  z-index: 2;
+}
+.slider i {
+  position: absolute;
+  font-size: 25px;
+  align-self: start;
+  left: 66%;
+  color: #911C1C;
+}
+.slider__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider__image::before {
+  display: flex;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
+  margin-right: 15px;
+  color: #911C1C;
+}
+.slider__image::after {
+  display: flex;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
+  margin-left: 15px;
+  color: #911C1C;
+}
+.slider__text {
+  color: #911C1C;
+}
+.slider img {
+  width: 30%;
+}
+
+.pricelikes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  justify-content: space-around;
+  right: 5%;
+  bottom: 0%;
+  background: #DB8876;
+  border-radius: 5px;
+  height: 45px;
+  width: 300px;
+  border-radius: 5px;
+}
+.pricelikes i {
+  margin-left: 5px;
+}
+
 .titre {
   font-weight: normal;
   width: 306px;

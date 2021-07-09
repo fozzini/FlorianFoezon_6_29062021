@@ -1,0 +1,16 @@
+.pricelikes{
+  @include alignFlex(space-around,center);
+  position: fixed;  
+  justify-content: space-around;
+  right:5%;
+  bottom: 0%;
+  background: #DB8876;
+  border-radius: 5px;
+  height: 45px;
+  width: 300px;
+  border-radius: 5px;
+  i{
+    margin-left: 5px;
+  }
+
+}

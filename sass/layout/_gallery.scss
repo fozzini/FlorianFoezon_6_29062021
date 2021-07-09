@@ -2,6 +2,7 @@
 .article-Gallery{
   @include alignFlex(space-between);
   flex-wrap: wrap;
+  
 }
 
 .gallery {
@@ -11,14 +12,18 @@
 	border: none;
 	float: left;
 	width: 30%;
-  height: 250px;
+  height: 350px;
   overflow: hidden;
   border-radius: 5px;
 	&:hover {
 		border: 1px solid #777;
 	}
 	img {
+    position: relative;
+    bottom: 60px;
     width: 100%;
+    height:auto;
+    
   }
 		
 }
@@ -44,4 +49,15 @@
     margin-left: 5px;
   }
 
+}
+.image-1{
+  width: auto;
+  
+  padding: 90%;
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  overflow: hidden;
+  
+  background-image:url(/images/Mimi/Animals_Rainbow.jpg);
 }
