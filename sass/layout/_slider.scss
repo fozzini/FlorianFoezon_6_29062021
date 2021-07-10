@@ -1,6 +1,7 @@
 .slider{
   flex-direction: column;
   @include alignFlex;
+  display:none;
   position: fixed;
   width:100%;
   height: 100vh;
