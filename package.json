@@ -1,7 +1,7 @@
 {
-  "name": "ohmyfood",
+  "name": "fisheye",
   "version": "1.0.0",
-  "description": "TP3-openclassrooms-dev-front",
+  "description": "TP6-openclassrooms-dev-front",
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch ./sass/main.scss:.public/css/style.css"
