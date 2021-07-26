@@ -1,52 +1,37 @@
 
 import  NewPhotograph from './photographe.js';
 
-const url = "../FishEyeData.json"
-
-/* const getData = async () =>
+const url = "../FishEyeData.json";
+/* connection au fichier JSON */
+const getData = async () =>
   await fetch(url)
-    .then((res) => res.json())
-    .catch((err) =>
-      console.log("An error occurs when fetching photographers", err)
-    );
- */
-const getData = async() =>
-  await fetch(url)
-  .then(resp => resp.json())
-  .catch (e => console.log("une erreur c'est produite",e))
-    
-
-const init = async () => {
+    .then((resp) => resp.json())
+    .catch((e) => console.log("une erreur c'est produite", e));
+/* Sélection des photographes */
+const getPhotographers = async (i) => {
   const { photographers } = await getData();
-  console.log(photographers);
-};
-
-init();
-
-/* const getData = async() =>{
-  await fetch(url)
-  .then(resp => resp.json())
-  .then(data => data)
-  .catch (e => console.log("une erreur c'est produite",e))
-  /* .then(data => data.photographers[index]) */
-  
-/* }
-
-
-const getPhotographers = async()=>{
-  const photographers = await getData()
-  console.log(photographers)
+  return photographers[i]
 }
 
-getPhotographers() */ 
-/* function getMedia(index){ 
-  fetch("./FishEyeData.json")
-  .then(response => response.json())
-  .then(media => media.media[index])
-} */
+/* sélection des médias */
+const getMedia = async () => {
+  const { media } = await getData();
+  console.log(media);
+};
+// getMedia();
+
+/* création des photographes et affichage */
+const displayPhotographers = async () => {   
+  for (let i = 0; i < 6 ; i++){
+  const display = await getPhotographers(i);
+  let photograph = new NewPhotograph(display);
+  photograph.createHtml;
+  }
+};
+displayPhotographers();
 
 
- 
+
 
 
 
