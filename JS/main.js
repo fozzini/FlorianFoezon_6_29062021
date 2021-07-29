@@ -25,7 +25,8 @@ const displayPhotographers = async () => {
   for (let i = 0; i < 6 ; i++){
   const display = await getPhotographers(i);
   let photograph = new NewPhotograph(display);
-  photograph.createHtml;
+  photograph.createHtml();
+  photograph.createTags(i);
   }
 };
 displayPhotographers();
