@@ -4,8 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1"/>
     <link rel="stylesheet" href="sass/main.css"/>
+    <link rel="shortcut icon" href="#">
     <script src="https://kit.fontawesome.com/cdad57d0a6.js" crossorigin="anonymous"></script>
-    <script src="modal.js"></script>
+    <script type="module" src="./JS/photographerPage.js" defer></script>   
     <title>photographer-page</title>
   </head>
   
@@ -48,27 +49,7 @@
     <header class="header-photographer">
       <a href="/index.html" class="logo"><img src="/images/logo/logo.svg" alt="logo_fisheye"></a>
     </header>
-    <section>
-      
-      <div class="panel" >
-        <div class="panel panel--split">
-          <div class="panel__description">
-              <h2 class="panel__name">Mimi keel</h2>
-              <h3 class="panel__location">London, UK</h3>
-              <h4 class="panel__quote">Voir le beau dans le quotidien</h4>
-          <nav class="nav">
-            <ul>
-                <li><a href="#section">Portrait</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Travel</a></li>
-                <li><a href="#">Animals</a></li>
-            </ul>
-          </nav>
-          </div>
-          <a class="panel__btn" href="#">Contactez-moi</a>
-        </div>
-        <div class="card card__picture"><img src="/images/Mimi/Portrait_Nora.jpg" alt="id_mimi"></div>
-      </div>
+    <section id="panel_section">
     </section>
     <article class="article">
       <div class="article__header">
@@ -81,57 +62,8 @@
           </div>
         </div>
       </div>
-      <div class="article-Gallery">
-        <div class="gallery">
-          <div class="image"><img src="/images/Mimi/Animals_Rainbow.jpg" alt="Mountains" ></div>
-          <div class="desc">
-            <p>Arc-en-ciel</p>
-            <div class="likes">
-              <p>12</p>
-              <i class="fas fa-heart"></i>
-            </div>
-          </div>
-        </div>
-        <div class="gallery">
-          <div class="image" ><img src="/images/Mimi/Travel_Lonesome.jpg" alt="Mountains" ></div>
-          <div class="desc"><p>Arc-en-ciel</p>
-            <div class="likes">
-              <p>12</p>
-              <i class="fas fa-heart"></i>
-            </div></div>
-        </div>
-        <div class="gallery">
-          <div class="image"><img src="/images/Mimi/Event_SeasideWedding.jpg" alt="Mountains"></div>
-          <div class="desc"><p>Arc-en-ciel</p>
-            <div class="likes">
-              <p>12</p>
-              <i class="fas fa-heart"></i>
-            </div></div>
-        </div>
-        <div class="gallery">
-          <div class="image"><img src="/images/Mimi/Portrait_Background.jpg" alt="Mountains"></div>
-          <div class="desc"><p>Arc-en-ciel</p>
-            <div class="likes">
-              <p>12</p>
-              <i class="fas fa-heart"></i>
-            </div></div>
-        </div>
-        <div class="gallery">
-          <div class="image"><img src="/images/Mimi/Event_PintoWedding.jpg" alt="Mountains"></div>
-          <div class="desc"><p>Arc-en-ciel</p>
-            <div class="likes">
-              <p>12</p>
-              <i class="fas fa-heart"></i>
-            </div></div>
-        </div>
-        <div class="gallery">
-          <div class="image"><img src="/images/Mimi/Portrait_Wednesday.jpg" alt="Mountains"></div>
-          <div class="desc"><p>Arc-en-ciel</p>
-            <div class="likes">
-              <p>12</p>
-              <i class="fas fa-heart"></i>
-            </div></div>
-        </div>
+      <div id="gallery" class="article-Gallery">
+      
       </div>
     </article>
     <aside class="pricelikes">

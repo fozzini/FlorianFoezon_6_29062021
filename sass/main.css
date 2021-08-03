@@ -326,6 +326,12 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   width: 100%;
   height: auto;
 }
+.gallery source {
+  position: relative;
+  bottom: 60px;
+  width: 100%;
+  height: auto;
+}
 
 .desc {
   text-align: center;
@@ -341,6 +347,17 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   height: 90%;
   background-position: center;
   overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.video {
+  width: auto;
+  height: 90%;
+  background-position: center;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .likes {
@@ -422,7 +439,7 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
+  display: none;
   position: fixed;
   width: 100%;
   height: 100vh;

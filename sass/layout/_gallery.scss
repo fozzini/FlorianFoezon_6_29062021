@@ -23,7 +23,12 @@
     bottom: 60px;
     width: 100%;
     height:auto;
-    
+  }
+  source {
+    position: relative;
+    bottom: 60px;
+    width: 100%;
+    height:auto;
   }
 		
 }
@@ -41,7 +46,14 @@
   height: 90%;
   background-position: center;
   overflow: hidden;
-  
+  object-fit: cover;
+}
+.video{
+  width: auto;
+  height: 90%;
+  background-position: center;
+  overflow: hidden;
+  object-fit: cover;
 }
 .likes{
   @include alignFlex;
