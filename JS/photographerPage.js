@@ -17,18 +17,18 @@ const displayPhotographerPage = async (i) => {
 displayPhotographerPage(cardSelected);
 
 /* filtrage du nom complet pour extraire le prénom et l'utiliser pour la source */
-const filterName = async () => {
+const firstName = async () => {
     const person = await getPhotographers(cardSelected);
     let fullName = person.name;
-    var firstName = fullName.substring(0, fullName.indexOf(' '));
+    let firstName = fullName.substring(0, fullName.indexOf(' '));
     return firstName;
-}
+};
+
 /* filtrage des medias par rapport au photographe */
 const filterMedia = async () => {
     const data = await getMedia();
     const person = await getPhotographers(cardSelected);
-    var filtered = [];
-
+    let filtered = [];
     for (let index = 0; index < data.length; index++) {
         let media = data[index];
         if (media.photographerId == person.id) {
@@ -36,14 +36,16 @@ const filterMedia = async () => {
         }
     }
     return filtered;
-}
+};
+
 /* creation des classes media */
-const displayMedia = () => {
-    const display = filterMedia();
+const displayMedia = async () => {
+    const display = await filterMedia();
     for (let index = 0; index < display.length; index++) {
         const element = display[index];
-        let media = new MediaFactory(element);
+        new MediaFactory(element);
     }
 };
 displayMedia();
-export {filterName};
+
+export {firstName};

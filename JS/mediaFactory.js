@@ -1,22 +1,11 @@
-import {filterName} from './photographerPage.js';
+import {firstName} from './photographerPage.js';
 
-
-class MediaFactory{
+class MediaFactory {
   constructor(data){
-    this.create = new Image(data);
-      image.createHtml();
-  //   if(data.hasOwnProperty('image')){
-  //     let image = new Image(data);
-  //     image.createHtml();
-  //   }
-  //   else if(data.hasOwnProperty('video')){
-  //     let video = new Video(data);
-  //     Video.createHtml();
-  //   }
-  //   else{
-  //     throw "typeinconnu !";
-  //   }
-  // }
+      if(data.type =='image') {let media = new Image(data);media.createHtml();}
+      else if(data.type == 'video') {let media = new Video(data);media.createHtml();}   
+      else console.log('objet inconnu');
+  }  
 }
 
 class Image {
@@ -30,21 +19,22 @@ class Image {
     this.likes = data.likes;
     this.date = data.date;
     this.price = data.price;
-    // this.name = filterName();
+    
+    
   }
-  createHtml(){
+  async createHtml(){
+    
     /* création des éléments */
-    let section = document.getElementById("gallery");
-    let html = section.appendChild(document.createElement("div"));
-    html.className = "gallery";
-    return (html.innerHTML = `<div class="image"><img src="../images/${this.name}/${this.image}" alt="${this.alt}" ></div>
+    const section = document.getElementById("gallery");
+    const rawHtml = `<div class="gallery"><div class="image"><img src="../images/${await firstName()}/${this.image}" alt="${this.alt}" ></div>
     <div class="desc">
-      <p>${data.title}</p>
+      <p>${this.title}</p>
       <div class="likes">
-        <p>${data.likes}</p>
+        <p>${this.likes}</p>
         <i class="fas fa-heart"></i>
       </div>
-    </div>`);
+    </div></div>`;
+    return section.insertAdjacentHTML("beforeend", rawHtml)
   }
 }
 
@@ -59,23 +49,23 @@ class Video {
     this.likes = data.likes;
     this.date = data.date;
     this.price = data.price;
-    // this.name = filterName();
+    
   }
-  createHtml(){
+  async createHtml(){
+    
     /* création des éléments */
-    let section = document.getElementById("gallery");
-    let html = section.appendChild(document.createElement("div"));
-    html.className = "gallery";
-    return (html.innerHTML = `<div class="video">
-    <video><source src="../images/${this.name}/${this.image}" type="video/mp4" alt="${this.alt}"></video>
+    const section = document.getElementById("gallery");
+    const rawHtml = `<div class="gallery"><div class="video">
+    <video><source src="../images/${await firstName()}/${this.video}" type="video/mp4" alt="${this.alt}"></video>
     </div>
     <div class="desc">
-      <p>${data.title}</p>
+      <p>${this.title}</p>
       <div class="likes">
-        <p>${data.likes}</p>
+        <p>${this.likes}</p>
         <i class="fas fa-heart"></i>
       </div>
-    </div>`);
+    </div></div>`;
+    return section.insertAdjacentHTML("beforeend", rawHtml)
   }
 }
 
