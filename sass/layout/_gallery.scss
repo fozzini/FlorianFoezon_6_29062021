@@ -15,6 +15,7 @@
   height: 350px;
   overflow: hidden;
   border-radius: 5px;
+  
 	&:hover {
 		border: 1px solid #777;
 	}
@@ -44,16 +45,13 @@
 .image{
   width: auto;
   height: 90%;
-  background-position: center;
   overflow: hidden;
-  object-fit: cover;
 }
 .video{
   width: auto;
   height: 90%;
-  background-position: center;
   overflow: hidden;
-  object-fit: cover;
+  
 }
 .likes{
   @include alignFlex;

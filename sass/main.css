@@ -345,19 +345,13 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
 .image {
   width: auto;
   height: 90%;
-  background-position: center;
   overflow: hidden;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .video {
   width: auto;
   height: 90%;
-  background-position: center;
   overflow: hidden;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .likes {

@@ -43,7 +43,7 @@ class NewPhotograph{
         </ul>
       </nav>
       </div>
-      <a class="panel__btn" href="#">Contactez-moi</a>
+      <a id="panel__btn" class="panel__btn" href="#">Contactez-moi</a>
     </div>
     <div class="card card__picture"><img src="../images/Photographers_ID_Photos/${this.portrait}" alt="${this.name}"></div></div>`;
     return sectionPanel.insertAdjacentHTML("beforeend",rawHtml);
@@ -66,6 +66,40 @@ class NewPhotograph{
       const rawHtml = `<li><a href="#">${array[index]}</a></li>`;
       tagNode.insertAdjacentHTML("beforeend",rawHtml);
     };
+  }
+  async createModale(){
+    const modale = document.getElementById("photographer");
+    const htmlRaw = `<div class="bground">
+    <div class="content">
+    <span class="close"></span>
+    <div class="modal-body">
+        <form name="reserve" action="photographer-page.html" >
+        <div class="modal-header">
+            <p>Contactez-moi</p>
+            <p>${this.name}</p>
+        </div>
+        <div class="formData">
+            <label for="first">Prénom</label><br>
+            <input class="text-control" type="text" id="first" name="first"/><br>
+        </div>
+        <div class="formData">
+            <label for="last">Nom</label><br>
+            <input class="text-control" type="text" id="last" name="last"/><br>
+        </div>
+        <div class="formData">
+            <label for="email">E-mail</label><br>
+            <input class="text-control" type="email" id="email" name="email"/><br>
+        </div>
+        <div class="formData">
+            <label for="msg">Message</label><br>
+            <textarea id="msg" name="user_message" rows="4"></textarea>
+        </div>
+        <input id="btn-submit" class="btn-submit button" type="button" value="Envoyer"/>
+        </form>
+        </div>
+    </div>
+    </div>`;
+    modale.insertAdjacentHTML("afterbegin", htmlRaw);
   }
 }
 

@@ -10,42 +10,7 @@
     <title>photographer-page</title>
   </head>
   
-  <body class="photographer">
-    <div class="bground">
-      <div class="content">
-        <span class="close"></span>
-        <div class="modal-body">
-          <form name="reserve" action="photographer-page.html" method="get" onsubmit="return validate();">
-            <div class="modal-header">
-              <p>Contactez-moi</p>
-              <p>Mimi Keel</p>
-            </div>
-            <div class="formData">
-              <label for="first">Prénom</label><br>
-              <input class="text-control" type="text" id="first" name="first"/><br>
-            </div>
-            <div class="formData">
-              <label for="last">Nom</label><br>
-              <input class="text-control" type="text" id="last" name="last"/><br>
-            </div>
-            <div class="formData">
-              <label for="email">E-mail</label><br>
-              <input class="text-control" type="email" id="email" name="email"/><br>
-            </div>
-            <div class="formData">
-              <label for="msg">Message</label><br>
-              <textarea id="msg" name="user_message" rows="4"></textarea>
-            </div>
-            <input class="btn-submit button" type="submit" value="Envoyer"/>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="slider">
-      <div class="slider__image"><img src="/images/Mimi/Animals_Rainbow.jpg" alt=""><i class="fas fa-times"></i></div>
-      <span class="slider__text">arc-en-ciel</span>
-    </div>
-    
+  <body class="photographer" id="photographer">
     <header class="header-photographer">
       <a href="/index.html" class="logo"><img src="/images/logo/logo.svg" alt="logo_fisheye"></a>
     </header>

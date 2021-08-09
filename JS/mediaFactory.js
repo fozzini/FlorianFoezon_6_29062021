@@ -5,7 +5,7 @@ class MediaFactory {
       if(data.type =='image') {let media = new Image(data);media.createHtml();}
       else if(data.type == 'video') {let media = new Video(data);media.createHtml();}   
       else console.log('objet inconnu');
-  }  
+  }
 }
 
 class Image {
@@ -19,8 +19,6 @@ class Image {
     this.likes = data.likes;
     this.date = data.date;
     this.price = data.price;
-    
-    
   }
   async createHtml(){
     
@@ -56,7 +54,7 @@ class Video {
     /* création des éléments */
     const section = document.getElementById("gallery");
     const rawHtml = `<div class="gallery"><div class="video">
-    <video><source src="../images/${await firstName()}/${this.video}" type="video/mp4" alt="${this.alt}"></video>
+    <video controls><source src="../images/${await firstName()}/${this.video}" type="video/mp4" alt="${this.alt}"></video>
     </div>
     <div class="desc">
       <p>${this.title}</p>
