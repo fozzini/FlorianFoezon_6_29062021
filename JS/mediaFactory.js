@@ -28,7 +28,7 @@ class Image {
     <div class="desc">
       <p>${this.title}</p>
       <div class="likes">
-        <p>${this.likes}</p>
+        <p class="likesP">${this.likes}</p>
         <i class="fas fa-heart"></i>
       </div>
     </div></div>`;

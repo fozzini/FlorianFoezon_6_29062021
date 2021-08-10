@@ -2,6 +2,9 @@ import NewPhotograph from './classPhotographer.js';
 import MediaFactory from './mediaFactory.js';
 import {getPhotographers} from './getJson.js';
 import {getMedia} from './getJson.js';
+import {displayModaleEvent} from "./modale.js";
+import {submitFormEvent} from "./modale.js";
+import {closeModaleEvent} from "./modale.js";
 
 
 
@@ -9,6 +12,20 @@ import {getMedia} from './getJson.js';
 let params = new URLSearchParams(document.location.search.substring(1));
 let cardSelected = parseInt(params.get("cardSelected"), 10);
 
+async function htmlCreation () {
+    await displayPhotographerPage(cardSelected);
+    await displayMedia();
+}
+async function events () {
+    await htmlCreation();
+    displayModaleEvent();
+    submitFormEvent();
+    closeModaleEvent(); 
+    incrementLikesEvent();
+} 
+function start (){
+    events();
+}
 /* affichage du panneau */
 const displayPhotographerPage = async (i) => {
     const display = await getPhotographers(i);
@@ -19,31 +36,12 @@ const displayPhotographerPage = async (i) => {
 };
 /* creation des classes media */
 const displayMedia = async () => {
-    await displayPhotographerPage(cardSelected);
     const display = await filterMedia();
     for (let index = 0; index < display.length; index++) {
         const element = display[index];
         new MediaFactory(element);
     }
 };
-
-const displayModaleEvent = async () => {
-    await displayMedia();
-    const btnContact = document.getElementById("panel__btn");
-    btnContact.addEventListener("click", () =>{
-        const modale = document.getElementsByClassName("bground")[0];
-        modale.style.display = "flex";
-    })
-};
-const closeModaleEvent = async () => {
-    await submitFormEvent();
-    const closeBtn = document.getElementsByClassName("close")[0];
-    closeBtn.addEventListener("click", () =>{
-        const modale = document.getElementsByClassName("bground")[0];
-        modale.style.display = "none";
-    })
-}
-
 
 
 /* filtrage du nom complet pour extraire le prénom et l'utiliser pour la source */
@@ -67,19 +65,25 @@ const filterMedia = async () => {
     }
     return filtered;
 };
-
-const submitFormEvent = async () => {
-    await displayModaleEvent();
-    const elt = document.getElementById('msg');
-    const submitForm = document.getElementById("btn-submit");
-    submitForm.addEventListener("click", () =>{
-        const modale = document.getElementsByClassName("bground")[0];
-        modale.style.display = "none";
-        console.log(elt.value);
-    })
+const incrementLikesEvent = () => {
+    const container = document.getElementsByClassName("fas fa-heart");
+    console.log(container.length)
+    for (let i = 0; i < container.length; i++) {
+        container[i].addEventListener("click", () =>{
+        const number = document.getElementsByClassName("likesP")[i];
+        console.log(number);
+        const numberStr = number.innerText;
+        const numberParsed = parseInt(numberStr);
+        const increment = numberParsed + 1;
+        // const numberStr2 = increment.toString();
+        number.innerHTML = increment;
+        console.log(increment);
+        console.log("hello")
+        })
+    }
 }
+start();
 
-closeModaleEvent();
 
 export {firstName};
 
