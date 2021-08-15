@@ -6,7 +6,7 @@
   background: #FAFAFA;
   border-radius: 5px;
   &--split{
-    width:50%;
+    width:60%;
   }
   &__description{
     @include alignFlex(center,flex-start);
@@ -15,11 +15,11 @@
   }
   &__name{
     font-weight: normal;
-    font-size: 64px;
+    font-size: 55px;
     margin-bottom: inherit;
     margin-top:15px;
     line-height: 83px;
-    text-align: center;
+    text-align:left;
     color: #D3573C;    
   }
   &__location{
@@ -41,6 +41,7 @@
     color: #525252;
   }   
   &__btn{
+    @include alignFlex;
     display:flex;
     padding : 21px 11px;
     font-weight: bold;
@@ -54,5 +55,6 @@
     text-decoration: none;
     align-self:flex-start;
     margin-top:50px;
+    width:30%;
   }
 }

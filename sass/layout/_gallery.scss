@@ -2,7 +2,6 @@
 .article-Gallery{
   @include alignFlex(space-between);
   flex-wrap: wrap;
-  
 }
 
 .gallery {
@@ -15,7 +14,7 @@
   height: 350px;
   overflow: hidden;
   border-radius: 5px;
-  
+  object-fit: contain;
 	&:hover {
 		border: 1px solid #777;
 	}
@@ -23,13 +22,14 @@
     position: relative;
     bottom: 60px;
     width: 100%;
-    height:auto;
+    
+    
   }
   source {
     position: relative;
     bottom: 60px;
     width: 100%;
-    height:auto;
+    
   }
 		
 }

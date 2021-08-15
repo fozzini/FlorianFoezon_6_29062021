@@ -7,83 +7,82 @@ import {submitFormEvent} from "./modale.js";
 import {closeModaleEvent} from "./modale.js";
 
 
-
 /* variables passées par l'url */
 let params = new URLSearchParams(document.location.search.substring(1));
 let cardSelected = parseInt(params.get("cardSelected"), 10);
+let id = params.get("id");
 
-async function htmlCreation () {
-    await displayPhotographerPage(cardSelected);
-    await displayMedia();
-}
-async function events () {
-    await htmlCreation();
-    displayModaleEvent();
-    submitFormEvent();
-    closeModaleEvent(); 
-    incrementLikesEvent();
-} 
-function start (){
-    events();
-}
 /* affichage du panneau */
-const displayPhotographerPage = async (i) => {
-    const display = await getPhotographers(i);
-    let photograph = new NewPhotograph(display);
-    photograph.createHtmlPanel();
-    photograph.createTagsPanel();
-    photograph.createModale();
+const displayPhotographerPage = async () => {
+    const data = await getPhotographers();
+    let photograph = new NewPhotograph(data[cardSelected]);
+    const sectionPanel = document.getElementById('panel_section');
+    sectionPanel.insertAdjacentHTML("beforeend",photograph.createHtmlPanel());
+    const tagPanel = document.getElementById("ul");
+    tagPanel.insertAdjacentHTML("beforeend",photograph.createTags());
+    const modale = document.getElementById("photographer");
+    modale.insertAdjacentHTML("afterbegin",photograph.createModale());
+    const likes = document.getElementById("likes");
+    likes.insertAdjacentHTML("afterbegin",photograph.createLikesPrice());
 };
+
 /* creation des classes media */
 const displayMedia = async () => {
     const display = await filterMedia();
     for (let index = 0; index < display.length; index++) {
         const element = display[index];
-        new MediaFactory(element);
+        let media = new MediaFactory(element);
+        const section = document.getElementById("gallery");
+        section.insertAdjacentHTML("beforeend", media.createHtml())
     }
-};
-
-
-/* filtrage du nom complet pour extraire le prénom et l'utiliser pour la source */
-const firstName = async () => {
-    const person = await getPhotographers(cardSelected);
-    let fullName = person.name;
-    let firstName = fullName.substring(0, fullName.indexOf(' '));
-    return firstName;
 };
 
 /* filtrage des medias par rapport au photographe */
 const filterMedia = async () => {
     const data = await getMedia();
-    const person = await getPhotographers(cardSelected);
-    let filtered = [];
-    for (let index = 0; index < data.length; index++) {
-        let media = data[index];
-        if (media.photographerId == person.id) {
-            filtered.push(media);
-        }
-    }
-    return filtered;
+    let filtered = data.filter((e) => {
+        return e.photographerId == id;
+    });
+    return filtered
 };
+
 const incrementLikesEvent = () => {
     const container = document.getElementsByClassName("fas fa-heart");
-    console.log(container.length)
+    // enlever un coeur en ciblant mieux
+    const totalLikes = document.getElementById("likes-total")
     for (let i = 0; i < container.length; i++) {
-        container[i].addEventListener("click", () =>{
         const number = document.getElementsByClassName("likesP")[i];
-        console.log(number);
-        const numberStr = number.innerText;
-        const numberParsed = parseInt(numberStr);
-        const increment = numberParsed + 1;
-        // const numberStr2 = increment.toString();
-        number.innerHTML = increment;
-        console.log(increment);
-        console.log("hello")
+        const element = number.innerText;
+        const parsing = parseInt(element);
+        totalLikes.innerText += parsing;
+        console.log(number)
+
+        container[i].addEventListener("click", () =>{
+        const numberParsed = parseInt(number.innerText);
+        number.innerText = ++numberParsed;
         })
     }
 }
-start();
+
+const displayHtml = async() => {
+    await displayPhotographerPage();
+    await displayMedia();
+    
+};
+
+const events = async () => {
+    await displayHtml();
+    displayModaleEvent();
+    submitFormEvent();
+    closeModaleEvent();
+    incrementLikesEvent();
+}
+
+events();
 
 
-export {firstName};
+
+
+export {cardSelected};
+export {id};
 

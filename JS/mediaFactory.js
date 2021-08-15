@@ -1,9 +1,9 @@
-import {firstName} from './photographerPage.js';
+import {id} from './photographerPage.js';
 
 class MediaFactory {
   constructor(data){
-      if(data.type =='image') {let media = new Image(data);media.createHtml();}
-      else if(data.type == 'video') {let media = new Video(data);media.createHtml();}   
+      if(data.type =='image') {return new Image(data);}
+      else if(data.type == 'video') {return new Video(data);}   
       else console.log('objet inconnu');
   }
 }
@@ -20,11 +20,9 @@ class Image {
     this.date = data.date;
     this.price = data.price;
   }
-  async createHtml(){
-    
+  createHtml(){
     /* création des éléments */
-    const section = document.getElementById("gallery");
-    const rawHtml = `<div class="gallery"><div class="image"><img src="../images/${await firstName()}/${this.image}" alt="${this.alt}" ></div>
+    const rawHtml = `<div class="gallery"><div class="image"><img src="../images/${id}/${this.image}" alt="${this.alt}" ></div>
     <div class="desc">
       <p>${this.title}</p>
       <div class="likes">
@@ -32,7 +30,7 @@ class Image {
         <i class="fas fa-heart"></i>
       </div>
     </div></div>`;
-    return section.insertAdjacentHTML("beforeend", rawHtml)
+    return rawHtml;
   }
 }
 
@@ -49,12 +47,10 @@ class Video {
     this.price = data.price;
     
   }
-  async createHtml(){
-    
+  createHtml(){
     /* création des éléments */
-    const section = document.getElementById("gallery");
     const rawHtml = `<div class="gallery"><div class="video">
-    <video controls><source src="../images/${await firstName()}/${this.video}" type="video/mp4" alt="${this.alt}"></video>
+    <video controls><source src="../images/${id}/${this.video}" type="video/mp4" alt="${this.alt}"></video>
     </div>
     <div class="desc">
       <p>${this.title}</p>
@@ -63,7 +59,7 @@ class Video {
         <i class="fas fa-heart"></i>
       </div>
     </div></div>`;
-    return section.insertAdjacentHTML("beforeend", rawHtml)
+    return rawHtml;
   }
 }
 

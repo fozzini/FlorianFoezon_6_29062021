@@ -13,8 +13,7 @@ class NewPhotograph{
   
   createHtmlCard(){ 
     /* création des cartes photographes */
-    const section = document.getElementById('section');
-    const rawHtml = `<div class="card"><a href="#" class="card__vignette"><div class="card__picture"> 
+    const rawHtml = `<div id="${this.id}" class="card"><a href="#" class="card__vignette"><div class="card__picture"> 
     <img src="../images/Photographers_ID_Photos/${this.portrait}" alt="id_${this.name}">
     </div>
     <h2 class="card__name">${this.name}</h2>
@@ -26,12 +25,11 @@ class NewPhotograph{
       <ul class="ul_tags"></ul>
     </nav>
     </div>`;
-    return section.insertAdjacentHTML("beforeend",rawHtml);
+    return rawHtml
   }
   
   createHtmlPanel(){
     /* création du panneau photographe */
-    const sectionPanel = document.getElementById('panel_section');
     const rawHtml = `<div class="panel">
     <div class="panel panel--split">
       <div class="panel__description">
@@ -46,29 +44,22 @@ class NewPhotograph{
       <a id="panel__btn" class="panel__btn" href="#">Contactez-moi</a>
     </div>
     <div class="card card__picture"><img src="../images/Photographers_ID_Photos/${this.portrait}" alt="${this.name}"></div></div>`;
-    return sectionPanel.insertAdjacentHTML("beforeend",rawHtml);
+    return rawHtml
   }
   
-  createTags(i){
+  createTags(){
     /* création des tags pour les photographes */
-    const tagNode = document.getElementsByClassName("ul_tags")[i];
     let array = this.tags;
+    const arrayRawHtml = [];
     for (let index = 0; index < array.length; index++) {
       const rawHtml = `<li><a href="#">${array[index]}</a></li>`;
-      tagNode.insertAdjacentHTML("beforeend",rawHtml);
+      arrayRawHtml.push(rawHtml);
     };
+    return arrayRawHtml.join('');
   }
-  createTagsPanel(){
-    /* création des tags pour le photographe */
-    const tagNode= document.getElementById("ul");
-    let array = this.tags;
-    for (let index = 0; index < array.length; index++) {
-      const rawHtml = `<li><a href="#">${array[index]}</a></li>`;
-      tagNode.insertAdjacentHTML("beforeend",rawHtml);
-    };
-  }
-  async createModale(){
-    const modale = document.getElementById("photographer");
+ 
+  createModale(){
+    
     const htmlRaw = `<div class="bground">
     <div class="content">
     <span class="close"></span>
@@ -99,7 +90,12 @@ class NewPhotograph{
         </div>
     </div>
     </div>`;
-    modale.insertAdjacentHTML("afterbegin", htmlRaw);
+    return htmlRaw
+  }
+  createLikesPrice(){
+    const htmlRaw = `<p id="likes-total"><i class="fas fa-heart"></i></p>
+    <p>${this.price}/jour</p>`
+    return htmlRaw;
   }
 }
 

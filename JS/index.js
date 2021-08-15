@@ -3,7 +3,6 @@ import { getPhotographers } from './getJson.js';
 
 const tagMenu = ["Portrait","Art","Fashion","Architecture","Travel","Sport","Animals","Events"];
 
-
 /* Création du menu Tag */
 const displayTagMenu = () => {
   const tag = document.getElementById("tagMenu");
@@ -17,11 +16,13 @@ displayTagMenu();
 
 /* création des photographes et affichage */
 const displayPhotographers = async () => {   
-  for (let i = 0; i < 6 ; i++){
-  const display = await getPhotographers(i);
-  let photograph = new NewPhotograph(display);
-  photograph.createHtmlCard();
-  photograph.createTags(i);
+  const section = document.getElementById('section');
+  const data = await getPhotographers();
+  for (let i = 0; i < data.length ; i++){
+  let photograph = new NewPhotograph(data[i]);
+  section.insertAdjacentHTML("beforeend",photograph.createHtmlCard());
+  const tagNode = document.querySelectorAll(".ul_tags")[i];
+  tagNode.insertAdjacentHTML("beforeend",photograph.createTags());
   }
 };
 
@@ -32,7 +33,8 @@ const cardClickEvent = async () => {
   const cardOnClick = document.getElementsByClassName("card");
   for (let i = 0; i < cardOnClick.length; i++) {
     cardOnClick[i].addEventListener("click", () =>{
-      location.href="/photographer-page.html?cardSelected="+i;
+      const id = cardOnClick[i].id;
+      location.href="/photographer-page.html?cardSelected="+i+"&id="+id;
     })
   }
 }
@@ -48,17 +50,19 @@ const tagClickEvent = () => {
 tagClickEvent();
 
 /* Affichage les photographes suivant leurs tags */
-const displayTaggedPhotograph = async (ClickedTag) => {  
+const displayTaggedPhotograph = (ClickedTag) => {  
   for (let i = 0; i < 6 ; i++){
-  const display = await getPhotographers(i);
-  const element = ClickedTag.toLowerCase();
-  const card = document.getElementsByClassName("card")[i];
-  let tagsArray= display.tags;
-    if (tagsArray.includes(element) === false) {
-      card.style.display = "none" ;
-    }else {
-      card.style.display = "flex" ;
-    }
+    const element = ClickedTag.toLowerCase();
+    const card = document.getElementsByClassName("card")[i];
+    const tagsArray = card.querySelectorAll(".nav a");
+    const textArray = [];
+    tagsArray.forEach(tag => {textArray.push(tag.innerHTML);});
+    if (textArray.includes(element) === false) {
+      card.style.visibility = "hidden" ;
+      }
+      else {
+        card.style.visibility = "visible" ;
+      }
   }
 }
 

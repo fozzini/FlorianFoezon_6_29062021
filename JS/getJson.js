@@ -6,9 +6,9 @@ const getData = async () =>
   .catch((e) => console.log("une erreur c'est produite", e)); 
   
 /* Sélection des photographes */
-const getPhotographers = async (i) => {
+const getPhotographers = async () => {
   const { photographers } = await getData();
-  return photographers[i];
+  return photographers;
 }
 /* Sélection des médias */
 const getMedia = async () => {

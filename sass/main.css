@@ -316,6 +316,8 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   height: 350px;
   overflow: hidden;
   border-radius: 5px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .gallery:hover {
   border: 1px solid #777;
@@ -324,13 +326,11 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   position: relative;
   bottom: 60px;
   width: 100%;
-  height: auto;
 }
 .gallery source {
   position: relative;
   bottom: 60px;
   width: 100%;
-  height: auto;
 }
 
 .desc {
@@ -651,6 +651,9 @@ textarea {
   width: 300px;
 }
 .card__vignette {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   height: auto;
   text-decoration: none;
@@ -659,12 +662,11 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
+  height: 195px;
   width: 200px;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0px 4px 12px #C4C4C4;
-  padding-top: 25px;
 }
 .card__name {
   font-weight: normal;
@@ -732,7 +734,7 @@ textarea {
   border-radius: 5px;
 }
 .panel--split {
-  width: 50%;
+  width: 60%;
 }
 .panel__description {
   display: flex;
@@ -743,11 +745,11 @@ textarea {
 }
 .panel__name {
   font-weight: normal;
-  font-size: 64px;
+  font-size: 55px;
   margin-bottom: inherit;
   margin-top: 15px;
   line-height: 83px;
-  text-align: center;
+  text-align: left;
   color: #D3573C;
 }
 .panel__location {
@@ -770,6 +772,9 @@ textarea {
 }
 .panel__btn {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
   padding: 21px 11px;
   font-weight: bold;
   font-size: 20px;
@@ -782,5 +787,6 @@ textarea {
   text-decoration: none;
   align-self: flex-start;
   margin-top: 50px;
+  width: 30%;
 }
 /*# sourceMappingURL=main.css.map *//*# sourceMappingURL=main.css.map */
