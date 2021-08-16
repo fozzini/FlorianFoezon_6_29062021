@@ -92,9 +92,30 @@ class NewPhotograph{
     </div>`;
     return htmlRaw
   }
+  createDropdown(){
+    const htmlRaw = `<div class="article__header">
+    <p class="article__title">Trier par</p>
+    <div class="dropdown">
+      <div class="dropdown__content">
+        <a href="" class="dropdown__content__link icon arrow">Popularité</a>
+        <a href="" class="dropdown__content__link dropdown__content__sub">Date</a>
+        <a href="" class="dropdown__content__link  dropdown__content__sub delborder">Titre</a>
+      </div>
+    </div>
+  </div>`
+  return htmlRaw
+  };
   createLikesPrice(){
-    const htmlRaw = `<p id="likes-total"><i class="fas fa-heart"></i></p>
+    const htmlRaw = `<p id="likes-total"></p><i class="fas fa-heart"></i>
     <p>${this.price}/jour</p>`
+    return htmlRaw;
+  }
+  createSlider(){
+    const htmlRaw = `<div id="slider" class="slider">
+    <span class="closeSlider"></span>
+    <div class="slider__image"><img src="/images/243/Animals_Rainbow.jpg" alt=""><i class="fas fa-times"></i></div>
+    <span class="slider__text">arc-en-ciel</span>
+    </div>`
     return htmlRaw;
   }
 }
