@@ -1,4 +1,4 @@
-const url = "../FishEyeData.json";
+const url = "FishEyeData.json";
 /* connection au fichier JSON */
 const getData = async () => 
   await fetch(url)
