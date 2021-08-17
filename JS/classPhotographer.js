@@ -43,7 +43,7 @@ class NewPhotograph{
       </div>
       <a id="panel__btn" class="panel__btn" href="#">Contactez-moi</a>
     </div>
-    <div class="card card__picture"><img src="images/Photographers_ID_Photos/${this.portrait}" alt="${this.name}"></div></div>`;
+    <div class="card card__picture"><img src="/images/Photographers_ID_Photos/${this.portrait}" alt="${this.name}"></div></div>`;
     return rawHtml
   }
   
@@ -113,7 +113,7 @@ class NewPhotograph{
   createSlider(){
     const htmlRaw = `<div id="slider" class="slider">
     <span class="closeSlider"></span>
-    <div class="slider__image"><img src="images/243/Animals_Rainbow.jpg" alt=""><i class="fas fa-times"></i></div>
+    <div class="slider__image"><img src="/images/243/Animals_Rainbow.jpg" alt=""><i class="fas fa-times"></i></div>
     <span class="slider__text">arc-en-ciel</span>
     </div>`
     return htmlRaw;
