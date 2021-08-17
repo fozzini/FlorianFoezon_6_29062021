@@ -1,10 +1,20 @@
 {
-  "name": "ohmyfood",
+  "name": "fisheye",
   "version": "1.0.0",
-  "description": "TP3-openclassrooms-dev-front",
+  "description": "TP6-openclassrooms-dev-front",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:.public/css/style.css"
+    "sass": "sass --watch ./sass/main.scss:.public/css/style.css",
+    "vscode:prepublish": "npm run -S esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+    "esbuild": "npm run -S esbuild-base -- --sourcemap",
+    "esbuild-watch": "npm run -S esbuild-base -- --sourcemap --watch",
+    "test-compile": "tsc -p ./",
+    "vscode:prepublish": "webpack --mode production",
+    "webpack": "webpack --mode development",
+    "webpack-dev": "webpack --mode development --watch",
+    "test-compile": "tsc -p ./"
+
   },
   "author": "Florian Foezon",
   "license": "ISC",
@@ -13,10 +23,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fozzini/FlorianFoezon_3_15042021.git"
+    "url": "git+https://github.com/fozzini/FlorianFoezon_6_29062021.git"
   },
   "bugs": {
-    "url": "https://github.com/fozzini/FlorianFoezon_3_15042021/issues"
+    "url": "https://github.com/fozzini/FlorianFoezon_6_29062021/issues"
   },
-  "homepage": "https://github.com/fozzini/FlorianFoezon_3_15042021#readme"
+  "homepage": "https://github.com/fozzini/FlorianFoezon_6_29062021#readme",
+  "devDependencies": {
+    "esbuild": "^0.12.15",
+    "webpack": "^5.45.1",
+    "webpack-cli": "^4.7.2"
+  }
 }

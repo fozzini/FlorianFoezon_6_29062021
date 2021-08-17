@@ -1,0 +1,73 @@
+
+.article-Gallery{
+  @include alignFlex(space-between);
+  flex-wrap: wrap;
+}
+
+.gallery {
+  @include alignFlex;
+  flex-direction: column;
+	margin: 5px;
+	border: none;
+	float: left;
+	width: 30%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 5px;
+  object-fit: contain;
+	&:hover {
+		border: 1px solid #777;
+	}
+	img {
+    position: relative;
+    bottom: 60px;
+    width: 100%;
+    
+    
+  }
+  source {
+    position: relative;
+    bottom: 60px;
+    width: 100%;
+    
+  }
+		
+}
+.desc {
+	text-align: center;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  color:#901C1C;
+  
+}
+.image{
+  width: auto;
+  height: 90%;
+  overflow: hidden;
+}
+.video{
+  width: auto;
+  height: 90%;
+  overflow: hidden;
+  
+}
+.likes{
+  @include alignFlex;
+  i{
+    margin-left: 5px;
+  }
+
+}
+.image-1{
+  width: auto;
+  
+  padding: 90%;
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  overflow: hidden;
+  
+  background-image:url(/images/Mimi/Animals_Rainbow.jpg);
+}

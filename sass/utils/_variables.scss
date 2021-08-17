@@ -1,21 +1,21 @@
-
+/* /* 
 
 /* variables ripple */
-$num-ripple: 5;
+/* $num-ripple: 5;
 $anim-dur: 3s;
 $anim-delay: -0.6s;
 /* couleurs */
-$cd-primary:#9356DC;
-$cd-secondary:#FF79DA;
-$cd-tertiary:#99E2D0;
+$cd-primary:#DB8876;/*
+$cd-secondary:#FF79DA;*/
+$cd-tag:#901C1C;/*
 $cd-grey:#eaeaea;
 $--gradient: linear-gradient(90deg,white,$cd-primary,$cd-secondary);
 $button-gradient:linear-gradient(175deg, $cd-secondary 5%,$cd-primary 100%);
 $button-gradient--hover:linear-gradient(175deg,$cd-primary 5%, $cd-secondary 100%);
 /* shadows */
-$box-shadow: 0px 5px 18px -3px darken($cd-grey, 30%);
+/* $box-shadow: 0px 5px 18px -3px darken($cd-grey, 30%);
 $box-shadow--hover: 0px 5px 22px -3px darken($cd-grey, 50%);
 $box-shadow--searchbar: inset 0px 5px 5px 0px darken($cd-grey, 10%);
 $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
 /* liste */
-$restaurants: "lapalette", "lanote", "franc","delice";
+/* $restaurants: "lapalette", "lanote", "franc","delice"; */ 

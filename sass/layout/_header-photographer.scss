@@ -1,0 +1,5 @@
+.header-photographer{
+  margin-left: 80px;
+  margin-right: 120px;
+  @include alignFlex(flex-start,center);
+}

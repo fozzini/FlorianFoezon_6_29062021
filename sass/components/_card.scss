@@ -1,0 +1,78 @@
+.card{
+  @include alignFlex;
+  background-color: white;
+  flex-direction: column;
+  width:30%;
+  margin-top: 30px;
+  img{
+    width: 300px;
+  }
+  &__vignette{
+    @include alignFlex;
+    flex-direction: column;
+    height: auto;
+    text-decoration: none;
+  }
+  &__picture{
+    @include alignFlex;
+    height: 195px;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px #C4C4C4;
+  }
+  &__name{
+    font-weight: normal;
+    font-size: 36px;
+    margin-bottom: inherit;
+    margin-top:15px;
+    line-height: 47px;
+    text-align: center;
+    color: #D3573C;
+    &--panel{
+      font-weight: normal;
+      font-size: 64px;
+      line-height: 83px;
+      color: #D3573C;
+    }
+  }
+  &__location{
+    font-weight: normal;
+    font-size: 13px;
+    margin-bottom: inherit;
+    margin-top:3px;
+    line-height: 17px;
+    text-align: center;
+    color: #901C1C;
+    &--panel{
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 31px;
+      color: #901C1C;
+    }
+  }
+  &__quote{
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 13px;
+    text-align: center;
+    margin-bottom: inherit;
+    margin-top:3px;
+    color: #000000;
+    &--panel{
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 23px;
+      color: #525252;
+    }
+  }
+  &__price{
+    font-weight: normal;
+    font-size: 9px;
+    line-height: 12px;
+    text-align: center;
+    margin-bottom: 3px;
+    margin-top:3px;
+    color: #757575;
+  }
+}
