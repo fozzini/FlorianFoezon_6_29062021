@@ -34,7 +34,7 @@ const cardClickEvent = async () => {
   for (let i = 0; i < cardOnClick.length; i++) {
     cardOnClick[i].addEventListener("click", () =>{
       const id = cardOnClick[i].id;
-      location.href="./../photographer-page.html?cardSelected="+i+"&id="+id;
+      location.href="photographer-page.html?cardSelected="+i+"&id="+id;
     })
   }
 }
