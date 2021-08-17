@@ -22,7 +22,7 @@ class Image {
   }
   createHtml(){
     /* création des éléments */
-    const rawHtml = `<div class="gallery"><div class="image"><img src="../images/${id}/${this.image}" alt="${this.alt}" ></div>
+    const rawHtml = `<div class="gallery"><div class="image"><img src="images/${id}/${this.image}" alt="${this.alt}" ></div>
     <div class="desc">
       <p>${this.title}</p>
       <div class="likes">
@@ -50,7 +50,7 @@ class Video {
   createHtml(){
     /* création des éléments */
     const rawHtml = `<div class="gallery"><div class="video">
-    <video controls><source src="../images/${id}/${this.video}" type="video/mp4" alt="${this.alt}"></video>
+    <video controls><source src="images/${id}/${this.video}" type="video/mp4" alt="${this.alt}"></video>
     </div>
     <div class="desc">
       <p>${this.title}</p>
