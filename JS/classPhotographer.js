@@ -14,7 +14,7 @@ class NewPhotograph{
   createHtmlCard(){ 
     /* création des cartes photographes */
     const rawHtml = `<div id="${this.id}" class="card"><a href="#" class="card__vignette"><div class="card__picture"> 
-    <img src="images/Photographers_ID_Photos/${this.portrait}" alt="id_${this.name}">
+    <img src="/images/Photographers_ID_Photos/${this.portrait}" alt="id_${this.name}">
     </div>
     <h2 class="card__name">${this.name}</h2>
     <h3 class="card__location">${this.city}, ${this.country}</h3>
