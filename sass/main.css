@@ -4,9 +4,9 @@
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 400;
-  src: url("../../fonts/dm-sans/dm-sans.eot");
+  src: url("fonts/dm-sans/dm-sans.eot");
   /* IE9 Compat Modes */
-  src: local(""), url("../../fonts/dm-sans/dm-sans.eot?#iefix") format("embedded-opentype"), url("../../fonts/dm-sans/dm-sans.woff2") format("woff2"), url("../../fonts/dm-sans/dm-sans.woff") format("woff"), url("../../fonts/dm-sans/dm-sans.ttf") format("truetype"), url("../../fonts/dm-sans/dm-sans.svg") format("svg");
+  src: local(""), url("fonts/dm-sans/dm-sans.eot?#iefix") format("embedded-opentype"), url("fonts/dm-sans/dm-sans.woff2") format("woff2"), url("fonts/dm-sans/dm-sans.woff") format("woff"), url("fonts/dm-sans/dm-sans.ttf") format("truetype"), url("fonts/dm-sans/dm-sans.svg") format("svg");
   /* Legacy iOS */
 }
 /**
