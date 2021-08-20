@@ -7,13 +7,6 @@
   height: 100vh;
   background-color: white;
   z-index: +2;
-  i{
-    position: absolute;
-    font-size: 25px;
-    align-self: start;
-    left:66%;
-    color:#911C1C;
-  }
   &__image{
     @include alignFlex;
     &::before{
@@ -53,10 +46,10 @@
 .closeSlider:before,
 .closeSlider:after {
   position: absolute;
-  left: 15px;
+  left: 67%;
   content: " ";
-  height: 33px;
-  width: 3px;
+  height: 2.5%;
+  width: 0.25%;
   background-color: #911C1C;
 }
 .closeSlider:before {

@@ -109,8 +109,8 @@ class NewPhotograph{
   }
   createSlider(){
     return `<div id="slider" class="slider">
-    <span class="closeSlider"></span>
-    <div class="slider__image"><img src="images/243/Animals_Rainbow.jpg" alt=""><i class="fas fa-times"></i></div>
+    <span id="closeSlider" class="closeSlider"></span>
+    <div class="slider__image"><img src="images/243/Animals_Rainbow.jpg" alt=""><i ></i></div>
     <span class="slider__text">arc-en-ciel</span>
     </div>`
   }

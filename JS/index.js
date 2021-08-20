@@ -64,5 +64,16 @@ const displayTaggedPhotograph = (ClickedTag) => {
         card.style.display = "flex" ;
       }
   }
+} 
+
+// On scroll, Show/Hide the button
+window.onscroll = () => {
+  window.scrollY > 1
+    ? (cta.style.display = 'flex')
+    : (cta.style.display = 'none')
 }
+// On Click, Scroll to the Top of Page
+cta.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' })
+
+
 

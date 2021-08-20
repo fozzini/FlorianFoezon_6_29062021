@@ -388,13 +388,6 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   background-color: white;
   z-index: 2;
 }
-.slider i {
-  position: absolute;
-  font-size: 25px;
-  align-self: start;
-  left: 66%;
-  color: #911C1C;
-}
 .slider__image {
   display: flex;
   justify-content: center;
@@ -434,10 +427,10 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
 .closeSlider:before,
 .closeSlider:after {
   position: absolute;
-  left: 15px;
+  left: 67%;
   content: " ";
-  height: 33px;
-  width: 3px;
+  height: 2.5%;
+  width: 0.25%;
   background-color: #911C1C;
 }
 
@@ -648,13 +641,13 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
   font-weight: bold;
   background-color: #DB8876;
-  position: absolute;
   width: 170px;
   height: 30px;
   top: 6px;
-  display: flex;
+  display: none;
   cursor: pointer;
 }
 

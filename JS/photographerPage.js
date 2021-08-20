@@ -12,6 +12,8 @@ let params = new URLSearchParams(document.location.search.substring(1));
 let cardSelected = parseInt(params.get("cardSelected"), 10);
 let id = params.get("id");
 let mediaArray = [];
+let likes = [];
+
 
 /* affichage du panneau */
 const displayPhotographerPage = async () => {
@@ -41,6 +43,8 @@ let displayMedia =  (media) => {
         mediaHtml.push(media.createHtml());
     }
     section.innerHTML = mediaHtml;
+    incrementLikesEvent();
+    displaySliderEvent();
 };
 /* filtrage des medias par rapport au photographe */
 const filterMedia = async () => {
@@ -57,11 +61,11 @@ const filterMedia = async () => {
 
 const totalLike = () => {
     const nbr = document.getElementsByClassName("likesP");
-    let sum = 0;
+    let Sum = 0;
     for (let index = 0; index < nbr.length; index++) {
-        sum += parseInt(nbr[index].innerHTML,10);
+        Sum += parseInt(nbr[index].innerHTML,10);
     };
-    return sum
+    return Sum;
 };
 const incrementLikesEvent = () => {
     const container = document.getElementsByClassName("fas fa-heart");
@@ -71,7 +75,14 @@ const incrementLikesEvent = () => {
     for (let i = 0; i < container.length; i++) {
         container[i].addEventListener("click", () =>{
         nbr[i].innerHTML = parseInt(nbr[i].innerHTML,10)+1;
-        totalLikes.innerHTML = totalLike(); 
+            if (likes[i] == 1) {
+                nbr[i].innerHTML = parseInt(nbr[i].innerHTML,10)-2;
+                likes[i] = 0;            
+            } else {
+                likes[i] = 1;
+            }
+        console.log(likes[i])
+        totalLikes.innerHTML = totalLike();
         })
     }
 }
@@ -131,28 +142,30 @@ const displaySliderEvent = () => {
         }) 
     } 
 };
+const closeSliderEvent = () => {
+    const closeBtn = document.getElementById("closeSlider");
+    closeBtn.addEventListener("click", () =>{
+        const slider = document.getElementById("slider");
+        slider.style.display = "none";
+    })
+}
 const displayHtml = async() => {
     await displayPhotographerPage();
     await filterMedia();
     displayMedia(mediaArray.sort((a, b) => b.likes - a.likes));
   
 };
-
 const events = async () => {
     await displayHtml();
     displayModaleEvent();
     submitFormEvent();
     closeModaleEvent();
-    incrementLikesEvent();
     mediaSortEvent();
-    displaySliderEvent();
-   }
+    closeSliderEvent();
+    
+}
 
 events();
-
-
-
-
 
 export {cardSelected};
 export {id};
