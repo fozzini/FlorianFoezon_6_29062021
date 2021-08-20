@@ -31,14 +31,16 @@ const displayPhotographerPage = async () => {
 };
 
 /* creation des classes media */
-const displayMedia = async (media) => {
-    const display = await media;
+let displayMedia =  (media) => {
+    const display = media;
+    const section = document.getElementById("gallery");
+    let mediaHtml = [];
     for (let index = 0; index < display.length; index++) {
         const element = display[index];
         let media = new MediaFactory(element);
-        const section = document.getElementById("gallery");
-        section.insertAdjacentHTML("afterbegin", media.createHtml())
+        mediaHtml.push(media.createHtml());
     }
+    section.innerHTML = mediaHtml;
 };
 /* filtrage des medias par rapport au photographe */
 const filterMedia = async () => {
@@ -48,11 +50,8 @@ const filterMedia = async () => {
     });
     for (let i = 0; i < filtered.length; i++) {
         const element = filtered[i];
-        // const convert = Object.fromEntries(element)
         mediaArray.push(element);
     }
-    // console.log(mediaArray[0]);
-    return filtered;
 };
 
 
@@ -89,19 +88,33 @@ const mediaSortEvent = () => {
     slots[1].innerHTML = "Date";
     slots[2].innerHTML = "Popularité";};
     for (let i = 0; i < slots.length; i++) {
-        slots[i].addEventListener("click", () =>{
+        slots[i].addEventListener("click", (e) =>{
+            e.preventDefault();
             switch (slots[i].innerHTML) {
                 case "Popularité":
+                    displayMedia(mediaArray.sort((a, b) => b.likes - a.likes));
                     configPopularity();
-                    displayMedia(mediaArray.sort(function(a, b){return b.likes - a.likes;}))
                     break;
                 case "Date":
+                    displayMedia(mediaArray.sort(function (a, b) {
+                        var dateA = new Date(a.date), dateB = new Date(b.date)
+                        return dateA - dateB
+                    }));
                     configDate();
-                    displayMedia(mediaArray.sort(function(a, b){return a.date - b.date;}))
                     break;
                 case "Titre":
+                    displayMedia(mediaArray.sort((a, b) => {
+                        let fa = a.title,
+                            fb = b.title;
+                        if (fa < fb) {
+                            return -1;
+                        }
+                        if (fa > fb) {
+                            return 1;
+                        }
+                        return 0;
+                    }));
                     configTitle();
-                    displayMedia(mediaArray.sort(title))
                     break;
             }
         })
@@ -110,7 +123,7 @@ const mediaSortEvent = () => {
 const displaySliderEvent = () => {
     const slider = document.getElementById("slider");
     const image = document.getElementsByClassName("image");
-    console.log(image);
+    // console.log(image);
     for (let i = 0; i < image.length; i++) {
         const element = image[i];
         element.addEventListener("click", () =>{
@@ -120,8 +133,9 @@ const displaySliderEvent = () => {
 };
 const displayHtml = async() => {
     await displayPhotographerPage();
-    await displayMedia(filterMedia());
-    
+    await filterMedia();
+    displayMedia(mediaArray.sort((a, b) => b.likes - a.likes));
+  
 };
 
 const events = async () => {
@@ -132,10 +146,7 @@ const events = async () => {
     incrementLikesEvent();
     mediaSortEvent();
     displaySliderEvent();
-    // const file = mediaArray.sort(function(a, b){return a.likes - b.likes;});
-    // console.log(file);
-
-}
+   }
 
 events();
 

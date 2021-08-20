@@ -1,5 +1,5 @@
 .cardlist{
-  @include alignFlex(space-around,center);
+  @include alignFlex;
   flex-wrap: wrap;
   margin-top: 50px;
   margin-bottom: 50px;

@@ -1,6 +1,6 @@
 
 .article-Gallery{
-  @include alignFlex(space-between);
+  @include alignFlex;
   flex-wrap: wrap;
 }
 
@@ -9,27 +9,24 @@
   flex-direction: column;
 	margin: 5px;
 	border: none;
-	float: left;
-	width: 30%;
+	width: 32%;
   height: 350px;
   overflow: hidden;
   border-radius: 5px;
-  object-fit: contain;
 	&:hover {
 		border: 1px solid #777;
 	}
 	img {
-    position: relative;
     bottom: 60px;
     width: 100%;
-    
-    
+    height : 100%;
+    object-fit:cover;
   }
-  source {
-    position: relative;
+  video {
+    height: 100%;
     bottom: 60px;
     width: 100%;
-    
+    object-fit: cover;
   }
 		
 }
@@ -40,34 +37,33 @@
   display: flex;
   justify-content: space-between;
   color:#901C1C;
+  padding-right: 5px;
+  padding-left: 5px;
   
 }
 .image{
-  width: auto;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+ 
 }
 .video{
-  width: auto;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  
 }
 .likes{
   @include alignFlex;
   i{
     margin-left: 5px;
   }
-
 }
 .image-1{
   width: auto;
-  
   padding: 90%;
   background-position:center;
   background-repeat: no-repeat;
   background-size: 60%;
-  overflow: hidden;
-  
+  overflow: hidden;  
   background-image:url(/images/Mimi/Animals_Rainbow.jpg);
 }

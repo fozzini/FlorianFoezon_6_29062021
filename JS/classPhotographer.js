@@ -13,7 +13,7 @@ class NewPhotograph{
   
   createHtmlCard(){ 
     /* création des cartes photographes */
-    const rawHtml = `<div id="${this.id}" class="card"><a href="#" class="card__vignette"><div class="card__picture"> 
+    return `<div id="${this.id}" class="card"><a href="#" class="card__vignette"><div class="card__picture"> 
     <img src="images/Photographers_ID_Photos/${this.portrait}" alt="id_${this.name}">
     </div>
     <h2 class="card__name">${this.name}</h2>
@@ -30,7 +30,7 @@ class NewPhotograph{
   
   createHtmlPanel(){
     /* création du panneau photographe */
-    const rawHtml = `<div class="panel">
+    return `<div class="panel">
     <div class="panel panel--split">
       <div class="panel__description">
           <h2 class="panel__name">${this.name}</h2>
@@ -44,7 +44,6 @@ class NewPhotograph{
       <a id="panel__btn" class="panel__btn" href="#">Contactez-moi</a>
     </div>
     <div class="card card__picture"><img src="images/Photographers_ID_Photos/${this.portrait}" alt="${this.name}"></div></div>`;
-    return rawHtml
   }
   
   createTags(){
@@ -60,7 +59,7 @@ class NewPhotograph{
  
   createModale(){
     
-    const htmlRaw = `<div class="bground">
+    return `<div class="bground">
     <div class="content">
     <span class="close"></span>
     <div class="modal-body">
@@ -90,10 +89,9 @@ class NewPhotograph{
         </div>
     </div>
     </div>`;
-    return htmlRaw
   }
   createDropdown(){
-    const htmlRaw = `<div class="article__header">
+    return `<div class="article__header">
     <p class="article__title">Trier par</p>
     <div class="dropdown">
       <div class="dropdown__content">
@@ -102,21 +100,19 @@ class NewPhotograph{
         <a href="" class="dropdown__content__link  dropdown__content__sub delborder">Titre</a>
       </div>
     </div>
-  </div>`
-  return htmlRaw
+    </div>`
+  
   };
   createLikesPrice(){
-    const htmlRaw = `<p id="likes-total"></p><i class="fas fa-heart"></i>
+    return `<p id="likes-total"></p><i class="fas fa-heart"></i>
     <p>${this.price}/jour</p>`
-    return htmlRaw;
   }
   createSlider(){
-    const htmlRaw = `<div id="slider" class="slider">
+    return `<div id="slider" class="slider">
     <span class="closeSlider"></span>
     <div class="slider__image"><img src="images/243/Animals_Rainbow.jpg" alt=""><i class="fas fa-times"></i></div>
     <span class="slider__text">arc-en-ciel</span>
     </div>`
-    return htmlRaw;
   }
 }
 

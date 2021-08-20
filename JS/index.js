@@ -58,10 +58,10 @@ const displayTaggedPhotograph = (ClickedTag) => {
     const textArray = [];
     tagsArray.forEach(tag => {textArray.push(tag.innerHTML);});
     if (textArray.includes(element) === false) {
-      card.style.visibility = "hidden" ;
+      card.style.display = "none" ;
       }
       else {
-        card.style.visibility = "visible" ;
+        card.style.display = "flex" ;
       }
   }
 }
