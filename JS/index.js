@@ -3,6 +3,24 @@ import { getPhotographers } from './getJson.js';
 
 const tagMenu = ["Portrait","Art","Fashion","Architecture","Travel","Sport","Animals","Events"];
 
+const displayHtml = () => {
+  const body = document.getElementById("body");
+  const html = `<header class="header">
+            <p id="cta" class="cta">Passer au contenu</p>
+            <img class="logo" src="images/logo/logo.svg" alt="logo-fisheye">
+            <nav class="nav">
+                <ul id="tagMenu">
+                </ul>
+            </nav>
+            <h1 class="titre">Nos photographes</h1>
+        </header>
+        <main>
+            <section class="cardlist" id="section">
+            </section>
+        </main>`;
+  body.insertAdjacentHTML("afterbegin",html)      
+}
+displayHtml();
 /* Création du menu Tag */
 const displayTagMenu = () => {
   const tag = document.getElementById("tagMenu");

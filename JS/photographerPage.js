@@ -19,17 +19,10 @@ let likes = [];
 const displayPhotographerPage = async () => {
     const data = await getPhotographers();
     let photograph = new NewPhotograph(data[cardSelected]);
-    const sectionPanel = document.getElementById('panel_section');
-    sectionPanel.insertAdjacentHTML("beforeend",photograph.createHtmlPanel());
+    const modale = document.getElementById("photographer");
+    modale.insertAdjacentHTML("afterbegin",photograph.createHtmlPhotographerPage());
     const tagPanel = document.getElementById("ul");
     tagPanel.insertAdjacentHTML("beforeend",photograph.createTags());
-    const modale = document.getElementById("photographer");
-    modale.insertAdjacentHTML("afterbegin",photograph.createModale());
-    modale.insertAdjacentHTML("afterbegin",photograph.createSlider());
-    const likes = document.getElementById("likes");
-    likes.insertAdjacentHTML("afterbegin",photograph.createLikesPrice());
-    const dropDown= document.getElementById("article");
-    dropDown.insertAdjacentHTML("afterbegin",photograph.createDropdown());
 };
 
 /* creation des classes media */
@@ -134,7 +127,6 @@ const mediaSortEvent = () => {
 const displaySliderEvent = () => {
     const slider = document.getElementById("slider");
     const image = document.getElementsByClassName("image");
-    // console.log(image);
     for (let i = 0; i < image.length; i++) {
         const element = image[i];
         element.addEventListener("click", () =>{
@@ -164,9 +156,7 @@ const events = async () => {
     closeSliderEvent();
     
 }
-
 events();
-
 export {cardSelected};
 export {id};
 
