@@ -152,15 +152,17 @@ const displayHtml = async() => {
   
 };
 const nextElementEvent = () => {
-    let element = document.getElementById("slider")
+    let element = document.getElementById("slider__image")
     let before = window.getComputedStyle(element, '::before');
     let beforeContent = before.getPropertyValue('content')
     let after = window.getComputedStyle(element, '::after');
     let afterContent = after.getPropertyValue('content')
-    
-    console.log(beforeContent);
-    
-    console.log(afterContent);
+    // beforeContent.addEventListener("click", () =>{
+    //     console.log("arrière");
+    // })
+    // afterContent.addEventListener("click", () =>{
+    //     console.log("avant");
+    // })
 };
 const previousElementEvent = () => {};
 
