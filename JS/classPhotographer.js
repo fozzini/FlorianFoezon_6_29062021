@@ -29,11 +29,7 @@ class NewPhotograph{
   
   createHtmlPhotographerPage(){
     /* création de la page photographe */
-    return ` <div id="slider" class="slider">
-    <span id="closeSlider" class="closeSlider"></span>
-    <div class="slider__image"><img src="images/243/Animals_Rainbow.jpg" alt=""><i ></i></div>
-    <span class="slider__text">arc-en-ciel</span>
-    </div>
+    return ` <div id="slider" class="slider"></div>
     <div class="bground">
     <div class="content">
     <span class="close"></span>

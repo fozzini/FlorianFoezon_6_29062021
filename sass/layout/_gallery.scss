@@ -4,7 +4,7 @@
   flex-wrap: wrap;
 }
 
-.gallery {
+.gallery{
   @include alignFlex;
   flex-direction: column;
 	margin: 5px;
@@ -16,6 +16,7 @@
 	&:hover {
 		border: 1px solid #777;
 	}
+ 
 	img {
     bottom: 60px;
     width: 100%;

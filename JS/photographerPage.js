@@ -126,11 +126,15 @@ const mediaSortEvent = () => {
 }
 const displaySliderEvent = () => {
     const slider = document.getElementById("slider");
-    const image = document.getElementsByClassName("image");
+    const image = document.getElementsByClassName("media");
     for (let i = 0; i < image.length; i++) {
         const element = image[i];
         element.addEventListener("click", () =>{
         slider.style.display = "flex";
+        let mediaImage = new MediaFactory(mediaArray[i]);
+        slider.innerHTML = mediaImage.createHtmlSlider();
+        closeSliderEvent();
+        nextElementEvent();
         }) 
     } 
 };
@@ -147,14 +151,25 @@ const displayHtml = async() => {
     displayMedia(mediaArray.sort((a, b) => b.likes - a.likes));
   
 };
+const nextElementEvent = () => {
+    let element = document.getElementById("slider")
+    let before = window.getComputedStyle(element, '::before');
+    let beforeContent = before.getPropertyValue('content')
+    let after = window.getComputedStyle(element, '::after');
+    let afterContent = after.getPropertyValue('content')
+    
+    console.log(beforeContent);
+    
+    console.log(afterContent);
+};
+const previousElementEvent = () => {};
+
 const events = async () => {
     await displayHtml();
     displayModaleEvent();
     submitFormEvent();
     closeModaleEvent();
     mediaSortEvent();
-    closeSliderEvent();
-    
 }
 events();
 export {cardSelected};

@@ -392,6 +392,7 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .slider__image::before {
   display: flex;
@@ -440,6 +441,13 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
 
 .closeSlider:after {
   transform: rotate(-45deg);
+}
+
+.med {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
 }
 
 .bground {

@@ -22,7 +22,7 @@ class Image {
   }
   createHtml(){
     /* création des éléments */
-    return `<div class="gallery"><div class="image"><img src="images/${id}/${this.image}" alt="${this.alt}" ></div>
+    return `<div class="gallery"><div class="image media"><img src="images/${id}/${this.image}" alt="${this.alt}" ></div>
     <div class="desc">
       <p>${this.title}</p>
       <div class="likes">
@@ -30,6 +30,11 @@ class Image {
         <i class="fas fa-heart"></i>
       </div>
     </div></div>`;
+  }
+  createHtmlSlider(){
+    return `<span id="closeSlider" class="closeSlider"></span>
+    <div class="slider__image"><img src="images/${id}/${this.image}" alt="${this.alt}" ></div>
+    <span class="slider__text">${this.title}</span>`
   }
 }
 
@@ -48,8 +53,8 @@ class Video {
   }
   createHtml(){
     /* création des éléments */
-    return `<div class="gallery"><div class="video">
-    <video controls><source src="images/${id}/${this.video}" type="video/mp4" alt="${this.alt}"></video>
+    return `<div class="gallery"><div class="video media">
+    <video><source src="images/${id}/${this.video}" type="video/mp4" alt="${this.alt}"></video>
     </div>
     <div class="desc">
       <p>${this.title}</p>
@@ -58,6 +63,11 @@ class Video {
         <i class="fas fa-heart"></i>
       </div>
     </div></div>`;
+  }
+  createHtmlSlider(){
+    return `<span id="closeSlider" class="closeSlider"></span>
+    <div class="slider__image"><video controls width="400"><source src="images/${id}/${this.video}" alt="${this.alt}" ></video></div>
+    <span class="slider__text">${this.title}</span>`
   }
 }
 

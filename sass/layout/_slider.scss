@@ -9,6 +9,7 @@
   z-index: +2;
   &__image{
     @include alignFlex;
+    width : 100%;
     &::before{
       display: flex;
       font-style: normal;
@@ -58,4 +59,11 @@
 
 .closeSlider:after {
   transform: rotate(-45deg);
+}
+.med{
+  @include alignFlex;
+
+  width: 35% ;
+  
+ 
 }
