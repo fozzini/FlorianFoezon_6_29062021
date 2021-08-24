@@ -3,6 +3,24 @@ import { getPhotographers } from './getJson.js';
 
 const tagMenu = ["Portrait","Art","Fashion","Architecture","Travel","Sport","Animals","Events"];
 
+const displayHtml = () => {
+  const body = document.getElementById("body");
+  const html = `<header class="header">
+            <p id="cta" class="cta">Passer au contenu</p>
+            <img class="logo" src="images/logo/logo.svg" alt="logo-fisheye">
+            <nav class="nav">
+                <ul id="tagMenu">
+                </ul>
+            </nav>
+            <h1 class="titre">Nos photographes</h1>
+        </header>
+        <main>
+            <section class="cardlist" id="section">
+            </section>
+        </main>`;
+  body.insertAdjacentHTML("afterbegin",html)      
+}
+displayHtml();
 /* Création du menu Tag */
 const displayTagMenu = () => {
   const tag = document.getElementById("tagMenu");
@@ -34,7 +52,7 @@ const cardClickEvent = async () => {
   for (let i = 0; i < cardOnClick.length; i++) {
     cardOnClick[i].addEventListener("click", () =>{
       const id = cardOnClick[i].id;
-      location.href="../photographer-page.html?cardSelected="+i+"&id="+id;
+      location.href="photographer-page.html?cardSelected="+i+"&id="+id;
     })
   }
 }
@@ -58,11 +76,22 @@ const displayTaggedPhotograph = (ClickedTag) => {
     const textArray = [];
     tagsArray.forEach(tag => {textArray.push(tag.innerHTML);});
     if (textArray.includes(element) === false) {
-      card.style.visibility = "hidden" ;
+      card.style.display = "none" ;
       }
       else {
-        card.style.visibility = "visible" ;
+        card.style.display = "flex" ;
       }
   }
+} 
+
+// On scroll, Show/Hide the button
+window.onscroll = () => {
+  window.scrollY > 1
+    ? (cta.style.display = 'flex')
+    : (cta.style.display = 'none')
 }
+// On Click, Scroll to the Top of Page
+cta.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' })
+
+
 

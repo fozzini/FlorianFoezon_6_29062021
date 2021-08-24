@@ -13,7 +13,7 @@ class NewPhotograph{
   
   createHtmlCard(){ 
     /* création des cartes photographes */
-    const rawHtml = `<div id="${this.id}" class="card"><a href="#" class="card__vignette"><div class="card__picture"> 
+    return `<div id="${this.id}" class="card"><a href="#" class="card__vignette"><div class="card__picture"> 
     <img src="images/Photographers_ID_Photos/${this.portrait}" alt="id_${this.name}">
     </div>
     <h2 class="card__name">${this.name}</h2>
@@ -25,42 +25,16 @@ class NewPhotograph{
       <ul class="ul_tags"></ul>
     </nav>
     </div>`;
-    return rawHtml
   }
   
-  createHtmlPanel(){
-    /* création du panneau photographe */
-    const rawHtml = `<div class="panel">
-    <div class="panel panel--split">
-      <div class="panel__description">
-          <h2 class="panel__name">${this.name}</h2>
-          <h3 class="panel__location">${this.city}, ${this.country}</h3>
-          <h4 class="panel__quote">${this.tagline}</h4>
-      <nav class="nav">
-        <ul id="ul">
-        </ul>
-      </nav>
-      </div>
-      <a id="panel__btn" class="panel__btn" href="#">Contactez-moi</a>
+  createHtmlPhotographerPage(){
+    /* création de la page photographe */
+    return ` <div id="slider" class="slider">
+    <span id="closeSlider" class="closeSlider"></span>
+    <div class="slider__image"><img src="images/243/Animals_Rainbow.jpg" alt=""><i ></i></div>
+    <span class="slider__text">arc-en-ciel</span>
     </div>
-    <div class="card card__picture"><img src="images/Photographers_ID_Photos/${this.portrait}" alt="${this.name}"></div></div>`;
-    return rawHtml
-  }
-  
-  createTags(){
-    /* création des tags pour les photographes */
-    let array = this.tags;
-    const arrayRawHtml = [];
-    for (let index = 0; index < array.length; index++) {
-      const rawHtml = `<li><a href="#">${array[index]}</a></li>`;
-      arrayRawHtml.push(rawHtml);
-    };
-    return arrayRawHtml.join('');
-  }
- 
-  createModale(){
-    
-    const htmlRaw = `<div class="bground">
+    <div class="bground">
     <div class="content">
     <span class="close"></span>
     <div class="modal-body">
@@ -89,34 +63,55 @@ class NewPhotograph{
         </form>
         </div>
     </div>
-    </div>`;
-    return htmlRaw
-  }
-  createDropdown(){
-    const htmlRaw = `<div class="article__header">
-    <p class="article__title">Trier par</p>
-    <div class="dropdown">
-      <div class="dropdown__content">
-        <a href="" class="dropdown__content__link icon arrow">Popularité</a>
-        <a href="" class="dropdown__content__link dropdown__content__sub">Date</a>
-        <a href="" class="dropdown__content__link  dropdown__content__sub delborder">Titre</a>
+    </div>
+    <header class="header-photographer">
+    <a href="index.html" class="logo"><img src="images/logo/logo.svg" alt="logo_fisheye"></a>
+    </header>
+    <section id="panel_section">
+    <div class="panel">
+      <div class="panel panel--split">
+        <div class="panel__description">
+            <h2 class="panel__name">${this.name}</h2>
+            <h3 class="panel__location">${this.city}, ${this.country}</h3>
+            <h4 class="panel__quote">${this.tagline}</h4>
+        <nav class="nav">
+          <ul id="ul">
+          </ul>
+        </nav>
+        </div>
+        <a id="panel__btn" class="panel__btn" href="#">Contactez-moi</a>
+      </div>
+      <div class="card card__picture"><img src="images/Photographers_ID_Photos/${this.portrait}" alt="${this.name}"></div></div>
+    </section>
+    <article id="article" class="article">
+    <div class="article__header">
+      <p class="article__title">Trier par</p>
+      <div class="dropdown">
+        <div class="dropdown__content">
+          <a href="" class="dropdown__content__link icon arrow">Popularité</a>
+          <a href="" class="dropdown__content__link dropdown__content__sub">Date</a>
+          <a href="" class="dropdown__content__link  dropdown__content__sub delborder">Titre</a>
+        </div>
       </div>
     </div>
-  </div>`
-  return htmlRaw
-  };
-  createLikesPrice(){
-    const htmlRaw = `<p id="likes-total"></p><i class="fas fa-heart"></i>
-    <p>${this.price}/jour</p>`
-    return htmlRaw;
+    <div id="gallery" class="article-Gallery">
+    </div>
+    </article>
+    <aside id="likes"class="pricelikes">
+    <p id="likes-total"></p><i class="fas fa-heart"></i>
+    <p>${this.price}/jour</p>
+    </aside>`;
   }
-  createSlider(){
-    const htmlRaw = `<div id="slider" class="slider">
-    <span class="closeSlider"></span>
-    <div class="slider__image"><img src="images/243/Animals_Rainbow.jpg" alt=""><i class="fas fa-times"></i></div>
-    <span class="slider__text">arc-en-ciel</span>
-    </div>`
-    return htmlRaw;
+  
+  createTags(){
+    /* création des tags pour les photographes */
+    let array = this.tags;
+    const arrayRawHtml = [];
+    for (let index = 0; index < array.length; index++) {
+      const rawHtml = `<li><a href="#">${array[index]}</a></li>`;
+      arrayRawHtml.push(rawHtml);
+    };
+    return arrayRawHtml.join('');
   }
 }
 
