@@ -13,6 +13,7 @@ let cardSelected = parseInt(params.get("cardSelected"), 10);
 let id = params.get("id");
 let mediaArray = [];
 let likes = [];
+let slideIndex = 1;
 
 
 /* affichage du panneau */
@@ -29,13 +30,17 @@ const displayPhotographerPage = async () => {
 let displayMedia =  (media) => {
     const display = media;
     const section = document.getElementById("gallery");
+    const slider = document.getElementById("slider__container");
     let mediaHtml = [];
+    let sliderHtml =[];
     for (let index = 0; index < display.length; index++) {
         const element = display[index];
         let media = new MediaFactory(element);
         mediaHtml.push(media.createHtml());
+        sliderHtml.push(media.createHtmlSlider());
     }
-    section.innerHTML = mediaHtml;
+    section.innerHTML = mediaHtml.join("");
+    slider.innerHTML = sliderHtml.join("");
     incrementLikesEvent();
     displaySliderEvent();
 };
@@ -127,51 +132,71 @@ const mediaSortEvent = () => {
 const displaySliderEvent = () => {
     const slider = document.getElementById("slider");
     const image = document.getElementsByClassName("media");
+    const container = document.getElementsByClassName("slider__image")
+    
     for (let i = 0; i < image.length; i++) {
         const element = image[i];
         element.addEventListener("click", () =>{
         slider.style.display = "flex";
-        let mediaImage = new MediaFactory(mediaArray[i]);
-        slider.innerHTML = mediaImage.createHtmlSlider();
+        container[i].style.display = "flex";        
         closeSliderEvent();
-        nextElementEvent();
-        }) 
+        })
     } 
 };
 const closeSliderEvent = () => {
     const closeBtn = document.getElementById("closeSlider");
+    const container = document.getElementsByClassName("slider__image")
     closeBtn.addEventListener("click", () =>{
         const slider = document.getElementById("slider");
         slider.style.display = "none";
+        for (let i = 0; i < container.length; i++) {
+            container[i].style.display = "none";
+        }
     })
 }
+
+const nextArrow = () => {
+    const after = document.getElementById("chevron-right");
+    after.addEventListener("click", () =>{
+        plusSlides(1);
+    })
+};
+const previousArrow = () => {
+    const before = document.getElementById("chevron-left");
+    before.addEventListener("click", () =>{
+        plusSlides(-1)
+    })
+};
+
+// Next/previous controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("slider__image");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex-1].style.display = "flex";
+}
+
 const displayHtml = async() => {
     await displayPhotographerPage();
     await filterMedia();
     displayMedia(mediaArray.sort((a, b) => b.likes - a.likes));
   
 };
-const nextElementEvent = () => {
-    let element = document.getElementById("slider__image")
-    let before = window.getComputedStyle(element, '::before');
-    let beforeContent = before.getPropertyValue('content')
-    let after = window.getComputedStyle(element, '::after');
-    let afterContent = after.getPropertyValue('content')
-    // beforeContent.addEventListener("click", () =>{
-    //     console.log("arrière");
-    // })
-    // afterContent.addEventListener("click", () =>{
-    //     console.log("avant");
-    // })
-};
-const previousElementEvent = () => {};
-
 const events = async () => {
     await displayHtml();
     displayModaleEvent();
     submitFormEvent();
     closeModaleEvent();
     mediaSortEvent();
+    previousArrow();
+    nextArrow();
 }
 events();
 export {cardSelected};

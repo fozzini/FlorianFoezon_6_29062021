@@ -29,12 +29,13 @@ class Image {
         <p class="likesP">${this.likes}</p>
         <i class="fas fa-heart"></i>
       </div>
-    </div></div>`;
+    </div>
+    </div>
+    `;
   }
   createHtmlSlider(){
-    return `<span id="closeSlider" class="closeSlider"></span>
-    <div id="slider__image" class="slider__image"><img src="images/${id}/${this.image}" alt="${this.alt}" ></div>
-    <span class="slider__text">${this.title}</span>`
+    return `<div class="slider__image"><img src="images/${id}/${this.image}" alt="${this.alt}" >
+    <span class="slider__text">${this.title}</span></div>`;
   }
 }
 
@@ -65,9 +66,8 @@ class Video {
     </div></div>`;
   }
   createHtmlSlider(){
-    return `<span id="closeSlider" class="closeSlider"></span>
-    <div id="slider__image" class="slider__image"><video controls width="400"><source src="images/${id}/${this.video}" alt="${this.alt}" ></video></div>
-    <span class="slider__text">${this.title}</span>`
+    return `<div class="slider__image"><video controls><source src="images/${id}/${this.video}" alt="${this.alt}" ></video>
+    <span class="slider__text">${this.title}</span></div>`;
   }
 }
 

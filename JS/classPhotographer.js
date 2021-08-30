@@ -29,7 +29,12 @@ class NewPhotograph{
   
   createHtmlPhotographerPage(){
     /* création de la page photographe */
-    return ` <div id="slider" class="slider"></div>
+    return ` <div id="slider" class="slider">
+    <span id="closeSlider" class="closeSlider"></span>
+    <i id="chevron-left" class="fas fa-chevron-left" >
+    </i><i id="chevron-right" class="fas fa-chevron-right"></i>
+    <div id="slider__container" class="slider__container">
+    </div></div>
     <div class="bground">
     <div class="content">
     <span class="close"></span>
