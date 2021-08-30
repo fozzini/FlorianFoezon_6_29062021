@@ -1,5 +1,6 @@
-import {id} from './photographerPage.js';
+import {id} from '../pages/photographerPage.js';
 
+/* Factory pattern pour créer des objets de type différents avec le meme constructeur */
 class MediaFactory {
   constructor(data){
       if(data.type =='image') {return new Image(data);}
@@ -33,6 +34,7 @@ class Image {
     </div>
     `;
   }
+  /* Création des images contenues dans la lightbox */
   createHtmlSlider(){
     return `<div class="slider__image"><img src="images/${id}/${this.image}" alt="${this.alt}" >
     <span class="slider__text">${this.title}</span></div>`;
@@ -65,6 +67,7 @@ class Video {
       </div>
     </div></div>`;
   }
+  /* Création des vidéos contenues dans la lightbox */
   createHtmlSlider(){
     return `<div class="slider__image"><video controls><source src="images/${id}/${this.video}" alt="${this.alt}" ></video>
     <span class="slider__text">${this.title}</span></div>`;

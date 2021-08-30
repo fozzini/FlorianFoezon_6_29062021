@@ -1,3 +1,4 @@
+/* affichage de la modale */
 const displayModaleEvent = () => {
     const btnContact = document.getElementById("panel__btn");
     btnContact.addEventListener("click", () =>{
@@ -5,6 +6,7 @@ const displayModaleEvent = () => {
         modale.style.display = "flex";
     })
 };
+/* event de soumission du formulaire */
 const submitFormEvent = () => {
     const elt = document.getElementById('msg');
     const firstName = document.getElementById('first');
@@ -20,6 +22,7 @@ const submitFormEvent = () => {
         +", message : "+elt.value);
     })
 }
+/* fermeture de la modale */
 const closeModaleEvent = () => {
     const closeBtn = document.getElementsByClassName("close")[0];
     closeBtn.addEventListener("click", () =>{

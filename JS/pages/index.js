@@ -1,8 +1,8 @@
-import  NewPhotograph from './classPhotographer.js';
-import { getPhotographers } from './getJson.js';
+import  NewPhotograph from '../class/classPhotographer.js';
+import { getPhotographers } from '../utils/getJson.js';
 
 const tagMenu = ["Portrait","Art","Fashion","Architecture","Travel","Sport","Animals","Events"];
-
+/* creation du html de l'en-tete */
 const displayHtml = () => {
   const body = document.getElementById("body");
   const html = `<header class="header">
@@ -21,6 +21,7 @@ const displayHtml = () => {
   body.insertAdjacentHTML("afterbegin",html)      
 }
 displayHtml();
+
 /* Création du menu Tag */
 const displayTagMenu = () => {
   const tag = document.getElementById("tagMenu");
