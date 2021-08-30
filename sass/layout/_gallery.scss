@@ -2,6 +2,7 @@
 .article-Gallery{
   @include alignFlex;
   flex-wrap: wrap;
+
 }
 
 .gallery{
@@ -13,6 +14,8 @@
   height: 350px;
   overflow: hidden;
   border-radius: 5px;
+  cursor: pointer;
+
 	&:hover {
 		border: 1px solid #777;
 	}
@@ -46,7 +49,6 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
- 
 }
 .video{
   width: 100%;

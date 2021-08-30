@@ -315,6 +315,7 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   height: 350px;
   overflow: hidden;
   border-radius: 5px;
+  cursor: pointer;
 }
 .gallery:hover {
   border: 1px solid #777;
@@ -448,6 +449,7 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   height: 2.5%;
   width: 0.25%;
   background-color: #911C1C;
+  cursor: pointer;
 }
 
 .closeSlider:before {
