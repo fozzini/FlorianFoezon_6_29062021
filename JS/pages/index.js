@@ -1,13 +1,13 @@
-import  NewPhotograph from './classPhotographer.js';
-import { getPhotographers } from './getJson.js';
+import  NewPhotograph from '../class/classPhotographer.js';
+import { getPhotographers } from '../utils/getJson.js';
 
 const tagMenu = ["Portrait","Art","Fashion","Architecture","Travel","Sport","Animals","Events"];
-
+/* creation du html de l'en-tete */
 const displayHtml = () => {
   const body = document.getElementById("body");
   const html = `<header class="header">
             <p id="cta" class="cta">Passer au contenu</p>
-            <img class="logo" src="images/logo/logo.svg" alt="logo-fisheye">
+            <img class="logo" src="images/logo/logo.svg" alt="Fisheye Home page">
             <nav class="nav">
                 <ul id="tagMenu">
                 </ul>
@@ -21,12 +21,13 @@ const displayHtml = () => {
   body.insertAdjacentHTML("afterbegin",html)      
 }
 displayHtml();
+
 /* Création du menu Tag */
 const displayTagMenu = () => {
   const tag = document.getElementById("tagMenu");
   for (let index = 0; index < tagMenu.length; index++) {
     const element = tagMenu[index];
-    const tagHtml = `<li class="nav__tag"><a href="#">${element}</a></li>`
+    const tagHtml = `<li class="nav__tag"><a href="#" aria-label="Tag">${element}</a></li>`
     tag.insertAdjacentHTML("beforeend", tagHtml)
   }
 };

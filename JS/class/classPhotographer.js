@@ -30,48 +30,50 @@ class NewPhotograph{
   createHtmlPhotographerPage(){
     /* création de la page photographe */
     return ` <div id="slider" class="slider">
-    <span id="closeSlider" class="closeSlider"></span>
-    <div class="slider__image"><img src="images/243/Animals_Rainbow.jpg" alt=""><i ></i></div>
-    <span class="slider__text">arc-en-ciel</span>
+    <span id="closeSlider" class="closeSlider" aria-label="Close dialog" alt="Close dialog"></span>
+    <i id="chevron-left" class="fas fa-chevron-left" aria-label="previous image" alt="previous image" ></i>
+    <i id="chevron-right" class="fas fa-chevron-right" aria-label="Next image" alt="Next image"></i>
+    <div id="slider__container" class="slider__container" aria-label="image closeup view">
+    </div>
     </div>
     <div class="bground">
     <div class="content">
-    <span class="close"></span>
-    <div class="modal-body">
+    <span class="close" aria-label="Close Contact form"></span>
+    <div class="modal-body" aria-labelledby="modal-header" aria-label="Contact me ${this.name}">
         <form name="reserve" action="photographer-page.html" >
-        <div class="modal-header">
+        <div id="modal-header" class="modal-header">
             <p>Contactez-moi</p>
             <p>${this.name}</p>
         </div>
         <div class="formData">
-            <label for="first">Prénom</label><br>
-            <input class="text-control" type="text" id="first" name="first"/><br>
+            <label id="prenom" for="first">Prénom</label><br>
+            <input class="text-control" type="text" id="first" aria-labelledby="prenom" name="first"aria-label="First name"/><br>
         </div>
         <div class="formData">
-            <label for="last">Nom</label><br>
-            <input class="text-control" type="text" id="last" name="last"/><br>
+            <label id="nom" for="last">Nom</label><br>
+            <input class="text-control" type="text" id="last" name="last" aria-labelledby="nom" name="first"aria-label="Last name"/><br>
         </div>
         <div class="formData">
-            <label for="email">E-mail</label><br>
-            <input class="text-control" type="email" id="email" name="email"/><br>
+            <label id="mail" for="email">E-mail</label><br>
+            <input class="text-control" type="email" id="email" name="email" aria-labelledby="mail" name="first"aria-label="Email"/><br>
         </div>
         <div class="formData">
-            <label for="msg">Message</label><br>
-            <textarea id="msg" name="user_message" rows="4"></textarea>
+            <label id="message" for="msg">Message</label><br>
+            <textarea id="msg" name="user_message" rows="4" aria-labelledby="message" name="first"aria-label="Your message"></textarea>
         </div>
-        <input id="btn-submit" class="btn-submit button" type="button" value="Envoyer"/>
+        <input id="btn-submit" class="btn-submit button" type="button" value="Envoyer" aria-label="send"/>
         </form>
         </div>
     </div>
     </div>
     <header class="header-photographer">
-    <a href="index.html" class="logo"><img src="images/logo/logo.svg" alt="logo_fisheye"></a>
+    <a href="index.html" class="logo"><img src="images/logo/logo.svg" alt="Fisheye Home page"></a>
     </header>
     <section id="panel_section">
     <div class="panel">
       <div class="panel panel--split">
-        <div class="panel__description">
-            <h2 class="panel__name">${this.name}</h2>
+        <div id="panel__description" class="panel__description">
+            <h2 class="panel__name" aria-label="${this.name}">${this.name}</h2>
             <h3 class="panel__location">${this.city}, ${this.country}</h3>
             <h4 class="panel__quote">${this.tagline}</h4>
         <nav class="nav">
@@ -79,9 +81,9 @@ class NewPhotograph{
           </ul>
         </nav>
         </div>
-        <a id="panel__btn" class="panel__btn" href="#">Contactez-moi</a>
+        <a id="panel__btn" class="panel__btn" href="#" aria-label="Contact Me">Contactez-moi</a>
       </div>
-      <div class="card card__picture"><img src="images/Photographers_ID_Photos/${this.portrait}" alt="${this.name}"></div></div>
+      <div class="card card__picture" aria-label="${this.name}"><img src="images/Photographers_ID_Photos/${this.portrait}" alt="${this.name}"></div></div>
     </section>
     <article id="article" class="article">
     <div class="article__header">
@@ -108,7 +110,7 @@ class NewPhotograph{
     let array = this.tags;
     const arrayRawHtml = [];
     for (let index = 0; index < array.length; index++) {
-      const rawHtml = `<li><a href="#">${array[index]}</a></li>`;
+      const rawHtml = `<li><a href="#" aria-label="Tag">${array[index]}</a></li>`;
       arrayRawHtml.push(rawHtml);
     };
     return arrayRawHtml.join('');
