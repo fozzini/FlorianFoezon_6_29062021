@@ -7,7 +7,7 @@ const displayHtml = () => {
   const body = document.getElementById("body");
   const html = `<header class="header">
             <p id="cta" class="cta">Passer au contenu</p>
-            <img class="logo" src="images/logo/logo.svg" alt="logo-fisheye">
+            <img class="logo" src="images/logo/logo.svg" alt="Fisheye Home page">
             <nav class="nav">
                 <ul id="tagMenu">
                 </ul>
@@ -27,7 +27,7 @@ const displayTagMenu = () => {
   const tag = document.getElementById("tagMenu");
   for (let index = 0; index < tagMenu.length; index++) {
     const element = tagMenu[index];
-    const tagHtml = `<li class="nav__tag"><a href="#">${element}</a></li>`
+    const tagHtml = `<li class="nav__tag"><a href="#" aria-label="Tag">${element}</a></li>`
     tag.insertAdjacentHTML("beforeend", tagHtml)
   }
 };

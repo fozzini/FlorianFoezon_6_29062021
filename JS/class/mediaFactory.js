@@ -28,7 +28,7 @@ class Image {
       <p>${this.title}</p>
       <div class="likes">
         <p class="likesP">${this.likes}</p>
-        <i class="fas fa-heart"></i>
+        <i class="fas fa-heart" alt="likes" aria-label="likes"></i>
       </div>
     </div>
     </div>
@@ -36,7 +36,7 @@ class Image {
   }
   /* Création des images contenues dans la lightbox */
   createHtmlSlider(){
-    return `<div class="slider__image"><img src="images/${id}/${this.image}" alt="${this.alt}" >
+    return `<div class="slider__image"><img src="images/${id}/${this.image}" alt="${this.alt}" aria-label="Closeup view" >
     <span class="slider__text">${this.title}</span></div>`;
   }
 }
