@@ -8,7 +8,7 @@ const displayTagMenu = () => {
   const tag = document.getElementById("tagMenu");
   for (let index = 0; index < tagMenu.length; index++) {
     const element = tagMenu[index];
-    const tagHtml = `<li class="nav__tag"><a href="#" aria-label="Tag">${element}</a></li>`
+    const tagHtml = `<li class="nav__tag"><a href="#" aria-label="Tag ${element}">${element}</a></li>`
     tag.insertAdjacentHTML("beforeend", tagHtml)
   }
 };

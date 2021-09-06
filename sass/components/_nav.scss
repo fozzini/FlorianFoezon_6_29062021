@@ -18,13 +18,24 @@
         padding: 5px;
         border: 0.5px solid #C4C4C4;
         border-radius: 11px; 
+        color:$cd-tag;
+        background-color: #FFFFFF;
+        &:hover{
+            &:before{ 
+                color: #FFFFFF;
+            } 
+            a{
+                color: #FFFFFF;  
+            }
+            background-color : #911C1C;
+        }
     }
     li:before{ 
         content: "#";
         color:$cd-tag;
         text-align: center;
         font-weight: bold;
-        font-size: 12px;       
+        font-size: 12px;    
     }
     a{
         font-weight: 500;

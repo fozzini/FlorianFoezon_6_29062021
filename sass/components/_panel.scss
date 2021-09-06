@@ -56,5 +56,9 @@
     align-self:flex-start;
     margin-top:50px;
     width:30%;
+    &:hover{
+      color: #000000;
+      background: #DB8876;
+    }
   }
 }
