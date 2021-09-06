@@ -2,6 +2,7 @@
 class NewPhotograph{
   constructor(data){
     this.name = data.name;
+    this.number = data.number;
     this.id = data.id;
     this.city = data.city;
     this.country = data.country;
@@ -10,10 +11,9 @@ class NewPhotograph{
     this.price = data.price;
     this.portrait = data.portrait;
   }
-  
   createHtmlCard(){ 
     /* création des cartes photographes */
-    return `<div id="${this.id}" class="card"><a href="#" class="card__vignette"><div class="card__picture"> 
+    return `<div id="${this.id}" class="card"><a href='photographer-page.html?cardSelected=${this.number}&id=${this.id}' class="card__vignette"><div class="card__picture"> 
     <img src="images/Photographers_ID_Photos/${this.portrait}" alt="id_${this.name}">
     </div>
     <h2 class="card__name">${this.name}</h2>

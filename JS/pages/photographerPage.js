@@ -15,9 +15,8 @@ import {incrementLikesEvent} from "../layout/likes.js"
 
 /* variables passées par l'url */
 let params = new URLSearchParams(document.location.search.substring(1));
-let cardSelected = parseInt(params.get("cardSelected"), 10);
+let cardSelected = params.get("cardSelected");
 let id = params.get("id");
-
 let mediaArray = [];
 
 /* affichage du panneau */

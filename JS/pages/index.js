@@ -2,25 +2,6 @@ import  NewPhotograph from '../class/classPhotographer.js';
 import { getPhotographers } from '../utils/getJson.js';
 
 const tagMenu = ["Portrait","Art","Fashion","Architecture","Travel","Sport","Animals","Events"];
-/* creation du html de l'en-tete */
-const displayHtml = () => {
-  const body = document.getElementById("body");
-  const html = `<header class="header">
-            <p id="cta" class="cta">Passer au contenu</p>
-            <img class="logo" src="images/logo/logo.svg" alt="Fisheye Home page">
-            <nav class="nav">
-                <ul id="tagMenu">
-                </ul>
-            </nav>
-            <h1 class="titre">Nos photographes</h1>
-        </header>
-        <main>
-            <section class="cardlist" id="section">
-            </section>
-        </main>`;
-  body.insertAdjacentHTML("afterbegin",html)      
-}
-displayHtml();
 
 /* Création du menu Tag */
 const displayTagMenu = () => {
@@ -44,21 +25,7 @@ const displayPhotographers = async () => {
   tagNode.insertAdjacentHTML("beforeend",photograph.createTags());
   }
 };
-
-
-/* Click event pour connaitre quelle carte à été choisit */
-const cardClickEvent = async () => {
-  await displayPhotographers();
-  const cardOnClick = document.getElementsByClassName("card");
-  for (let i = 0; i < cardOnClick.length; i++) {
-    cardOnClick[i].addEventListener("click", () =>{
-      const id = cardOnClick[i].id;
-      location.href="photographer-page.html?cardSelected="+i+"&id="+id;
-    })
-  }
-}
-cardClickEvent();
-
+displayPhotographers();
 /* Click event pour connaitre quel tag à été selectionné */
 const tagClickEvent = () => {
   const tagOnClick = document.getElementsByClassName("nav__tag");
