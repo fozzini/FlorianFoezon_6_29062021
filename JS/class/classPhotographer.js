@@ -13,7 +13,7 @@ class NewPhotograph{
   }
   createHtmlCard(){ 
     /* création des cartes photographes */
-    return `<div id="${this.id}" class="card" aria-label = "Le photographe ${this.name} qui vient de ${this.city} en ${this.country}.Ce photographe est spécialisé en ${this.tags}, sont tarif est de ${this.price}.Sa devise est ${this.tagline}  "><a href='photographer-page.html?cardSelected=${this.number}&id=${this.id}' class="card__vignette"><div class="card__picture"> 
+    return `<div tabindex="0" id="${this.id}" class="card" aria-label = "Le photographe ${this.name} qui vient de ${this.city} en ${this.country}.Ce photographe est spécialisé en ${this.tags}, sont tarif est de ${this.price}.Sa devise est ${this.tagline}  "><a href='photographer-page.html?cardSelected=${this.number}&id=${this.id}' class="card__vignette"><div class="card__picture"> 
     <img src="images/Photographers_ID_Photos/${this.portrait}" alt="id_${this.name}">
     </div>
     <h2 class="card__name">${this.name}</h2>

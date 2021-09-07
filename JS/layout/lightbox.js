@@ -26,6 +26,14 @@ const closeSliderEvent = () => {
             container[i].style.display = "none";
         }
     })
+    document.addEventListener('keydown',(event) => {
+        if(event.key === "Escape"){
+            slider.style.display = "none";
+        }
+        for (let i = 0; i < container.length; i++) {
+            container[i].style.display = "none";
+        }
+    });
 }
 /* listener sur la fleche de droite */
 const nextArrow = () => {
@@ -33,6 +41,11 @@ const nextArrow = () => {
     after.addEventListener("click", () =>{
         plusSlides(1);
     })
+    document.addEventListener('keydown',e => {
+        if(e.key ==="ArrowRight"){
+            plusSlides(1);
+        }
+    });
 };
 /* listener sur le fleche de gauche */
 const previousArrow = () => {
@@ -40,6 +53,11 @@ const previousArrow = () => {
     before.addEventListener("click", () =>{
         plusSlides(-1)
     })
+    document.addEventListener('keydown',e => {
+        if(e.key === "ArrowLeft"){
+            plusSlides(-1);
+        }
+    });
 };
 
 // Next/previous controls
@@ -48,11 +66,10 @@ function plusSlides(n) {
 }
 /* fonction pour incrementer ou decrementer les images */
 function showSlides(n) {
-    let i;
     let slides = document.getElementsByClassName("slider__image");
     if (n > slides.length) {slideIndex = 1}
     if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
+    for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
     slides[slideIndex-1].style.display = "flex";

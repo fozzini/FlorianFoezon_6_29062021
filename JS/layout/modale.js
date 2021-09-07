@@ -25,10 +25,15 @@ const submitFormEvent = () => {
 /* fermeture de la modale */
 const closeModaleEvent = () => {
     const closeBtn = document.getElementsByClassName("close")[0];
+    const modale = document.getElementsByClassName("bground")[0];
     closeBtn.addEventListener("click", () =>{
-        const modale = document.getElementsByClassName("bground")[0];
         modale.style.display = "none";
     })
+    document.addEventListener('keydown',(event) => {
+        if(event.key === "Escape"){
+            modale.style.display = "none";
+        }
+    });
 }
 
 export {displayModaleEvent};
