@@ -23,12 +23,12 @@ class Image {
   }
   createHtml(){
     /* création des éléments */
-    return `<div class="gallery"><div class="image media"><img src="images/${id}/${this.image}" alt="${this.alt}" ></div>
+    return `<div tabindex="0" class="gallery"><div class="image media"><img src="images/${id}/${this.image}" alt="${this.alt}" ></div>
     <div class="desc">
       <p>${this.title}</p>
       <div class="likes">
         <p class="likesP">${this.likes}</p>
-        <i class="fas fa-heart" alt="likes" aria-label="likes"></i>
+        <i tabindex="0" class="fas fa-heart" alt="likes" aria-label="likes"></i>
       </div>
     </div>
     </div>

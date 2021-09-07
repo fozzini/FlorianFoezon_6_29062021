@@ -24,9 +24,13 @@ const incrementLikesEvent = () => {
             } else {
                 likes[i] = 1;
             }
-        console.log(likes[i])
         totalLikes.innerHTML = totalLike();
         })
+        // document.addEventListener('keydown',(event) => {
+        //     if(event.key === "Enter"){
+        //         modale.style.display = "none";
+        //     }
+        // });
     }
 }
 export {incrementLikesEvent}
