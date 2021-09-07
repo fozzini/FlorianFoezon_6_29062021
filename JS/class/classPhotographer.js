@@ -2,6 +2,7 @@
 class NewPhotograph{
   constructor(data){
     this.name = data.name;
+    this.number = data.number;
     this.id = data.id;
     this.city = data.city;
     this.country = data.country;
@@ -10,10 +11,9 @@ class NewPhotograph{
     this.price = data.price;
     this.portrait = data.portrait;
   }
-  
   createHtmlCard(){ 
     /* création des cartes photographes */
-    return `<div id="${this.id}" class="card"><a href="#" class="card__vignette"><div class="card__picture"> 
+    return `<div id="${this.id}" class="card" aria-label = "Le photographe ${this.name} qui vient de ${this.city} en ${this.country}.Ce photographe est spécialisé en ${this.tags}, sont tarif est de ${this.price}.Sa devise est ${this.tagline}  "><a href='photographer-page.html?cardSelected=${this.number}&id=${this.id}' class="card__vignette"><div class="card__picture"> 
     <img src="images/Photographers_ID_Photos/${this.portrait}" alt="id_${this.name}">
     </div>
     <h2 class="card__name">${this.name}</h2>
@@ -87,12 +87,12 @@ class NewPhotograph{
     </section>
     <article id="article" class="article">
     <div class="article__header">
-      <p class="article__title">Trier par</p>
+      <p id="Trier" class="article__title" aria-label=" Trier par">Trier par</p>
       <div class="dropdown">
         <div class="dropdown__content">
-          <a href="" class="dropdown__content__link icon arrow">Popularité</a>
-          <a href="" class="dropdown__content__link dropdown__content__sub">Date</a>
-          <a href="" class="dropdown__content__link  dropdown__content__sub delborder">Titre</a>
+          <a href="" class="dropdown__content__link icon arrow" aria-labelledby="Trier">Popularité</a>
+          <a href="" class="dropdown__content__link dropdown__content__sub" aria-labelledby="Trier">Date</a>
+          <a href="" class="dropdown__content__link  dropdown__content__sub delborder" aria-labelledby="Trier">Titre</a>
         </div>
       </div>
     </div>
@@ -110,7 +110,7 @@ class NewPhotograph{
     let array = this.tags;
     const arrayRawHtml = [];
     for (let index = 0; index < array.length; index++) {
-      const rawHtml = `<li><a href="#" aria-label="Tag">${array[index]}</a></li>`;
+      const rawHtml = `<li><a href="#" aria-label="Tag ${array[index]}">${array[index]}</a></li>`;
       arrayRawHtml.push(rawHtml);
     };
     return arrayRawHtml.join('');

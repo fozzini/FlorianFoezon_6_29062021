@@ -3,6 +3,7 @@
     {
       "name": "Mimi Keel",
       "id": 243,
+      "number": 0,
       "city": "London",
       "country": "UK",
       "tags": ["portrait", "events", "travel", "animals"],
@@ -13,6 +14,7 @@
     {
       "name": "Ellie-Rose Wilkens",
       "id": 930,
+      "number": 1,
       "city": "Paris",
       "country": "France",
       "tags": ["sports", "architecture"],
@@ -23,6 +25,7 @@
     {
       "name": "Tracy Galindo",
       "id": 82,
+      "number": 2,
       "city": "Montreal",
       "country": "Canada",
       "tags": ["art", "fashion", "events"],
@@ -33,6 +36,7 @@
     {
       "name": "Nabeel Bradford",
       "id": 527,
+      "number": 3,
       "city": "Mexico City",
       "country": "Mexico",
       "tags": ["travel", "portrait"],
@@ -43,6 +47,7 @@
     {
       "name": "Rhode Dubois",
       "id": 925,
+      "number": 4,
       "city": "Barcelona",
       "country": "Spain",
       "tags": ["sport", "fashion", "events", "animals"],
@@ -53,6 +58,7 @@
     {
       "name": "Marcel Nikolic",
       "id": 195,
+      "number": 5,
       "city": "Berlin",
       "country": "Germany",
       "tags": ["travel", "architecture"],

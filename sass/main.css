@@ -393,8 +393,8 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  height: 60%;
+  width: 75%;
+  height: 90%;
 }
 .slider__image {
   display: flex;
@@ -407,7 +407,12 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   display: none;
 }
 .slider__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #911C1C;
+  align-self: flex-start;
+  margin-top: 1%;
 }
 .slider img {
   width: 100%;
@@ -425,7 +430,8 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
 .fa-chevron-left {
   display: flex;
   position: absolute;
-  left: 20%;
+  left: 9%;
+  font-size: 200%;
   font-weight: 900;
   color: #911C1C;
   cursor: pointer;
@@ -434,7 +440,8 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
 .fa-chevron-right {
   display: flex;
   position: absolute;
-  right: 20%;
+  font-size: 200%;
+  right: 9%;
   font-weight: 900;
   color: #911C1C;
   cursor: pointer;
@@ -443,10 +450,10 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
 .closeSlider:before,
 .closeSlider:after {
   position: absolute;
-  right: 20%;
-  top: 15%;
+  right: 10%;
+  top: 5%;
   content: " ";
-  height: 2.5%;
+  height: 3.5%;
   width: 0.25%;
   background-color: #911C1C;
   cursor: pointer;
@@ -638,6 +645,17 @@ textarea {
   padding: 5px;
   border: 0.5px solid #C4C4C4;
   border-radius: 11px;
+  color: #901C1C;
+  background-color: #FFFFFF;
+}
+.nav li:hover {
+  background-color: #911C1C;
+}
+.nav li:hover:before {
+  color: #FFFFFF;
+}
+.nav li:hover a {
+  color: #FFFFFF;
 }
 .nav li:before {
   content: "#";
@@ -826,5 +844,9 @@ textarea {
   align-self: flex-start;
   margin-top: 50px;
   width: 30%;
+}
+.panel__btn:hover {
+  color: #000000;
+  background: #DB8876;
 }
 /*# sourceMappingURL=main.css.map *//*# sourceMappingURL=main.css.map */
