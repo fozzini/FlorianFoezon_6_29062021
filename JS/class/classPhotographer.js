@@ -29,15 +29,15 @@ class NewPhotograph{
   
   createHtmlPhotographerPage(){
     /* création de la page photographe */
-    return ` <div id="slider" class="slider">
+    return ` <div tabindex="0" id="slider" class="slider">
     <span id="closeSlider" class="closeSlider" aria-label="Close dialog" alt="Close dialog"></span>
     <i id="chevron-left" class="fas fa-chevron-left" aria-label="previous image" alt="previous image" ></i>
     <i id="chevron-right" class="fas fa-chevron-right" aria-label="Next image" alt="Next image"></i>
     <div id="slider__container" class="slider__container" aria-label="image closeup view">
     </div>
     </div>
-    <div class="bground">
-    <div class="content">
+    <div tabindex="0" id="bground" class="bground">
+    <div id="content" class="content">
     <span class="close" aria-label="Close Contact form"></span>
     <div class="modal-body" aria-labelledby="modal-header" aria-label="Contact me ${this.name}">
         <form name="reserve" action="photographer-page.html" >
