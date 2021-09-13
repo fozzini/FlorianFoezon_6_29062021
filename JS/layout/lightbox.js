@@ -4,16 +4,21 @@ let slideIndex = 1;
 const displaySliderEvent = () => {
     const slider = document.getElementById("slider");
     const image = document.getElementsByClassName("media");
+    const link = document.getElementsByClassName("gallery");
     const container = document.getElementsByClassName("slider__image")
-    
     for (let i = 0; i < image.length; i++) {
-        const element = image[i];
-        element.addEventListener("click", () =>{
+        image[i].addEventListener("click", () =>{
         slider.style.display = "flex";
         container[i].style.display = "flex";        
         closeSliderEvent();
         slider.focus();
         })
+        image[i].addEventListener("keydown", (e) => {if(e.key === "Enter"){ 
+        slider.style.display = "flex";
+        container[i].style.display = "flex";        
+        closeSliderEvent();
+        slider.focus();
+        }})
     } 
 };
 /* fermeture de la lightbox */

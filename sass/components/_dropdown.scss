@@ -29,8 +29,23 @@
         transform: rotate(-180deg);
       }
     }
+    &:focus-within{
+      .dropdown__content__sub {
+        display: block;
+      }
+      .dropdown__content__link{
+        border-bottom: white solid;
+        border-width:thin;
+      }
+      .delborder{
+        border-bottom: hidden;
+      }
+      .arrow::after{
+        transform: rotate(-180deg);
+      }
+    }
+    
     &__link{
-      
       text-decoration: none;
       color:white;
       padding: 16px;
@@ -40,7 +55,6 @@
     }
     &__sub{
       display: none;
-      
     }
   }
 }

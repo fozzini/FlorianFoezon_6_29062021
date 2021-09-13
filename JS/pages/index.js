@@ -8,7 +8,7 @@ const displayTagMenu = () => {
   const tag = document.getElementById("tagMenu");
   for (let index = 0; index < tagMenu.length; index++) {
     const element = tagMenu[index];
-    const tagHtml = `<li class="nav__tag"><a href="#" aria-label="Tag ${element}">${element}</a></li>`
+    const tagHtml = `<li tabindex="0" aria-label="Tag ${element}" class="nav__tag"><a href="#" tabindex="-1">${element}</a></li>`
     tag.insertAdjacentHTML("beforeend", tagHtml)
   }
 };
@@ -26,16 +26,30 @@ const displayPhotographers = async () => {
   }
 };
 displayPhotographers();
+
 /* Click event pour connaitre quel tag à été selectionné */
 const tagClickEvent = () => {
   const tagOnClick = document.getElementsByClassName("nav__tag");
   for (let i = 0; i < tagOnClick.length; i++) {
-    tagOnClick[i].addEventListener("click", async () =>{await displayTaggedPhotograph(tagMenu[i]);})
+    tagOnClick[i].addEventListener("click",() =>{displayTaggedPhotograph(tagMenu[i]);})
   }
 }
 tagClickEvent();
 
-/* Affichage les photographes suivant leurs tags */
+// event pour les évenements de selection au clavier.
+const tagKeyboardEvent = () => {
+  const tagOnClick = document.getElementsByClassName("nav__tag");
+  for (let i = 0; i < tagOnClick.length; i++) {
+    tagOnClick[i].addEventListener('keydown',e => {
+      if(e.key === "Enter"){
+        displayTaggedPhotograph(tagMenu[i]);
+      }
+    });
+  }
+} 
+tagKeyboardEvent();
+
+/* Affiche les photographes suivant leurs tags */
 const displayTaggedPhotograph = (ClickedTag) => {  
   for (let i = 0; i < 6 ; i++){
     const element = ClickedTag.toLowerCase();
@@ -60,6 +74,8 @@ window.onscroll = () => {
 }
 // On Click, Scroll to the Top of Page
 cta.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' })
+// On Enter, Scroll to the Top of Page
+cta.onkeydown = (e) => {if(e.key === "Enter"){ window.scrollTo({ top: 0, behavior: 'smooth' })}}
 
 
 

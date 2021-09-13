@@ -58,6 +58,36 @@ const mediaSortEvent = () => {
                     break;
             }
         })
+        slots[i].onkeydown = (e) => {if(e.key === "Enter"){ 
+            e.preventDefault();
+            switch (slots[i].innerHTML) {
+            case "Popularité":
+                displayMedia(mediaArray.sort((a, b) => b.likes - a.likes));
+                configPopularity();
+                break;
+            case "Date":
+                displayMedia(mediaArray.sort(function (a, b) {
+                    var dateA = new Date(a.date), dateB = new Date(b.date)
+                    return dateA - dateB
+                }));
+                configDate();
+                break;
+            case "Titre":
+                displayMedia(mediaArray.sort((a, b) => {
+                    let fa = a.title,
+                        fb = b.title;
+                    if (fa < fb) {
+                        return -1;
+                    }
+                    if (fa > fb) {
+                        return 1;
+                    }
+                    return 0;
+                }));
+                configTitle();
+                break;}
+            }
+        }
     }
 }
 
