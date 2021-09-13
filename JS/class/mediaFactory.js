@@ -23,7 +23,7 @@ class Image {
   }
   createHtml(){
     /* création des éléments */
-    return `<div tabindex="0" class="gallery"><div class="image media"><img src="images/${id}/${this.image}" alt="${this.alt}" ></div>
+    return `<div class="gallery"><div tabindex="0" class="image media"><img src="images/${id}/${this.image}" alt="${this.alt}" ></div>
     <div class="desc">
       <p>${this.title}</p>
       <div class="likes">
@@ -56,14 +56,14 @@ class Video {
   }
   createHtml(){
     /* création des éléments */
-    return `<div class="gallery"><div class="video media">
-    <video><source src="images/${id}/${this.video}" type="video/mp4" alt="${this.alt}"></video>
+  return `<div class="gallery"><div tabindex="0" class="video media">
+    <video tabindex="-1"><source src="images/${id}/${this.video}" type="video/mp4" alt="${this.alt}"></video>
     </div>
     <div class="desc">
       <p>${this.title}</p>
       <div class="likes">
         <p class="likesP">${this.likes}</p>
-        <i class="fas fa-heart"></i>
+        <i tabindex="0" class="fas fa-heart"></i>
       </div>
     </div></div>`;
   }

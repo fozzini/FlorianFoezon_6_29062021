@@ -4,9 +4,11 @@ import {getPhotographers} from '../utils/getJson.js';
 import {displayModaleEvent} from "../layout/modale.js";
 import {submitFormEvent} from "../layout/modale.js";
 import {closeModaleEvent} from "../layout/modale.js";
+import {modaleKeyboardEvent} from "../layout/modale.js";
 import {nextArrow}from "../layout/lightbox.js";
 import {previousArrow}from "../layout/lightbox.js";
 import {displaySliderEvent}from "../layout/lightbox.js";
+import {lightBoxKeyboardEvent}from "../layout/lightbox.js";
 import {filterMedia}from "../utils/utils.js";
 import {mediaSortEvent}from "../utils/utils.js";
 import {incrementLikesEvent} from "../layout/likes.js"
@@ -63,6 +65,8 @@ const events = async () => {
     mediaSortEvent();
     previousArrow();
     nextArrow();
+    lightBoxKeyboardEvent();
+    modaleKeyboardEvent();
 }
 events();
 export {cardSelected};

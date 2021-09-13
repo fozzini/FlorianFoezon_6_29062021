@@ -29,6 +29,15 @@
             }
             background-color : #911C1C;
         }
+        &:focus{
+            &:before{ 
+                color: #FFFFFF;
+            } 
+            a{
+                color: #FFFFFF;  
+            }
+            background-color : #911C1C;
+        }
     }
     li:before{ 
         content: "#";

@@ -4,9 +4,9 @@
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/dm-sans/dm-sans.eot");
+  src: url("./fonts/dm-sans/dm-sans.eot");
   /* IE9 Compat Modes */
-  src: local(""), url("/fonts/dm-sans/dm-sans.eot?#iefix") format("embedded-opentype"), url("/fonts/dm-sans/dm-sans.woff2") format("woff2"), url("/fonts/dm-sans/dm-sans.woff") format("woff"), url("/fonts/dm-sans/dm-sans.ttf") format("truetype"), url("/fonts/dm-sans/dm-sans.svg") format("svg");
+  src: local(""), url("./fonts/dm-sans/dm-sans.eot?#iefix") format("embedded-opentype"), url("./fonts/dm-sans/dm-sans.woff2") format("woff2"), url("./fonts/dm-sans/dm-sans.woff") format("woff"), url("./fonts/dm-sans/dm-sans.ttf") format("truetype"), url("./fonts/dm-sans/dm-sans.svg") format("svg");
   /* Legacy iOS */
 }
 /**
@@ -198,6 +198,19 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
 .dropdown__content:hover .arrow::after {
   transform: rotate(-180deg);
 }
+.dropdown__content:focus-within .dropdown__content__sub {
+  display: block;
+}
+.dropdown__content:focus-within .dropdown__content__link {
+  border-bottom: white solid;
+  border-width: thin;
+}
+.dropdown__content:focus-within .delborder {
+  border-bottom: hidden;
+}
+.dropdown__content:focus-within .arrow::after {
+  transform: rotate(-180deg);
+}
 .dropdown__content__link {
   text-decoration: none;
   color: white;
@@ -313,8 +326,6 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   border: none;
   width: 32%;
   height: 350px;
-  overflow: hidden;
-  border-radius: 5px;
   cursor: pointer;
 }
 .gallery:hover {
@@ -324,6 +335,8 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   bottom: 60px;
   width: 100%;
   height: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -331,6 +344,8 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   height: 100%;
   bottom: 60px;
   width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -487,6 +502,7 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
 }
 
 .content {
+  z-index: 2;
   margin: 5% auto;
   width: 669px;
   height: 900px;
@@ -655,6 +671,15 @@ textarea {
   color: #FFFFFF;
 }
 .nav li:hover a {
+  color: #FFFFFF;
+}
+.nav li:focus {
+  background-color: #911C1C;
+}
+.nav li:focus:before {
+  color: #FFFFFF;
+}
+.nav li:focus a {
   color: #FFFFFF;
 }
 .nav li:before {
@@ -846,6 +871,10 @@ textarea {
   width: 30%;
 }
 .panel__btn:hover {
+  color: #000000;
+  background: #DB8876;
+}
+.panel__btn:focus {
   color: #000000;
   background: #DB8876;
 }

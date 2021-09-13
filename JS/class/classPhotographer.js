@@ -13,7 +13,11 @@ class NewPhotograph{
   }
   createHtmlCard(){ 
     /* création des cartes photographes */
-    return `<div tabindex="0" id="${this.id}" class="card" aria-label = "Le photographe ${this.name} qui vient de ${this.city} en ${this.country}.Ce photographe est spécialisé en ${this.tags}, sont tarif est de ${this.price}.Sa devise est ${this.tagline}  "><a href='photographer-page.html?cardSelected=${this.number}&id=${this.id}' class="card__vignette"><div class="card__picture"> 
+    return `<div tabindex="-1" id="${this.id}" class="card">
+    <a href='photographer-page.html?cardSelected=${this.number}&id=${this.id}' 
+    tabindex="0" aria-label = "Le photographe ${this.name} qui vient de ${this.city} en 
+    ${this.country}.Ce photographe est spécialisé en ${this.tags}, sont tarif est de ${this.price}.Sa devise est ${this.tagline}" 
+    class="card__vignette"><div class="card__picture"> 
     <img src="images/Photographers_ID_Photos/${this.portrait}" alt="id_${this.name}">
     </div>
     <h2 class="card__name">${this.name}</h2>
@@ -29,15 +33,15 @@ class NewPhotograph{
   
   createHtmlPhotographerPage(){
     /* création de la page photographe */
-    return ` <div id="slider" class="slider">
+    return ` <div tabindex="0" id="slider" class="slider">
     <span id="closeSlider" class="closeSlider" aria-label="Close dialog" alt="Close dialog"></span>
     <i id="chevron-left" class="fas fa-chevron-left" aria-label="previous image" alt="previous image" ></i>
     <i id="chevron-right" class="fas fa-chevron-right" aria-label="Next image" alt="Next image"></i>
     <div id="slider__container" class="slider__container" aria-label="image closeup view">
     </div>
     </div>
-    <div class="bground">
-    <div class="content">
+    <div tabindex="0" id="bground" class="bground">
+    <div id="content" class="content">
     <span class="close" aria-label="Close Contact form"></span>
     <div class="modal-body" aria-labelledby="modal-header" aria-label="Contact me ${this.name}">
         <form name="reserve" action="photographer-page.html" >
@@ -67,12 +71,12 @@ class NewPhotograph{
     </div>
     </div>
     <header class="header-photographer">
-    <a href="index.html" class="logo"><img src="images/logo/logo.svg" alt="Fisheye Home page"></a>
+    <a href="index.html" class="logo"><img src="images/logo/logo.svg" aria-label = "retour à la page d'acceuil" alt="Fisheye Home page"></a>
     </header>
     <section id="panel_section">
     <div class="panel">
       <div class="panel panel--split">
-        <div id="panel__description" class="panel__description">
+        <div tabindex="0" aria-label ="${this.name}" id="panel__description" class="panel__description">
             <h2 class="panel__name" aria-label="${this.name}">${this.name}</h2>
             <h3 class="panel__location">${this.city}, ${this.country}</h3>
             <h4 class="panel__quote">${this.tagline}</h4>
@@ -81,18 +85,18 @@ class NewPhotograph{
           </ul>
         </nav>
         </div>
-        <a id="panel__btn" class="panel__btn" href="#" aria-label="Contact Me">Contactez-moi</a>
+        <a id="panel__btn" class="panel__btn" href="#" tabindex="0" aria-label="Contact Me">Contactez-moi</a>
       </div>
-      <div class="card card__picture" aria-label="${this.name}"><img src="images/Photographers_ID_Photos/${this.portrait}" alt="${this.name}"></div></div>
+      <div tabindex="0" class="card card__picture" aria-label="photo de ${this.name}"><img src="images/Photographers_ID_Photos/${this.portrait}" alt="${this.name}"></div></div>
     </section>
     <article id="article" class="article">
     <div class="article__header">
       <p id="Trier" class="article__title" aria-label=" Trier par">Trier par</p>
       <div class="dropdown">
-        <div class="dropdown__content">
-          <a href="" class="dropdown__content__link icon arrow" aria-labelledby="Trier">Popularité</a>
-          <a href="" class="dropdown__content__link dropdown__content__sub" aria-labelledby="Trier">Date</a>
-          <a href="" class="dropdown__content__link  dropdown__content__sub delborder" aria-labelledby="Trier">Titre</a>
+        <div tabindex="0" class="dropdown__content">
+          <a tabindex="0" href="" class="dropdown__content__link icon arrow" aria-labelledby="Trier">Popularité</a>
+          <a tabindex="0" href="" class="dropdown__content__link dropdown__content__sub" aria-labelledby="Trier">Date</a>
+          <a tabindex="0" href="" class="dropdown__content__link  dropdown__content__sub delborder" aria-labelledby="Trier">Titre</a>
         </div>
       </div>
     </div>
@@ -110,7 +114,7 @@ class NewPhotograph{
     let array = this.tags;
     const arrayRawHtml = [];
     for (let index = 0; index < array.length; index++) {
-      const rawHtml = `<li><a href="#" aria-label="Tag ${array[index]}">${array[index]}</a></li>`;
+      const rawHtml = `<li tabindex="0" aria-label="Tag ${array[index]}"><a href="#" tabindex="-1" >${array[index]}</a></li>`;
       arrayRawHtml.push(rawHtml);
     };
     return arrayRawHtml.join('');

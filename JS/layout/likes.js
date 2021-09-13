@@ -26,11 +26,16 @@ const incrementLikesEvent = () => {
             }
         totalLikes.innerHTML = totalLike();
         })
-        // document.addEventListener('keydown',(event) => {
-        //     if(event.key === "Enter"){
-        //         modale.style.display = "none";
-        //     }
-        // });
+        container[i].addEventListener("keydown", (e) => {if(e.key === "Enter"){
+        nbr[i].innerHTML = parseInt(nbr[i].innerHTML,10)+1;
+            if (likes[i] == 1) {
+                nbr[i].innerHTML = parseInt(nbr[i].innerHTML,10)-2;
+                likes[i] = 0;            
+            } else {
+                likes[i] = 1;
+            }
+        totalLikes.innerHTML = totalLike();}
+        })
     }
 }
 export {incrementLikesEvent}
