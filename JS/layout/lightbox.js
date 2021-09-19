@@ -4,17 +4,22 @@ let slideIndex = 1;
 const displaySliderEvent = () => {
     const slider = document.getElementById("slider");
     const image = document.getElementsByClassName("media");
-    const link = document.getElementsByClassName("gallery");
     const container = document.getElementsByClassName("slider__image")
     for (let i = 0; i < image.length; i++) {
         image[i].addEventListener("click", () =>{
         slider.style.display = "flex";
+        slider.removeAttribute("aria-hidden");
+        slider.setAttribute("tabindex", "0");
+        slider.setAttribute("aria-modal", "true");
         container[i].style.display = "flex";        
         closeSliderEvent();
         slider.focus();
         })
         image[i].addEventListener("keydown", (e) => {if(e.key === "Enter"){ 
         slider.style.display = "flex";
+        slider.removeAttribute("aria-hidden");
+        slider.setAttribute("tabindex", "0");
+        slider.setAttribute("aria-modal", "true");
         container[i].style.display = "flex";        
         closeSliderEvent();
         slider.focus();
@@ -28,6 +33,9 @@ const closeSliderEvent = () => {
     const container = document.getElementsByClassName("slider__image")
     closeBtn.addEventListener("click", () =>{
         slider.style.display = "none";
+        slider.setAttribute("aria-hidden", true);
+        slider.setAttribute("tabindex", "-1");
+        slider.removeAttribute("aria-modal");
         for (let i = 0; i < container.length; i++) {
             container[i].style.display = "none";
         }
@@ -50,19 +58,37 @@ const previousArrow = () => {
 // event pour detecter les pressions de touches sur le clavier
 const lightBoxKeyboardEvent = () => {
     const slider = document.getElementById("slider");
-    const container = document.getElementsByClassName("slider__image")
+    const container = document.getElementsByClassName("slider__image");
+    const focusableSelector = 'i';
+    let focusables = Array.from(slider.querySelectorAll(focusableSelector));
+    let index = focusables.findIndex(f => f === slider.querySelector(':focus'));
     slider.addEventListener('keydown',e => {
+        e.preventDefault();
         if(e.key === "ArrowLeft"){
             plusSlides(-1);
         }
-        else if(e.key ==="ArrowRight"){
+        if(e.key ==="ArrowRight"){
             plusSlides(1);
         }
-        else if(e.key === "Escape"){
+        if(e.key === "Escape"){
             for (let i = 0; i < container.length; i++) {
                 container[i].style.display = "none";
                 slider.style.display = "none";
             }  
+        }
+        if(e.shiftKey && e.key === 'Tab'){
+            index--
+            if (index < 0){
+                index = focusables.length - 1;
+            }
+            focusables[index].focus();
+        }
+        else if(e.key === 'Tab'){
+            index++;
+            if (index >= focusables.length) {
+                index = 0 ;
+            }
+            focusables[index].focus();
         }
     });
 };
