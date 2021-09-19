@@ -573,7 +573,7 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   font-size: 1rem;
   color: #fff;
   cursor: pointer;
-  border: 0;
+  border: none;
   font-weight: bold;
   font-size: 18px;
   line-height: 23px;
@@ -594,6 +594,9 @@ input {
   outline: none;
   width: 100%;
 }
+input:focus {
+  border: 0.8px solid blue;
+}
 
 textarea {
   padding: 8px;
@@ -601,6 +604,9 @@ textarea {
   outline: none;
   width: 100%;
   margin-bottom: 15px;
+}
+textarea:focus {
+  border: 0.8px solid blue;
 }
 
 .modal-header {

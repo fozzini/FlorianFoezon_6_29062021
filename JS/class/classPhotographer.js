@@ -40,11 +40,11 @@ class NewPhotograph{
     <div id="slider__container" class="slider__container" aria-label="image closeup view">
     </div>
     </div>
-    <div tabindex="0" id="bground" class="bground">
+    <div tabindex="-1" role="dialog" aria-modal="false" id="bground" class="bground">
     <div id="content" class="content">
     <span class="close" aria-label="Close Contact form"></span>
     <div class="modal-body" aria-labelledby="modal-header" aria-label="Contact me ${this.name}">
-        <form name="reserve" action="photographer-page.html" >
+        <form id='form' name="reserve" action="photographer-page.html" >
         <div id="modal-header" class="modal-header">
             <p>Contactez-moi</p>
             <p>${this.name}</p>
