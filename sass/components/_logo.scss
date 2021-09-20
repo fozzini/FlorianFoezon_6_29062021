@@ -1,5 +1,20 @@
 .logo{
-    margin-top: 2.625rem;
+    margin-top: 2.65rem;
     width: 12.5rem;
-    height: 3.125rem;   
+    height: 3.125rem;
+    @media all and (max-width: 1150px){
+        width: 9.5rem; 
+    }
+    @media all and (max-width: 1036px){
+        order: 1;
+        width:50%;
+        margin-bottom: 20px;
+    } 
+    @media all and (max-width: 525px){
+        width: 8rem; 
+    }
+    @media all and (max-width: 360px){
+        width: 6rem; 
+    }
+    
 }

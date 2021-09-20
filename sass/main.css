@@ -278,16 +278,34 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
 .header {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: flex-end;
   margin-left: 6.25rem;
-  justify-content: space-around;
-  width: auto;
+  justify-content: space-between;
+}
+@media all and (max-width: 1150px) {
+  .header {
+    font-size: 10px;
+  }
+}
+@media all and (max-width: 1036px) {
+  .header {
+    justify-content: center;
+    margin-left: 0;
+  }
+}
+@media all and (max-width: 1022px) {
+  .header {
+    font-size: 8px;
+  }
 }
 
 .cardlist {
   display: flex;
   justify-content: center;
   align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
   flex-wrap: wrap;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -295,11 +313,13 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
 
 .body {
   width: auto;
+  height: auto;
 }
 
 .photographer {
   position: relative;
   width: auto;
+  padding-bottom: 100px;
 }
 
 .header-photographer {
@@ -310,11 +330,16 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   align-items: center;
 }
 
+.article {
+  margin-right: 80px;
+}
+
 .article-Gallery {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  width: auto;
 }
 
 .gallery {
@@ -382,6 +407,10 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   margin-left: 5px;
 }
 
+.pricelikes {
+  justify-content: space-between;
+}
+
 .image-1 {
   width: auto;
   padding: 90%;
@@ -390,6 +419,12 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   background-size: 60%;
   overflow: hidden;
   background-image: url(/images/Mimi/Animals_Rainbow.jpg);
+}
+
+.likes-heart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .slider {
@@ -632,6 +667,8 @@ textarea:focus {
 }
 
 .titre {
+  display: flex;
+  justify-content: center;
   font-weight: normal;
   width: 306px;
   height: 47px;
@@ -639,7 +676,29 @@ textarea:focus {
   font-size: 36px;
   line-height: 47px;
   color: #911C1C;
-  margin-bottom: 7px;
+  margin-bottom: 0px;
+}
+@media all and (max-width: 1150px) {
+  .titre {
+    font-size: 30px;
+  }
+}
+@media all and (max-width: 1036px) {
+  .titre {
+    order: 1;
+    width: 50%;
+    margin-bottom: 20px;
+  }
+}
+@media all and (max-width: 525px) {
+  .titre {
+    font-size: 20px;
+  }
+}
+@media all and (max-width: 360px) {
+  .titre {
+    font-size: 15px;
+  }
 }
 
 .nav {
@@ -651,6 +710,18 @@ textarea:focus {
   right: 35.83%;
   top: 5%;
   bottom: 92.48%;
+  margin-bottom: 5px;
+}
+@media all and (max-width: 1036px) {
+  .nav {
+    width: 100%;
+    order: 2;
+  }
+}
+@media all and (max-width: 525px) {
+  .nav {
+    flex-wrap: wrap;
+  }
 }
 .nav ul {
   display: flex;
@@ -659,6 +730,11 @@ textarea:focus {
   -webkit-padding-start: 0px;
           padding-inline-start: 0px;
   margin: inherit;
+}
+@media all and (max-width: 525px) {
+  .nav ul {
+    flex-wrap: wrap;
+  }
 }
 .nav li {
   display: flex;
@@ -670,6 +746,11 @@ textarea:focus {
   border-radius: 11px;
   color: #901C1C;
   background-color: #FFFFFF;
+}
+@media all and (max-width: 1036px) {
+  .nav li {
+    margin-top: 5px;
+  }
 }
 .nav li:hover {
   background-color: #911C1C;
@@ -705,11 +786,43 @@ textarea:focus {
   text-decoration: none;
   list-style: none;
 }
+@media all and (max-width: 1150px) {
+  .nav a {
+    font-size: 9px;
+  }
+}
+@media all and (max-width: 1036px) {
+  .nav a {
+    font-size: 12px;
+  }
+}
 
 .logo {
-  margin-top: 2.625rem;
+  margin-top: 2.65rem;
   width: 12.5rem;
   height: 3.125rem;
+}
+@media all and (max-width: 1150px) {
+  .logo {
+    width: 9.5rem;
+  }
+}
+@media all and (max-width: 1036px) {
+  .logo {
+    order: 1;
+    width: 50%;
+    margin-bottom: 20px;
+  }
+}
+@media all and (max-width: 525px) {
+  .logo {
+    width: 8rem;
+  }
+}
+@media all and (max-width: 360px) {
+  .logo {
+    width: 6rem;
+  }
 }
 
 .cta {
@@ -734,6 +847,16 @@ textarea:focus {
   flex-direction: column;
   width: 30%;
   margin-top: 30px;
+}
+@media all and (max-width: 1002px) {
+  .card {
+    width: 50%;
+  }
+}
+@media all and (max-width: 620px) {
+  .card {
+    width: 100%;
+  }
 }
 .card img {
   width: 300px;
@@ -815,11 +938,13 @@ textarea:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px;
+  padding-right: 30px;
   padding-top: 0px;
   margin-top: 30px;
   background: #FAFAFA;
   border-radius: 5px;
+  margin-left: 80px;
+  margin-right: 80px;
 }
 .panel--split {
   width: 60%;

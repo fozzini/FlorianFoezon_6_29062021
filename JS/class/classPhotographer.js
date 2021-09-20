@@ -51,19 +51,19 @@ class NewPhotograph{
         </div>
         <div class="formData">
             <label id="prenom" for="first">Prénom</label><br>
-            <input class="text-control" type="text" id="first" aria-labelledby="prenom" name="first"aria-label="First name"/><br>
+            <input class="text-control" type="text" id="first" aria-labelledby="prenom" name="first" aria-label="First name"/><br>
         </div>
         <div class="formData">
             <label id="nom" for="last">Nom</label><br>
-            <input class="text-control" type="text" id="last" name="last" aria-labelledby="nom" name="first"aria-label="Last name"/><br>
+            <input class="text-control" type="text" id="last" name="last" aria-labelledby="nom" name="last" aria-label="Last name"/><br>
         </div>
         <div class="formData">
             <label id="mail" for="email">E-mail</label><br>
-            <input class="text-control" type="email" id="email" name="email" aria-labelledby="mail" name="first"aria-label="Email"/><br>
+            <input class="text-control" type="email" id="email" name="email" aria-labelledby="mail" name="email" aria-label="Email"/><br>
         </div>
         <div class="formData">
             <label id="message" for="msg">Message</label><br>
-            <textarea id="msg" name="user_message" rows="4" aria-labelledby="message" name="first"aria-label="Your message"></textarea>
+            <textarea id="msg" name="user_message" rows="4" aria-labelledby="message" name="" aria-label="Your message"></textarea>
         </div>
         <input id="btn-submit" class="btn-submit button" type="button" value="Envoyer" aria-label="send"/>
         </form>
@@ -104,7 +104,7 @@ class NewPhotograph{
     </div>
     </article>
     <aside id="likes"class="pricelikes">
-    <p id="likes-total"></p><i class="fas fa-heart"></i>
+    <div class="likes-heart"><p id="likes-total"></p><i class="fas fa-heart"></i></div>
     <p>${this.price}/jour</p>
     </aside>`;
   }

@@ -44,11 +44,11 @@ const modaleKeyboardEvent = () => {
     let focusables = Array.from(modale.querySelectorAll(focusableSelector));
     let index = focusables.findIndex(f => f === modale.querySelector(':focus'));
     modale.addEventListener('keydown',e => {
-        e.preventDefault();
         if(e.key === "Escape"){
             modale.style.display = "none"
         }  
         if(e.shiftKey && e.key === 'Tab'){
+            e.preventDefault();
             index--
             if (index < 0){
                 index = focusables.length - 1;
@@ -56,6 +56,7 @@ const modaleKeyboardEvent = () => {
             focusables[index].focus();
         }
         else if(e.key === 'Tab'){
+            e.preventDefault();
             index++;
             if (index >= focusables.length) {
                 index = 0 ;

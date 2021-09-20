@@ -5,10 +5,22 @@
     right: 35.83%;
     top: 5%;
     bottom: 92.48%;
+    margin-bottom: 5px;
+    @media all and (max-width: 1036px){
+        width:100%;
+        order: 2;
+    } 
+    @media all and (max-width: 525px){
+        flex-wrap: wrap;
+    }
     ul{
         @include alignFlex;
         padding-inline-start: 0px;
         margin: inherit;
+       
+        @media all and (max-width: 525px){
+            flex-wrap: wrap;
+        }
     }
     li{
         display: flex;
@@ -20,6 +32,9 @@
         border-radius: 11px; 
         color:$cd-tag;
         background-color: #FFFFFF;
+        @media all and (max-width: 1036px){
+            margin-top: 5px;
+        } 
         &:hover{
             &:before{ 
                 color: #FFFFFF;
@@ -44,7 +59,8 @@
         color:$cd-tag;
         text-align: center;
         font-weight: bold;
-        font-size: 12px;    
+        font-size: 12px;
+          
     }
     a{
         font-weight: 500;
@@ -54,6 +70,11 @@
         color:$cd-tag;
         text-decoration: none;
         list-style: none;
+        @media all and (max-width: 1150px){
+            font-size: 9px; 
+        }
+        @media all and (max-width: 1036px){
+            font-size: 12px; 
+        }
     }
-   
 }
