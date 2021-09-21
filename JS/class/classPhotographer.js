@@ -33,37 +33,37 @@ class NewPhotograph{
   
   createHtmlPhotographerPage(){
     /* création de la page photographe */
-    return ` <div tabindex="0" id="slider" class="slider">
+    return ` <div tabindex="-1" role="dialog" aria-modal="false" aria-hidden="true" id="slider" class="slider">
     <span id="closeSlider" class="closeSlider" aria-label="Close dialog" alt="Close dialog"></span>
     <i id="chevron-left" class="fas fa-chevron-left" aria-label="previous image" alt="previous image" ></i>
     <i id="chevron-right" class="fas fa-chevron-right" aria-label="Next image" alt="Next image"></i>
     <div id="slider__container" class="slider__container" aria-label="image closeup view">
     </div>
     </div>
-    <div tabindex="0" id="bground" class="bground">
+    <div tabindex="-1" role="dialog" aria-modal="false" aria-hidden="true" id="bground" class="bground">
     <div id="content" class="content">
     <span class="close" aria-label="Close Contact form"></span>
     <div class="modal-body" aria-labelledby="modal-header" aria-label="Contact me ${this.name}">
-        <form name="reserve" action="photographer-page.html" >
+        <form id='form' name="reserve" action="photographer-page.html" >
         <div id="modal-header" class="modal-header">
             <p>Contactez-moi</p>
             <p>${this.name}</p>
         </div>
         <div class="formData">
             <label id="prenom" for="first">Prénom</label><br>
-            <input class="text-control" type="text" id="first" aria-labelledby="prenom" name="first"aria-label="First name"/><br>
+            <input class="text-control" type="text" id="first" aria-labelledby="prenom" name="first" aria-label="First name"/><br>
         </div>
         <div class="formData">
             <label id="nom" for="last">Nom</label><br>
-            <input class="text-control" type="text" id="last" name="last" aria-labelledby="nom" name="first"aria-label="Last name"/><br>
+            <input class="text-control" type="text" id="last" name="last" aria-labelledby="nom" name="last" aria-label="Last name"/><br>
         </div>
         <div class="formData">
             <label id="mail" for="email">E-mail</label><br>
-            <input class="text-control" type="email" id="email" name="email" aria-labelledby="mail" name="first"aria-label="Email"/><br>
+            <input class="text-control" type="email" id="email" name="email" aria-labelledby="mail" name="email" aria-label="Email"/><br>
         </div>
         <div class="formData">
             <label id="message" for="msg">Message</label><br>
-            <textarea id="msg" name="user_message" rows="4" aria-labelledby="message" name="first"aria-label="Your message"></textarea>
+            <textarea id="msg" name="user_message" rows="4" aria-labelledby="message" name="" aria-label="Your message"></textarea>
         </div>
         <input id="btn-submit" class="btn-submit button" type="button" value="Envoyer" aria-label="send"/>
         </form>
@@ -75,12 +75,12 @@ class NewPhotograph{
     </header>
     <section id="panel_section">
     <div class="panel">
-      <div class="panel panel--split">
+      <div class="panel panel--split margin">
         <div tabindex="0" aria-label ="${this.name}" id="panel__description" class="panel__description">
             <h2 class="panel__name" aria-label="${this.name}">${this.name}</h2>
             <h3 class="panel__location">${this.city}, ${this.country}</h3>
             <h4 class="panel__quote">${this.tagline}</h4>
-        <nav class="nav">
+        <nav class="nav nav_panel">
           <ul id="ul">
           </ul>
         </nav>
@@ -104,7 +104,7 @@ class NewPhotograph{
     </div>
     </article>
     <aside id="likes"class="pricelikes">
-    <p id="likes-total"></p><i class="fas fa-heart"></i>
+    <div class="likes-heart"><p id="likes-total"></p><i class="fas fa-heart"></i></div>
     <p>${this.price}/jour</p>
     </aside>`;
   }

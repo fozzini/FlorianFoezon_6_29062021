@@ -1,12 +1,23 @@
 .panel{
   @include alignFlex(space-between,center);
-  padding:30px;
+  padding-right:30px;
   padding-top: 0px;
   margin-top:30px;
   background: #FAFAFA;
   border-radius: 5px;
+  margin-left: 80px;
+  margin-right: 80px;
+  @media all and (max-width: 925px){
+    background:#FFFFFF;
+  }
+  @media all and (max-width: 645px){
+    padding-right:0px;
+  }
   &--split{
     width:60%;
+    @media all and (max-width: 820px){
+      width:40%;
+    }
   }
   &__description{
     @include alignFlex(center,flex-start);
@@ -35,7 +46,6 @@
     font-weight: normal;
     font-size: 18px;
     line-height: 23px;
-    text-align: center;
     margin-bottom: 5px;
     margin-top:3px;
     color: #525252;
@@ -54,8 +64,29 @@
     border-radius: 5px;
     text-decoration: none;
     align-self:flex-start;
-    margin-top:50px;
+    margin-top:60px;
     width:30%;
+    @media all and (max-width: 1225px){
+      font-size: 15px; 
+    }
+    @media all and (max-width: 1095px){
+      font-size: 12px; 
+    }
+    @media all and (max-width: 1030px){
+      position:fixed; 
+      bottom:0;
+      left:40%;
+      z-index:+1;
+      font-size: 20px;
+      width:20%;
+      padding : 10px;
+    }
+    @media all and (max-width: 820px){
+      font-size: 15px;
+    }
+    @media all and (max-width: 645px){
+      font-size: 10px;
+    }
     &:hover{
       color: #000000;
       background: #DB8876;
@@ -64,5 +95,11 @@
       color: #000000;
       background: #DB8876;
     }
+  }
+}
+.margin{
+  margin-left: 45px;
+  @media all and (max-width: 925px){
+    margin-left: 0px;
   }
 }

@@ -71,7 +71,7 @@
   font-size: 1rem;
   color: #fff;
   cursor: pointer;
-  border: 0;
+  border: none;
   font-weight: bold;
   font-size: 18px;
   line-height: 23px;
@@ -90,6 +90,9 @@ input {
   border: 0.8px solid #ccc;
   outline: none;
   width:100%;
+  &:focus{
+    border:0.8px solid blue;
+  }
 }
 textarea{
   padding: 8px;
@@ -97,6 +100,9 @@ textarea{
   outline: none;
   width:100%;
   margin-bottom: 15px;
+  &:focus{
+    border:0.8px solid blue;
+  }
 }
 .modal-header{
   margin-bottom: 15px;;

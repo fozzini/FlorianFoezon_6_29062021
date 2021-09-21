@@ -1,4 +1,6 @@
 .titre{
+  display: flex;
+  justify-content: center;
   font-weight: normal;
   width: 306px;
   height: 47px;
@@ -6,5 +8,21 @@
   font-size: 36px;
   line-height: 47px;
   color: #911C1C;
-  margin-bottom:7px;
+  margin-bottom:0px;
+  @media all and (max-width: 1150px){
+    font-size: 30px; 
+  }
+  @media all and (max-width: 1036px){
+    order: 1;
+    width:50%;
+    margin-bottom: 20px;
+  } 
+  @media all and (max-width: 525px){
+    font-size: 20px; 
+  }
+  @media all and (max-width: 360px){
+    font-size: 15px; 
+  }
+
+
 }

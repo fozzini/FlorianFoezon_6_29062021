@@ -1,8 +1,18 @@
 .header{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-end;
     margin-left: 6.25rem;
-    justify-content: space-around;
-    width:auto;
+    justify-content: space-between;
+    @media all and (max-width: 1150px){
+        font-size: 10px; 
+    }
+    @media all and (max-width: 1036px){
+        justify-content: center;
+        margin-left: 0;
+    }
+    @media all and (max-width: 1022px){
+        font-size: 8px; 
+    }  
 }

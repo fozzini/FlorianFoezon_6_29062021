@@ -4,7 +4,10 @@ const displayModaleEvent = () => {
     const modale = document.getElementById("bground");
     btnContact.addEventListener("click", () =>{
         modale.style.display = "flex";
-        modale.focus();
+        modale.removeAttribute("aria-hidden");
+        modale.setAttribute("tabindex", "0");
+        modale.setAttribute("aria-modal", "true");
+        document.getElementById("first").focus();
     })
 };
 /* event de soumission du formulaire */
@@ -29,17 +32,40 @@ const closeModaleEvent = () => {
     const modale = document.getElementById("bground");
     closeBtn.addEventListener("click", () =>{
         modale.style.display = "none";
+        modale.setAttribute("aria-hidden", true);
+        modale.setAttribute("tabindex", "-1");
+        modale.removeAttribute("aria-modal");
     })
 }
 // event pour les pression de touches sur la modale
 const modaleKeyboardEvent = () => { 
     const modale = document.getElementById("bground");
+    const focusableSelector = 'input, textarea';
+    let focusables = Array.from(modale.querySelectorAll(focusableSelector));
+    let index = focusables.findIndex(f => f === modale.querySelector(':focus'));
     modale.addEventListener('keydown',e => {
         if(e.key === "Escape"){
             modale.style.display = "none"
         }  
+        if(e.shiftKey && e.key === 'Tab'){
+            e.preventDefault();
+            index--
+            if (index < 0){
+                index = focusables.length - 1;
+                }
+            focusables[index].focus();
+        }
+        else if(e.key === 'Tab'){
+            e.preventDefault();
+            index++;
+            if (index >= focusables.length) {
+                index = 0 ;
+            }
+            focusables[index].focus();
+        }
     });
-};
+}
+
 export {displayModaleEvent};
 export {submitFormEvent};
 export {closeModaleEvent};
