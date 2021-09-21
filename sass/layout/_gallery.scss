@@ -6,6 +6,10 @@
   @include alignFlex(space-between);
   flex-wrap: wrap;
   width: auto;
+  @media all and (max-width: 925px){
+    flex-direction: column;
+    margin-top:50px;
+  }
 }
 
 .gallery{
@@ -16,7 +20,9 @@
 	width: 32%;
   height: 350px;
   cursor: pointer;
-
+  @media all and (max-width: 925px){
+    width: 100%;
+  }
 	&:hover {
 		border: 1px solid #777;
 	}

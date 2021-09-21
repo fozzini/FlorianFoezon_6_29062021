@@ -9,6 +9,9 @@
   height: 45px;
   width: 300px;
   border-radius: 5px;
+  @media all and (max-width: 1030px){
+    display:none;
+  }
   i{
     margin-left: 5px;
   }

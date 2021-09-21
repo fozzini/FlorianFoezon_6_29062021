@@ -252,6 +252,11 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   margin-top: 10px;
   margin-bottom: 15px;
 }
+@media all and (max-width: 920px) {
+  .article__header {
+    display: none;
+  }
+}
 .article__title {
   font-weight: bold;
   font-size: 18px;
@@ -341,6 +346,12 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   flex-wrap: wrap;
   width: auto;
 }
+@media all and (max-width: 925px) {
+  .article-Gallery {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+}
 
 .gallery {
   display: flex;
@@ -352,6 +363,11 @@ $box-shadow--sticker--restaurant: 0px 5px 18px -3px darken($cd-grey, 30%);
   width: 32%;
   height: 350px;
   cursor: pointer;
+}
+@media all and (max-width: 925px) {
+  .gallery {
+    width: 100%;
+  }
 }
 .gallery:hover {
   border: 1px solid #777;
@@ -662,6 +678,11 @@ textarea:focus {
   width: 300px;
   border-radius: 5px;
 }
+@media all and (max-width: 1030px) {
+  .pricelikes {
+    display: none;
+  }
+}
 .pricelikes i {
   margin-left: 5px;
 }
@@ -795,6 +816,10 @@ textarea:focus {
   .nav a {
     font-size: 12px;
   }
+}
+
+.nav_panel {
+  justify-content: normal;
 }
 
 .logo {
@@ -946,8 +971,23 @@ textarea:focus {
   margin-left: 80px;
   margin-right: 80px;
 }
+@media all and (max-width: 925px) {
+  .panel {
+    background: #FFFFFF;
+  }
+}
+@media all and (max-width: 645px) {
+  .panel {
+    padding-right: 0px;
+  }
+}
 .panel--split {
   width: 60%;
+}
+@media all and (max-width: 820px) {
+  .panel--split {
+    width: 40%;
+  }
 }
 .panel__description {
   display: flex;
@@ -978,7 +1018,6 @@ textarea:focus {
   font-weight: normal;
   font-size: 18px;
   line-height: 23px;
-  text-align: center;
   margin-bottom: 5px;
   margin-top: 3px;
   color: #525252;
@@ -999,8 +1038,39 @@ textarea:focus {
   border-radius: 5px;
   text-decoration: none;
   align-self: flex-start;
-  margin-top: 50px;
+  margin-top: 60px;
   width: 30%;
+}
+@media all and (max-width: 1225px) {
+  .panel__btn {
+    font-size: 15px;
+  }
+}
+@media all and (max-width: 1095px) {
+  .panel__btn {
+    font-size: 12px;
+  }
+}
+@media all and (max-width: 1030px) {
+  .panel__btn {
+    position: fixed;
+    bottom: 0;
+    left: 40%;
+    z-index: 1;
+    font-size: 20px;
+    width: 20%;
+    padding: 10px;
+  }
+}
+@media all and (max-width: 820px) {
+  .panel__btn {
+    font-size: 15px;
+  }
+}
+@media all and (max-width: 645px) {
+  .panel__btn {
+    font-size: 10px;
+  }
 }
 .panel__btn:hover {
   color: #000000;
@@ -1009,5 +1079,14 @@ textarea:focus {
 .panel__btn:focus {
   color: #000000;
   background: #DB8876;
+}
+
+.margin {
+  margin-left: 45px;
+}
+@media all and (max-width: 925px) {
+  .margin {
+    margin-left: 0px;
+  }
 }
 /*# sourceMappingURL=main.css.map *//*# sourceMappingURL=main.css.map */

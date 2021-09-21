@@ -5,10 +5,12 @@
   flex-direction:column;
   position: relative;
   &__header{
-    
     @include alignFlex(flex-start, baseline);
     margin-top:10px;
     margin-bottom: 15px;
+    @media all and (max-width: 920px){
+      display:none;
+    }
   }
   &__title{
     font-weight: bold;

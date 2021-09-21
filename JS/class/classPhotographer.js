@@ -75,12 +75,12 @@ class NewPhotograph{
     </header>
     <section id="panel_section">
     <div class="panel">
-      <div class="panel panel--split">
+      <div class="panel panel--split margin">
         <div tabindex="0" aria-label ="${this.name}" id="panel__description" class="panel__description">
             <h2 class="panel__name" aria-label="${this.name}">${this.name}</h2>
             <h3 class="panel__location">${this.city}, ${this.country}</h3>
             <h4 class="panel__quote">${this.tagline}</h4>
-        <nav class="nav">
+        <nav class="nav nav_panel">
           <ul id="ul">
           </ul>
         </nav>
