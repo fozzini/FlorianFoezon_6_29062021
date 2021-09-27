@@ -1,6 +1,10 @@
 
 .article{
   margin-right: 80px;
+  @media all and (max-width: 550px){
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 .article-Gallery{
   @include alignFlex(space-between);

@@ -87,7 +87,7 @@ class NewPhotograph{
         </div>
         <a id="panel__btn" class="panel__btn" href="#" tabindex="0" aria-label="Contact Me">Contactez-moi</a>
       </div>
-      <div tabindex="0" class="card card__picture" aria-label="photo de ${this.name}"><img src="images/Photographers_ID_Photos/${this.portrait}" alt="${this.name}"></div></div>
+      <div tabindex="0" class="card card__picture image__panel" aria-label="photo de ${this.name}"><img src="images/Photographers_ID_Photos/${this.portrait}" alt="${this.name}"></div></div>
     </section>
     <article id="article" class="article">
     <div class="article__header">

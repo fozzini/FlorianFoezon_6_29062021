@@ -1,5 +1,6 @@
 .panel{
   @include alignFlex(space-between,center);
+  
   padding-right:30px;
   padding-top: 0px;
   margin-top:30px;
@@ -9,9 +10,14 @@
   margin-right: 80px;
   @media all and (max-width: 925px){
     background:#FFFFFF;
+    margin-top: 0px;
   }
   @media all and (max-width: 645px){
     padding-right:0px;
+  }
+  @media all and (max-width: 550px){
+    margin-left: 20px;
+    margin-right: 20px;
   }
   &--split{
     width:60%;
@@ -23,6 +29,9 @@
     @include alignFlex(center,flex-start);
     flex-direction: column;
     margin-top: 30px;
+    @media all and (max-width: 670px){
+      margin-top: 0px;
+    }
   }
   &__name{
     font-weight: normal;
@@ -31,7 +40,23 @@
     margin-top:15px;
     line-height: 83px;
     text-align:left;
-    color: #D3573C;    
+    color: #D3573C;
+    @media all and (max-width: 1350px){
+      font-size: calc(55px * 0.70);
+      margin-top: calc(15px * 0.70);
+      line-height: calc(83px * 0.70);
+    }
+    @media all and (max-width: 670px){
+      font-size: calc(55px * 0.50);
+      margin-top: calc(15px * 0.50);
+      line-height: calc(83px * 0.50);
+      margin-top:0px;
+    }    
+    @media all and (max-width: 380px){
+      font-size: calc(55px * 0.30);
+      margin-top: calc(15px * 0.30);
+      line-height: calc(83px * 0.30);
+    } 
   }
   &__location{
     font-weight: normal;
@@ -39,8 +64,23 @@
     margin-bottom: inherit;
     margin-top:3px;
     line-height: 31px;
-    text-align: center;
+    text-align: left;
     color: #901C1C;
+    @media all and (max-width: 1350px){
+      font-size: calc(24px * 0.70);
+      margin-top: calc(3px * 0.70);
+      line-height: calc(31px * 0.70);
+    }
+    @media all and (max-width: 670px){
+      font-size: calc(24px * 0.50);
+      margin-top: calc(3px * 0.50);
+      line-height: calc(31px * 0.50);
+    } 
+    @media all and (max-width: 380px){
+      font-size: calc(24px * 0.40);
+      margin-top: calc(3px * 0.40);
+      line-height: calc(31px * 0.40);
+    }  
   }
   &__quote{
     font-weight: normal;
@@ -49,6 +89,21 @@
     margin-bottom: 5px;
     margin-top:3px;
     color: #525252;
+    @media all and (max-width: 1350px){
+      font-size: calc(18px * 0.70);
+      margin-top: calc(3px * 0.70);
+      line-height: calc(23px * 0.70);
+    }
+    @media all and (max-width: 670px){
+      font-size: calc(18px * 0.50);
+      margin-top: calc(3px * 0.50);
+      line-height: calc(23px * 0.50);
+    }  
+    @media all and (max-width: 380px){
+      font-size: calc(18px * 0.40);
+      margin-top: calc(3px * 0.40);
+      line-height: calc(23px * 0.40);
+    } 
   }   
   &__btn{
     @include alignFlex;
@@ -75,17 +130,24 @@
     @media all and (max-width: 1030px){
       position:fixed; 
       bottom:0;
-      left:40%;
+      margin: auto;
+      left: 0;
+      right: 0;
       z-index:+1;
-      font-size: 20px;
       width:20%;
-      padding : 10px;
+      padding-left : 1%;
+      padding-right : 1%;
     }
     @media all and (max-width: 820px){
-      font-size: 15px;
+      font-size:x-small;
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
     @media all and (max-width: 645px){
-      font-size: 10px;
+      font-size:xx-small;
+    }
+    @media all and (max-width: 360px){
+      font-size:6px;
     }
     &:hover{
       color: #000000;
@@ -101,5 +163,24 @@
   margin-left: 45px;
   @media all and (max-width: 925px){
     margin-left: 0px;
+  }
+  @media all and (max-width: 850px){
+    margin-right : 0px;
+    padding-right: 0px;
+    width: auto;
+  }
+}
+.image__panel{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  @media all and (max-width: 850px){
+    margin-top: 0;
+    width: 150px;
+    height: 150px;
+  }
+  @media all and (max-width: 670px){
+    width: 100px;
+    height: 100px;
   }
 }
