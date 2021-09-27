@@ -23,12 +23,12 @@ class Image {
   }
   createHtml(){
     /* création des éléments */
-    return `<div class="gallery"><div tabindex="0" class="image media"><img src="images/${id}/${this.image}" alt="${this.alt}" ></div>
+    return `<div class="gallery"><div tabindex="0" class="image media"><img src="images/${id}/${this.image}" alt="${this.alt}" aria-label="${this.title}"></div>
     <div class="desc">
-      <p>${this.title}</p>
-      <div class="likes">
-        <p class="likesP">${this.likes}</p>
-        <i tabindex="0" class="fas fa-heart" alt="likes" aria-label="likes"></i>
+      <p >${this.title}</p>
+      <div class="likes" tabindex="0">
+        <p class="likesP" aria-label="${this.likes}">${this.likes}</p>
+        <i tabindex="0" aria-label="coeur" class="fas fa-heart" alt="likes" ></i>
       </div>
     </div>
     </div>
@@ -36,7 +36,7 @@ class Image {
   }
   /* Création des images contenues dans la lightbox */
   createHtmlSlider(){
-    return `<div class="slider__image"><img src="images/${id}/${this.image}" alt="${this.alt}" aria-label="Closeup view" >
+    return `<div class="slider__image"><img src="images/${id}/${this.image}" alt="${this.alt}" aria-label="${this.title}" >
     <span class="slider__text">${this.title}</span></div>`;
   }
 }
@@ -56,20 +56,20 @@ class Video {
   }
   createHtml(){
     /* création des éléments */
-  return `<div class="gallery"><div tabindex="0" class="video media">
-    <video tabindex="-1"><source src="images/${id}/${this.video}" type="video/mp4" alt="${this.alt}"></video>
+  return `<div class="gallery"><div tabindex="0" class="video media" aria-label="${this.title}">
+    <video tabindex="-1"><source src="images/${id}/${this.video}" type="video/mp4" alt="${this.alt}" ></video>
     </div>
     <div class="desc">
       <p>${this.title}</p>
-      <div class="likes">
-        <p class="likesP">${this.likes}</p>
-        <i tabindex="0" class="fas fa-heart"></i>
+      <div class="likes" tabindex="0">
+        <p class="likesP" aria-label="${this.likes}">${this.likes}</p>
+        <i tabindex="0" aria-label="coeur" class="fas fa-heart"></i>
       </div>
     </div></div>`;
   }
   /* Création des vidéos contenues dans la lightbox */
   createHtmlSlider(){
-    return `<div class="slider__image"><video controls><source src="images/${id}/${this.video}" alt="${this.alt}" ></video>
+    return `<div class="slider__image"><video controls><source src="images/${id}/${this.video}" alt="${this.alt}" aria-label="${this.title}" ></video>
     <span class="slider__text">${this.title}</span></div>`;
   }
 }

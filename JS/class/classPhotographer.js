@@ -15,8 +15,8 @@ class NewPhotograph{
     /* création des cartes photographes */
     return `<div tabindex="-1" id="${this.id}" class="card">
     <a href='photographer-page.html?cardSelected=${this.number}&id=${this.id}' 
-    tabindex="0" aria-label = "Le photographe ${this.name} qui vient de ${this.city} en 
-    ${this.country}.Ce photographe est spécialisé en ${this.tags}, sont tarif est de ${this.price}.Sa devise est ${this.tagline}" 
+     aria-label = "Le photographe ${this.name} qui vient de ${this.city} en 
+    ${this.country} Ce photographe est spécialisé en ${this.tags}, sont tarif est de ${this.price} euros par jours, Sa devise est ${this.tagline}" 
     class="card__vignette"><div class="card__picture"> 
     <img src="images/Photographers_ID_Photos/${this.portrait}" alt="id_${this.name}">
     </div>
@@ -35,15 +35,15 @@ class NewPhotograph{
     /* création de la page photographe */
     return ` <div tabindex="-1" role="dialog" aria-modal="false" aria-hidden="true" id="slider" class="slider">
     <span id="closeSlider" class="closeSlider" aria-label="Close dialog" alt="Close dialog"></span>
-    <i id="chevron-left" class="fas fa-chevron-left" aria-label="previous image" alt="previous image" ></i>
-    <i id="chevron-right" class="fas fa-chevron-right" aria-label="Next image" alt="Next image"></i>
-    <div id="slider__container" class="slider__container" aria-label="image closeup view">
+    <i id="chevron-left" class="fas fa-chevron-left" aria-label="image précédente" alt="previous image" ></i>
+    <i id="chevron-right" class="fas fa-chevron-right" aria-label="prochaine image" alt="Next image"></i>
+    <div id="slider__container" class="slider__container" aria-label="vue agrandi de l'image">
     </div>
     </div>
     <div tabindex="-1" role="dialog" aria-modal="false" aria-hidden="true" id="bground" class="bground">
     <div id="content" class="content">
-    <span class="close" aria-label="Close Contact form"></span>
-    <div class="modal-body" aria-labelledby="modal-header" aria-label="Contact me ${this.name}">
+    <span class="close" aria-label="fermer le formulaire"></span>
+    <div class="modal-body" aria-labelledby="modal-header" aria-label="Contactez moi ${this.name}">
         <form id='form' name="reserve" action="photographer-page.html" >
         <div id="modal-header" class="modal-header">
             <p>Contactez-moi</p>
@@ -65,7 +65,7 @@ class NewPhotograph{
             <label id="message" for="msg">Message</label><br>
             <textarea id="msg" name="user_message" rows="4" aria-labelledby="message" name="" aria-label="Your message"></textarea>
         </div>
-        <input id="btn-submit" class="btn-submit button" type="button" value="Envoyer" aria-label="send"/>
+        <input id="btn-submit" class="btn-submit button" type="button" value="Envoyer" aria-label="envoyer"/>
         </form>
         </div>
     </div>
@@ -76,8 +76,8 @@ class NewPhotograph{
     <section id="panel_section">
     <div class="panel">
       <div class="panel panel--split margin">
-        <div tabindex="0" aria-label ="${this.name}" id="panel__description" class="panel__description">
-            <h2 class="panel__name" aria-label="${this.name}">${this.name}</h2>
+        <div tabindex="0" aria-label ="${this.name} qui vient de ${this.city} ${this.country} spécialisé en ${this.tagline}" id="panel__description" class="panel__description">
+            <h2 class="panel__name">${this.name}</h2>
             <h3 class="panel__location">${this.city}, ${this.country}</h3>
             <h4 class="panel__quote">${this.tagline}</h4>
         <nav class="nav nav_panel">
@@ -85,7 +85,7 @@ class NewPhotograph{
           </ul>
         </nav>
         </div>
-        <a id="panel__btn" class="panel__btn" href="#" tabindex="0" aria-label="Contact Me">Contactez-moi</a>
+        <a id="panel__btn" class="panel__btn" href="#" tabindex="0" aria-label="Contactez-moi">Contactez-moi</a>
       </div>
       <div tabindex="0" class="card card__picture image__panel" aria-label="photo de ${this.name}"><img src="images/Photographers_ID_Photos/${this.portrait}" alt="${this.name}"></div></div>
     </section>
@@ -94,9 +94,9 @@ class NewPhotograph{
       <p id="Trier" class="article__title" aria-label=" Trier par">Trier par</p>
       <div class="dropdown">
         <div tabindex="0" class="dropdown__content">
-          <a tabindex="0" href="" class="dropdown__content__link icon arrow" aria-labelledby="Trier">Popularité</a>
-          <a tabindex="0" href="" class="dropdown__content__link dropdown__content__sub" aria-labelledby="Trier">Date</a>
-          <a tabindex="0" href="" class="dropdown__content__link  dropdown__content__sub delborder" aria-labelledby="Trier">Titre</a>
+          <a tabindex="0" href="" class="dropdown__content__link icon arrow" aria-label="Trier par Popularité">Popularité</a>
+          <a tabindex="0" href="" class="dropdown__content__link dropdown__content__sub" aria-label="Trier par Date">Date</a>
+          <a tabindex="0" href="" class="dropdown__content__link  dropdown__content__sub delborder" aria-label="Trier par Titre">Titre</a>
         </div>
       </div>
     </div>
@@ -105,7 +105,7 @@ class NewPhotograph{
     </article>
     <aside id="likes"class="pricelikes">
     <div class="likes-heart"><p id="likes-total"></p><i class="fas fa-heart"></i></div>
-    <p>${this.price}/jour</p>
+    <p aria-label="${this.price} par jour">${this.price}/jour</p>
     </aside>`;
   }
   
@@ -114,7 +114,7 @@ class NewPhotograph{
     let array = this.tags;
     const arrayRawHtml = [];
     for (let index = 0; index < array.length; index++) {
-      const rawHtml = `<li tabindex="0" aria-label="Tag ${array[index]}"><a href="#" tabindex="-1" >${array[index]}</a></li>`;
+      const rawHtml = `<li tabindex="-1" aria-label="Tag ${array[index]}"><a href="#" tabindex="-1" >${array[index]}</a></li>`;
       arrayRawHtml.push(rawHtml);
     };
     return arrayRawHtml.join('');
