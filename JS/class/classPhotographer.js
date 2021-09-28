@@ -76,7 +76,7 @@ class NewPhotograph{
     <section id="panel_section">
     <div class="panel">
       <div class="panel panel--split margin">
-        <div tabindex="0" aria-label ="${this.name} qui vient de ${this.city} ${this.country} spécialisé en ${this.tagline}" id="panel__description" class="panel__description">
+        <div tabindex="0" aria-label ="${this.name} qui vient de ${this.city} en ${this.country} sa devise est ${this.tagline} spécialisé en ${this.tags}" id="panel__description" class="panel__description">
             <h2 class="panel__name">${this.name}</h2>
             <h3 class="panel__location">${this.city}, ${this.country}</h3>
             <h4 class="panel__quote">${this.tagline}</h4>
@@ -93,7 +93,7 @@ class NewPhotograph{
     <div class="article__header">
       <p id="Trier" class="article__title" aria-label=" Trier par">Trier par</p>
       <div class="dropdown">
-        <div tabindex="0" class="dropdown__content">
+        <div class="dropdown__content">
           <a tabindex="0" href="" class="dropdown__content__link icon arrow" aria-label="Trier par Popularité">Popularité</a>
           <a tabindex="0" href="" class="dropdown__content__link dropdown__content__sub" aria-label="Trier par Date">Date</a>
           <a tabindex="0" href="" class="dropdown__content__link  dropdown__content__sub delborder" aria-label="Trier par Titre">Titre</a>

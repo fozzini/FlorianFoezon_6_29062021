@@ -27,8 +27,8 @@ class Image {
     <div class="desc">
       <p >${this.title}</p>
       <div class="likes" tabindex="0">
-        <p class="likesP" aria-label="${this.likes}">${this.likes}</p>
-        <i tabindex="0" aria-label="coeur" class="fas fa-heart" alt="likes" ></i>
+        <p class="likesP" aria-label="${this.likes} j'aime">${this.likes}</p>
+        <i tabindex="0" aria-label="cliquez pour ajouter un j'aime" class="fas fa-heart" alt="likes" ></i>
       </div>
     </div>
     </div>
@@ -36,7 +36,7 @@ class Image {
   }
   /* Création des images contenues dans la lightbox */
   createHtmlSlider(){
-    return `<div class="slider__image"><img src="images/${id}/${this.image}" alt="${this.alt}" aria-label="${this.title}" >
+    return `<div class="slider__image"><img tabindex="0" src="images/${id}/${this.image}" alt="${this.alt}" aria-label="${this.title}" >
     <span class="slider__text">${this.title}</span></div>`;
   }
 }
@@ -62,14 +62,14 @@ class Video {
     <div class="desc">
       <p>${this.title}</p>
       <div class="likes" tabindex="0">
-        <p class="likesP" aria-label="${this.likes}">${this.likes}</p>
-        <i tabindex="0" aria-label="coeur" class="fas fa-heart"></i>
+        <p class="likesP" aria-label="${this.likes} j'aime">${this.likes}</p>
+        <i tabindex="0" aria-label="cliquez pour ajouter un j'aime" class="fas fa-heart" alt="likes" ></i>
       </div>
     </div></div>`;
   }
   /* Création des vidéos contenues dans la lightbox */
   createHtmlSlider(){
-    return `<div class="slider__image"><video controls><source src="images/${id}/${this.video}" alt="${this.alt}" aria-label="${this.title}" ></video>
+    return `<div class="slider__image"><video tabindex="0" controls><source src="images/${id}/${this.video}" alt="${this.alt}" aria-label="${this.title}" ></video>
     <span class="slider__text">${this.title}</span></div>`;
   }
 }
