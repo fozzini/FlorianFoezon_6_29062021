@@ -49,15 +49,15 @@
       line-height: calc(83px * 0.70);
     }
     @media all and (max-width: 670px){
-      font-size: calc(55px * 0.50);
-      margin-top: calc(15px * 0.50);
-      line-height: calc(83px * 0.50);
+      font-size: calc(55px * 0.60);
+      margin-top: calc(15px * 0.60);
+      line-height: calc(83px * 0.60);
       margin-top:0px;
     }    
     @media all and (max-width: 380px){
-      font-size: calc(55px * 0.30);
-      margin-top: calc(15px * 0.30);
-      line-height: calc(83px * 0.30);
+      font-size: calc(55px * 0.50);
+      margin-top: calc(15px * 0.50);
+      line-height: calc(83px * 0.50);
     } 
   }
   &__location{
@@ -74,14 +74,14 @@
       line-height: calc(31px * 0.70);
     }
     @media all and (max-width: 670px){
+      font-size: calc(24px * 0.60);
+      margin-top: calc(3px * 0.60);
+      line-height: calc(31px * 0.60);
+    } 
+    @media all and (max-width: 380px){
       font-size: calc(24px * 0.50);
       margin-top: calc(3px * 0.50);
       line-height: calc(31px * 0.50);
-    } 
-    @media all and (max-width: 380px){
-      font-size: calc(24px * 0.40);
-      margin-top: calc(3px * 0.40);
-      line-height: calc(31px * 0.40);
     }  
   }
   &__quote{
@@ -97,14 +97,14 @@
       line-height: calc(23px * 0.70);
     }
     @media all and (max-width: 670px){
+      font-size: calc(18px * 0.60);
+      margin-top: calc(3px * 0.60);
+      line-height: calc(23px * 0.60);
+    }  
+    @media all and (max-width: 380px){
       font-size: calc(18px * 0.50);
       margin-top: calc(3px * 0.50);
       line-height: calc(23px * 0.50);
-    }  
-    @media all and (max-width: 380px){
-      font-size: calc(18px * 0.40);
-      margin-top: calc(3px * 0.40);
-      line-height: calc(23px * 0.40);
     } 
   }   
   &__btn{
@@ -191,9 +191,9 @@
     width: 75px;
     height: 75px;
 }
-@media all and (max-width: 400px){
-  width: 50px;
-  height: 50px;
+@media all and (max-width: 350px){
+  width: 65px;
+  height: 65px;
 }
   
 }
