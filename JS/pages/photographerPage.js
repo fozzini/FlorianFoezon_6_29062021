@@ -63,9 +63,9 @@ const events = async () => {
     submitFormEvent();
     closeModaleEvent();
     mediaSortEvent();
+    lightBoxKeyboardEvent();
     previousArrow();
     nextArrow();
-    lightBoxKeyboardEvent();
     modaleKeyboardEvent();
 }
 events();

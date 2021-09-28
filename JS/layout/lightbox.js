@@ -61,9 +61,10 @@ const lightBoxKeyboardEvent = () => {
     const container = document.getElementsByClassName("slider__image");
     const focusableSelector = 'i';
     let focusables = Array.from(slider.querySelectorAll(focusableSelector));
+    let slides = document.getElementsByClassName("slider__image");
     let index = focusables.findIndex(f => f === slider.querySelector(':focus'));
     slider.addEventListener('keydown',e => {
-        e.preventDefault();
+        
         if(e.key === "ArrowLeft"){
             plusSlides(-1);
         }
@@ -77,6 +78,7 @@ const lightBoxKeyboardEvent = () => {
             }  
         }
         if(e.shiftKey && e.key === 'Tab'){
+            e.preventDefault();
             index--
             if (index < 0){
                 index = focusables.length - 1;
@@ -84,6 +86,7 @@ const lightBoxKeyboardEvent = () => {
             focusables[index].focus();
         }
         else if(e.key === 'Tab'){
+            e.preventDefault();
             index++;
             if (index >= focusables.length) {
                 index = 0 ;
