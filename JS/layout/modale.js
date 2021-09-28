@@ -6,7 +6,7 @@ const displayModaleEvent = () => {
         modale.style.display = "flex";
         modale.removeAttribute("aria-hidden");
         modale.setAttribute("tabindex", "0");
-        modale.setAttribute("aria-modal", "true");
+        modale.setAttribute("aria-modal", "true"); 
         document.getElementById("first").focus();
     })
 };
@@ -45,7 +45,10 @@ const modaleKeyboardEvent = () => {
     let index = focusables.findIndex(f => f === modale.querySelector(':focus'));
     modale.addEventListener('keydown',e => {
         if(e.key === "Escape"){
-            modale.style.display = "none"
+            modale.style.display = "none";
+            modale.setAttribute("aria-hidden", true);
+            modale.setAttribute("tabindex", "-1");
+            modale.removeAttribute("aria-modal");
         }  
         if(e.shiftKey && e.key === 'Tab'){
             e.preventDefault();
@@ -65,8 +68,22 @@ const modaleKeyboardEvent = () => {
         }
     });
 }
+const btnKeyboardEvent = () => {
+    const btnContact = document.getElementById("panel__btn");
+    const modale = document.getElementById("bground");
+    btnContact.addEventListener('keydown',e => {
+        if(e.key === "Enter"){
+            modale.style.display = "flex";
+            modale.removeAttribute("aria-hidden");
+            modale.setAttribute("tabindex", "0");
+            modale.setAttribute("aria-modal", "true"); 
+            document.getElementById("first").focus();
+        }
+    })
+}
 
 export {displayModaleEvent};
 export {submitFormEvent};
 export {closeModaleEvent};
 export {modaleKeyboardEvent};
+export {btnKeyboardEvent};

@@ -71,7 +71,7 @@ class NewPhotograph{
     </div>
     </div>
     <header class="header-photographer">
-    <a href="index.html" class="logo"><img src="images/logo/logo.svg" aria-label = "retour à la page d'acceuil" alt="Fisheye Home page"></a>
+    <a href="index.html" class="logo"><img class="logo__img img--margin" src="images/logo/logo.svg" aria-label = "retour à la page d'acceuil" alt="Fisheye Home page"></a>
     </header>
     <section id="panel_section">
     <div class="panel">
@@ -85,7 +85,7 @@ class NewPhotograph{
           </ul>
         </nav>
         </div>
-        <a id="panel__btn" class="panel__btn" href="#" tabindex="0" aria-label="Contactez-moi">Contactez-moi</a>
+        <button id="panel__btn" class="panel__btn" href="#" tabindex="0" aria-label="Contactez-moi">Contactez-moi</button>
       </div>
       <div tabindex="0" class="card card__picture image__panel" aria-label="photo de ${this.name}"><img src="images/Photographers_ID_Photos/${this.portrait}" alt="${this.name}"></div></div>
     </section>

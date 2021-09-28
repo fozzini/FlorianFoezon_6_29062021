@@ -1,7 +1,7 @@
 import NewPhotograph from '../class/classPhotographer.js';
 import MediaFactory from '../class/mediaFactory.js';
 import {getPhotographers} from '../utils/getJson.js';
-import {displayModaleEvent} from "../layout/modale.js";
+import {btnKeyboardEvent, displayModaleEvent} from "../layout/modale.js";
 import {submitFormEvent} from "../layout/modale.js";
 import {closeModaleEvent} from "../layout/modale.js";
 import {modaleKeyboardEvent} from "../layout/modale.js";
@@ -66,6 +66,7 @@ const events = async () => {
     lightBoxKeyboardEvent();
     previousArrow();
     nextArrow();
+    btnKeyboardEvent();
     modaleKeyboardEvent();
 }
 events();
