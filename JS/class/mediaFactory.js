@@ -26,7 +26,7 @@ class Image {
     <div class="desc">
       <p >${this.title}</p>
       <div class="likes" >
-        <p tabindex="0" class="likesP" aria-label="${this.likes}" j'aime">${this.likes}</p>
+        <p tabindex="0" class="likesP" aria-label="${this.likes} j'aime">${this.likes}</p>
         <p tabindex="0" class="likePHeart" aria-label="cliquez pour ajouter un j'aime"  alt="likes" ><i class="fas fa-heart description"></i></p>
       </div>
     </div>
@@ -60,7 +60,7 @@ class Video {
     <div class="desc">
       <p>${this.title}</p>
       <div class="likes">
-        <p tabindex="0" class="likesP" aria-label="${this.likes}" j'aime">${this.likes}</p>
+        <p tabindex="0" class="likesP" aria-label="${this.likes} j'aime">${this.likes}</p>
         <p tabindex="0" class="likePHeart" aria-label="cliquez pour ajouter un j'aime"  alt="likes" ><i class="fas fa-heart description"></i></p>
       </div>
     </div></div>`;
