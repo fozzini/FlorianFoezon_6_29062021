@@ -1,8 +1,6 @@
 
 import {getMedia} from '../utils/getJson.js';
-import { mediaArray } from '../pages/photographerPage.js';
-import { displayMedia } from '../pages/photographerPage.js';
-import { id } from '../pages/photographerPage.js';
+import { mediaArray,displayMedia,id } from '../pages/photographerPage.js';
 
 /* filtrage des medias par rapport au photographe */
 const filterMedia = async () => {
@@ -15,81 +13,69 @@ const filterMedia = async () => {
         mediaArray.push(element);
     }
 };
-/* triage des photos */
+/* Evènement de triage des photos */
 const mediaSortEvent = () => {
-    const slots=document.getElementsByClassName("dropdown__content__link")
-    const configPopularity = ()=>{slots[0].innerHTML = "Popularité";
-    slots[1].innerHTML = "Date";
-    slots[2].innerHTML = "Titre";};
-    const configDate = ()=>{slots[0].innerHTML = "Date";
-    slots[1].innerHTML = "Popularité";
-    slots[2].innerHTML = "Titre";};
-    const configTitle = ()=>{slots[0].innerHTML = "Titre";
-    slots[1].innerHTML = "Date";
-    slots[2].innerHTML = "Popularité";};
+    const slots=document.getElementsByClassName("dropdown__content__link");
     for (let i = 0; i < slots.length; i++) {
-        slots[i].addEventListener("click", (e) =>{
-            e.preventDefault();
-            switch (slots[i].innerHTML) {
-                case "Popularité":
-                    displayMedia(mediaArray.sort((a, b) => b.likes - a.likes));
-                    configPopularity();
-                    break;
-                case "Date":
-                    displayMedia(mediaArray.sort(function (a, b) {
-                        var dateA = new Date(a.date), dateB = new Date(b.date)
-                        return dateA - dateB
-                    }));
-                    configDate();
-                    break;
-                case "Titre":
-                    displayMedia(mediaArray.sort((a, b) => {
-                        let fa = a.title,
-                            fb = b.title;
-                        if (fa < fb) {
-                            return -1;
-                        }
-                        if (fa > fb) {
-                            return 1;
-                        }
-                        return 0;
-                    }));
-                    configTitle();
-                    break;
-            }
-        })
-        slots[i].onkeydown = (e) => {if(e.key === "Enter"){ 
-            e.preventDefault();
-            switch (slots[i].innerHTML) {
-            case "Popularité":
-                displayMedia(mediaArray.sort((a, b) => b.likes - a.likes));
-                configPopularity();
-                break;
-            case "Date":
-                displayMedia(mediaArray.sort(function (a, b) {
-                    var dateA = new Date(a.date), dateB = new Date(b.date)
-                    return dateA - dateB
-                }));
-                configDate();
-                break;
-            case "Titre":
-                displayMedia(mediaArray.sort((a, b) => {
-                    let fa = a.title,
-                        fb = b.title;
-                    if (fa < fb) {
-                        return -1;
-                    }
-                    if (fa > fb) {
-                        return 1;
-                    }
-                    return 0;
-                }));
-                configTitle();
-                break;}
-            }
-        }
+        slots[i].addEventListener("click", (e) =>{mediaSort(i, e)})
+        slots[i].onkeydown = (e) => {if(e.key === "Enter"){mediaSort(i)}}
     }
 }
+/* Triage des photos */
+const mediaSort = (i, e) =>{
+    const slots=document.getElementsByClassName("dropdown__content__link");
+    e.preventDefault();
+    switch (slots[i].innerHTML) {
+        case "Popularité":
+            displayMedia(mediaArray.sort((a, b) => b.likes - a.likes));
+            configSort("popularity");
+            break;
+        case "Date":
+            displayMedia(mediaArray.sort(function (a, b) {
+                var dateA = new Date(a.date), dateB = new Date(b.date)
+                return dateA - dateB
+            }));
+            configSort("date");
+            break;
+        case "Titre":
+            displayMedia(mediaArray.sort((a, b) => {
+                let fa = a.title,
+                    fb = b.title;
+                if (fa < fb) {
+                    return -1;
+                }
+                if (fa > fb) {
+                    return 1;
+                }
+                return 0;
+            }));
+            configSort("title");
+            break;
+    }
+}
+/* Configuration du triage */
+const configSort = (config) => {
+    const slots=document.getElementsByClassName("dropdown__content__link");
+    let a=0;
+    let b=1;
+    let c=2;
+
+    if (config == "date"){
+        a=2;b=0;c=1;
+    }
+    else if (config == "title"){
+        a=1;b=2;c=0;
+    }
+    else{}
+    
+    slots[a].innerHTML = "Popularité";
+    slots[a].setAttribute("aria-label", "Trier par Popularité");
+    slots[b].innerHTML = "Date";
+    slots[b].setAttribute("aria-label", "Trier par Date");
+    slots[c].innerHTML = "Titre";
+    slots[c].setAttribute("aria-label", "Trier par Titre");
+}
+
 
 export{filterMedia}
 export{mediaSortEvent}

@@ -94,9 +94,9 @@ class NewPhotograph{
       <p id="Trier" class="article__title" aria-label=" Trier par">Trier par</p>
       <div class="dropdown">
         <div class="dropdown__content">
-          <a tabindex="0" href="" class="dropdown__content__link icon arrow" aria-label="Trier par Popularité">Popularité</a>
-          <a tabindex="0" href="" class="dropdown__content__link dropdown__content__sub" aria-label="Trier par Date">Date</a>
-          <a tabindex="0" href="" class="dropdown__content__link  dropdown__content__sub delborder" aria-label="Trier par Titre">Titre</a>
+          <a tabindex="0" href="" class="dropdown__content__link icon arrow" role="button" aria-haspopup="listbox" aria-expanded="true" aria-label="Trier par Popularité">Popularité</a>
+          <a tabindex="0" href="" class="dropdown__content__link dropdown__content__sub" role="listbox" aria-activedescendant="true" aria-label="Trier par Date">Date</a>
+          <a tabindex="0" href="" class="dropdown__content__link  dropdown__content__sub delborder" role="listbox" aria-activedescendant="true" aria-label="Trier par Titre">Titre</a>
         </div>
       </div>
     </div>
