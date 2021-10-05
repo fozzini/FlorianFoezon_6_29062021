@@ -33,14 +33,14 @@ class NewPhotograph{
   
   createHtmlPhotographerPage(){
     /* création de la page photographe */
-    return ` <div tabindex="-1" role="dialog" aria-modal="false" aria-hidden="true" id="slider" class="slider">
+    return ` <div tabindex="-1" role="dialog" aria-hidden="true" id="slider" class="slider">
     <span id="closeSlider" class="closeSlider" aria-label="Close dialog" alt="Close dialog"></span>
     <i id="chevron-left" class="fas fa-chevron-left" aria-label="image précédente" alt="previous image" ></i>
     <i id="chevron-right" class="fas fa-chevron-right" aria-label="prochaine image" alt="Next image"></i>
     <div id="slider__container" class="slider__container" aria-label="vue agrandi de l'image">
     </div>
     </div>
-    <div tabindex="-1" role="dialog" aria-modal="false" aria-hidden="true" id="bground" class="bground">
+    <div tabindex="-1" role="dialog" aria-hidden="true" id="bground" class="bground">
     <div id="content" class="content">
     <span class="close" aria-label="fermer le formulaire"></span>
     <div class="modal-body" aria-labelledby="modal-header" aria-label="Contactez moi ${this.name}">
@@ -71,7 +71,7 @@ class NewPhotograph{
     </div>
     </div>
     <header class="header-photographer">
-    <a href="index.html" class="logo"><img src="images/logo/logo.svg" aria-label = "retour à la page d'acceuil" alt="Fisheye Home page"></a>
+    <a href="index.html" class="logo"><img class="logo__img img--margin" src="images/logo/logo.svg" aria-label = "retour à la page d'acceuil" alt="Fisheye Home page"></a>
     </header>
     <section id="panel_section">
     <div class="panel">
@@ -85,7 +85,7 @@ class NewPhotograph{
           </ul>
         </nav>
         </div>
-        <a id="panel__btn" class="panel__btn" href="#" tabindex="0" aria-label="Contactez-moi">Contactez-moi</a>
+        <button id="panel__btn" class="panel__btn" href="#" tabindex="0" aria-label="Contactez-moi">Contactez-moi</button>
       </div>
       <div tabindex="0" class="card card__picture image__panel" aria-label="photo de ${this.name}"><img src="images/Photographers_ID_Photos/${this.portrait}" alt="${this.name}"></div></div>
     </section>
@@ -93,10 +93,10 @@ class NewPhotograph{
     <div class="article__header">
       <p id="Trier" class="article__title" aria-label=" Trier par">Trier par</p>
       <div class="dropdown">
-        <div class="dropdown__content">
-          <a tabindex="0" href="" class="dropdown__content__link icon arrow" aria-label="Trier par Popularité">Popularité</a>
-          <a tabindex="0" href="" class="dropdown__content__link dropdown__content__sub" aria-label="Trier par Date">Date</a>
-          <a tabindex="0" href="" class="dropdown__content__link  dropdown__content__sub delborder" aria-label="Trier par Titre">Titre</a>
+        <div class="dropdown__content" role="listbox" aria-activedescendant>
+          <a tabindex="0" href="" class="dropdown__content__link icon arrow" role="option" aria-label="Trier par Popularité">Popularité</a>
+          <a tabindex="0" href="" class="dropdown__content__link dropdown__content__sub" role="option" aria-label="Trier par Date">Date</a>
+          <a tabindex="0" href="" class="dropdown__content__link  dropdown__content__sub delborder" role="option" aria-label="Trier par Titre">Titre</a>
         </div>
       </div>
     </div>

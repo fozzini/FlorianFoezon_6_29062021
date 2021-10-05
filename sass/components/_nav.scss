@@ -84,4 +84,31 @@
 }
 .nav_panel{
     justify-content: normal;
+    ul{
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: auto;
+        
+       
+         
+    }
+    li{
+        @media all and (max-width: 350px){
+            padding:2px;
+        }
+    }
+    li::before{
+            
+        @media all and (max-width: 400px){
+            font-size: 10px;
+        }
+    }
+    a{
+        @media all and (max-width: 400px){
+            font-size: 10px;
+        }
+        @media all and (max-width: 350px){
+            font-size: 8px;
+        }
+    }
 }

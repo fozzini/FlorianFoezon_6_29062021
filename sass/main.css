@@ -855,33 +855,62 @@ textarea:focus {
 .nav_panel {
   justify-content: normal;
 }
+.nav_panel ul {
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: auto;
+}
+@media all and (max-width: 350px) {
+  .nav_panel li {
+    padding: 2px;
+  }
+}
+@media all and (max-width: 400px) {
+  .nav_panel li::before {
+    font-size: 10px;
+  }
+}
+@media all and (max-width: 400px) {
+  .nav_panel a {
+    font-size: 10px;
+  }
+}
+@media all and (max-width: 350px) {
+  .nav_panel a {
+    font-size: 8px;
+  }
+}
 
-.logo {
+.logo, .logo__img {
   margin-top: 2.65rem;
   width: 12.5rem;
   height: 3.125rem;
 }
 @media all and (max-width: 1150px) {
-  .logo {
+  .logo, .logo__img {
     width: 9.5rem;
   }
 }
 @media all and (max-width: 1036px) {
-  .logo {
+  .logo, .logo__img {
     order: 1;
     width: 50%;
     margin-bottom: 20px;
   }
 }
 @media all and (max-width: 525px) {
-  .logo {
+  .logo, .logo__img {
     width: 8rem;
   }
 }
 @media all and (max-width: 360px) {
-  .logo {
-    width: 6rem;
+  .logo, .logo__img {
+    width: 7rem;
   }
+}
+
+.img--margin {
+  margin: 0px;
 }
 
 .cta {
@@ -984,7 +1013,8 @@ textarea:focus {
 .panel {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  height: auto;
   padding-right: 30px;
   padding-top: 0px;
   margin-top: 30px;
@@ -1022,8 +1052,9 @@ textarea:focus {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  margin: 0px;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 @media all and (max-width: 670px) {
   .panel__description {
@@ -1048,17 +1079,17 @@ textarea:focus {
 }
 @media all and (max-width: 670px) {
   .panel__name {
-    font-size: calc(55px * 0.50);
-    margin-top: calc(15px * 0.50);
-    line-height: calc(83px * 0.50);
+    font-size: calc(55px * 0.60);
+    margin-top: calc(15px * 0.60);
+    line-height: calc(83px * 0.60);
     margin-top: 0px;
   }
 }
 @media all and (max-width: 380px) {
   .panel__name {
-    font-size: calc(55px * 0.30);
-    margin-top: calc(15px * 0.30);
-    line-height: calc(83px * 0.30);
+    font-size: calc(55px * 0.50);
+    margin-top: calc(15px * 0.50);
+    line-height: calc(83px * 0.50);
   }
 }
 .panel__location {
@@ -1079,16 +1110,16 @@ textarea:focus {
 }
 @media all and (max-width: 670px) {
   .panel__location {
-    font-size: calc(24px * 0.50);
-    margin-top: calc(3px * 0.50);
-    line-height: calc(31px * 0.50);
+    font-size: calc(24px * 0.60);
+    margin-top: calc(3px * 0.60);
+    line-height: calc(31px * 0.60);
   }
 }
 @media all and (max-width: 380px) {
   .panel__location {
-    font-size: calc(24px * 0.40);
-    margin-top: calc(3px * 0.40);
-    line-height: calc(31px * 0.40);
+    font-size: calc(24px * 0.50);
+    margin-top: calc(3px * 0.50);
+    line-height: calc(31px * 0.50);
   }
 }
 .panel__quote {
@@ -1108,35 +1139,32 @@ textarea:focus {
 }
 @media all and (max-width: 670px) {
   .panel__quote {
-    font-size: calc(18px * 0.50);
-    margin-top: calc(3px * 0.50);
-    line-height: calc(23px * 0.50);
+    font-size: calc(18px * 0.60);
+    margin-top: calc(3px * 0.60);
+    line-height: calc(23px * 0.60);
   }
 }
 @media all and (max-width: 380px) {
   .panel__quote {
-    font-size: calc(18px * 0.40);
-    margin-top: calc(3px * 0.40);
-    line-height: calc(23px * 0.40);
+    font-size: calc(18px * 0.50);
+    margin-top: calc(3px * 0.50);
+    line-height: calc(23px * 0.50);
   }
 }
 .panel__btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
   padding: 21px 11px;
   font-weight: bold;
   font-size: 20px;
   line-height: 26px;
-  align-items: center;
   text-align: center;
   color: #FFFFFF;
   background: #911C1C;
   border-radius: 5px;
-  text-decoration: none;
-  align-self: flex-start;
-  margin-top: 60px;
+  border: none;
+  margin-top: 50px;
   width: 30%;
 }
 @media all and (max-width: 1225px) {
@@ -1190,6 +1218,7 @@ textarea:focus {
 
 .margin {
   margin-left: 45px;
+  margin-top: 0;
 }
 @media all and (max-width: 925px) {
   .margin {
@@ -1205,10 +1234,14 @@ textarea:focus {
 }
 
 .image__panel {
-  width: 200px;
-  height: 200px;
+  display: flex;
+  align-self: center;
+  width: 175px;
+  height: 175px;
   -o-object-fit: cover;
      object-fit: cover;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 @media all and (max-width: 850px) {
   .image__panel {
@@ -1221,6 +1254,18 @@ textarea:focus {
   .image__panel {
     width: 100px;
     height: 100px;
+  }
+}
+@media all and (max-width: 400px) {
+  .image__panel {
+    width: 75px;
+    height: 75px;
+  }
+}
+@media all and (max-width: 350px) {
+  .image__panel {
+    width: 65px;
+    height: 65px;
   }
 }
 /*# sourceMappingURL=main.css.map *//*# sourceMappingURL=main.css.map */

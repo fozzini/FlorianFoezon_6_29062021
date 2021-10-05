@@ -1,6 +1,6 @@
 .panel{
-  @include alignFlex(space-between,center);
-  
+  @include alignFlex(space-between, flex-start);
+  height: auto;
   padding-right:30px;
   padding-top: 0px;
   margin-top:30px;
@@ -27,11 +27,13 @@
   }
   &__description{
     @include alignFlex(center,flex-start);
+    margin: 0px;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 50px;
     @media all and (max-width: 670px){
-      margin-top: 0px;
+    margin-top: 0px;
     }
+    
   }
   &__name{
     font-weight: normal;
@@ -47,15 +49,15 @@
       line-height: calc(83px * 0.70);
     }
     @media all and (max-width: 670px){
-      font-size: calc(55px * 0.50);
-      margin-top: calc(15px * 0.50);
-      line-height: calc(83px * 0.50);
+      font-size: calc(55px * 0.60);
+      margin-top: calc(15px * 0.60);
+      line-height: calc(83px * 0.60);
       margin-top:0px;
     }    
     @media all and (max-width: 380px){
-      font-size: calc(55px * 0.30);
-      margin-top: calc(15px * 0.30);
-      line-height: calc(83px * 0.30);
+      font-size: calc(55px * 0.50);
+      margin-top: calc(15px * 0.50);
+      line-height: calc(83px * 0.50);
     } 
   }
   &__location{
@@ -72,14 +74,14 @@
       line-height: calc(31px * 0.70);
     }
     @media all and (max-width: 670px){
+      font-size: calc(24px * 0.60);
+      margin-top: calc(3px * 0.60);
+      line-height: calc(31px * 0.60);
+    } 
+    @media all and (max-width: 380px){
       font-size: calc(24px * 0.50);
       margin-top: calc(3px * 0.50);
       line-height: calc(31px * 0.50);
-    } 
-    @media all and (max-width: 380px){
-      font-size: calc(24px * 0.40);
-      margin-top: calc(3px * 0.40);
-      line-height: calc(31px * 0.40);
     }  
   }
   &__quote{
@@ -95,31 +97,28 @@
       line-height: calc(23px * 0.70);
     }
     @media all and (max-width: 670px){
+      font-size: calc(18px * 0.60);
+      margin-top: calc(3px * 0.60);
+      line-height: calc(23px * 0.60);
+    }  
+    @media all and (max-width: 380px){
       font-size: calc(18px * 0.50);
       margin-top: calc(3px * 0.50);
       line-height: calc(23px * 0.50);
-    }  
-    @media all and (max-width: 380px){
-      font-size: calc(18px * 0.40);
-      margin-top: calc(3px * 0.40);
-      line-height: calc(23px * 0.40);
     } 
   }   
   &__btn{
     @include alignFlex;
-    display:flex;
     padding : 21px 11px;
     font-weight: bold;
     font-size: 20px;
     line-height: 26px;
-    align-items: center;
     text-align: center;
     color: #FFFFFF;
     background: #911C1C;
     border-radius: 5px;
-    text-decoration: none;
-    align-self:flex-start;
-    margin-top:60px;
+    border: none;
+    margin-top:50px;
     width:30%;
     @media all and (max-width: 1225px){
       font-size: 15px; 
@@ -161,6 +160,7 @@
 }
 .margin{
   margin-left: 45px;
+  margin-top: 0;
   @media all and (max-width: 925px){
     margin-left: 0px;
   }
@@ -171,9 +171,13 @@
   }
 }
 .image__panel{
-  width: 200px;
-  height: 200px;
+  display: flex;
+  align-self: center;
+  width: 175px;
+  height: 175px;
   object-fit: cover;
+  margin-top : 50px;
+  margin-bottom: 50px;
   @media all and (max-width: 850px){
     margin-top: 0;
     width: 150px;
@@ -183,4 +187,13 @@
     width: 100px;
     height: 100px;
   }
+  @media all and (max-width: 400px){
+    width: 75px;
+    height: 75px;
+}
+@media all and (max-width: 350px){
+  width: 65px;
+  height: 65px;
+}
+  
 }
