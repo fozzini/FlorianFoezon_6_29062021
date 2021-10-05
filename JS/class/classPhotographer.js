@@ -33,14 +33,14 @@ class NewPhotograph{
   
   createHtmlPhotographerPage(){
     /* création de la page photographe */
-    return ` <div tabindex="-1" role="dialog" aria-modal="false" aria-hidden="true" id="slider" class="slider">
+    return ` <div tabindex="-1" role="dialog" aria-hidden="true" id="slider" class="slider">
     <span id="closeSlider" class="closeSlider" aria-label="Close dialog" alt="Close dialog"></span>
     <i id="chevron-left" class="fas fa-chevron-left" aria-label="image précédente" alt="previous image" ></i>
     <i id="chevron-right" class="fas fa-chevron-right" aria-label="prochaine image" alt="Next image"></i>
     <div id="slider__container" class="slider__container" aria-label="vue agrandi de l'image">
     </div>
     </div>
-    <div tabindex="-1" role="dialog" aria-modal="false" aria-hidden="true" id="bground" class="bground">
+    <div tabindex="-1" role="dialog" aria-hidden="true" id="bground" class="bground">
     <div id="content" class="content">
     <span class="close" aria-label="fermer le formulaire"></span>
     <div class="modal-body" aria-labelledby="modal-header" aria-label="Contactez moi ${this.name}">
@@ -93,10 +93,10 @@ class NewPhotograph{
     <div class="article__header">
       <p id="Trier" class="article__title" aria-label=" Trier par">Trier par</p>
       <div class="dropdown">
-        <div class="dropdown__content">
-          <a tabindex="0" href="" class="dropdown__content__link icon arrow" role="button" aria-haspopup="listbox" aria-expanded="true" aria-label="Trier par Popularité">Popularité</a>
-          <a tabindex="0" href="" class="dropdown__content__link dropdown__content__sub" role="listbox" aria-activedescendant="true" aria-label="Trier par Date">Date</a>
-          <a tabindex="0" href="" class="dropdown__content__link  dropdown__content__sub delborder" role="listbox" aria-activedescendant="true" aria-label="Trier par Titre">Titre</a>
+        <div class="dropdown__content" role="listbox" aria-activedescendant>
+          <a tabindex="0" href="" class="dropdown__content__link icon arrow" role="option" aria-label="Trier par Popularité">Popularité</a>
+          <a tabindex="0" href="" class="dropdown__content__link dropdown__content__sub" role="option" aria-label="Trier par Date">Date</a>
+          <a tabindex="0" href="" class="dropdown__content__link  dropdown__content__sub delborder" role="option" aria-label="Trier par Titre">Titre</a>
         </div>
       </div>
     </div>
